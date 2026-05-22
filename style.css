@@ -1,46 +1,54 @@
 /* =========================================================
-   NOVA SYMBOLIC ELITE UI
-   Futuristic • Cinematic • Premium Portfolio Experience
+   AETHER MODERN UI
+   Clean • Easy Reading • Premium • Balanced Sections
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root{
 
-    /* BACKGROUND */
+    /* =====================================================
+       BACKGROUND COLORS
+    ===================================================== */
 
-    --bg:#030712;
-    --bg-soft:#0b1222;
-    --bg-card:#121b31;
+    --bg:#f4f7fb;
+    --bg-soft:#e9eef6;
+    --card:#ffffff;
 
-    /* ACCENTS */
+    /* =====================================================
+       ACCENT COLORS
+    ===================================================== */
 
-    --primary:#6ea8ff;
-    --cyan:#57ffe1;
-    --purple:#9c7dff;
-    --pink:#ff7fd1;
+    --primary:#2563eb;
+    --primary-light:#4f8cff;
 
-    /* TEXT */
+    --cyan:#06b6d4;
+    --purple:#7c3aed;
 
-    --white:#ffffff;
-    --text:#dbe8ff;
-    --muted:#95a8c9;
+    /* =====================================================
+       TEXT COLORS
+    ===================================================== */
 
-    /* UI */
+    --title:#0f172a;
+    --text:#334155;
+    --muted:#64748b;
 
-    --glass:rgba(255,255,255,.05);
-    --border:rgba(255,255,255,.09);
+    /* =====================================================
+       UI COLORS
+    ===================================================== */
 
-    --radius:32px;
+    --border:#dbe4f0;
 
     --shadow:
-    0 25px 80px rgba(0,0,0,.45);
+    0 10px 35px rgba(15,23,42,.08);
 
     --shadow-hover:
-    0 35px 100px rgba(0,0,0,.65);
+    0 18px 45px rgba(15,23,42,.14);
+
+    --radius:28px;
 
     --transition:
-    all .45s cubic-bezier(.22,.61,.36,1);
+    all .35s cubic-bezier(.22,.61,.36,1);
 }
 
 /* =========================================================
@@ -62,35 +70,23 @@ body{
     font-family:'Inter',sans-serif;
 
     background:
-    radial-gradient(circle at top right,
-    rgba(110,168,255,.15),
-    transparent 20%),
-
-    radial-gradient(circle at bottom left,
-    rgba(87,255,225,.10),
-    transparent 25%),
-
     linear-gradient(
     180deg,
     var(--bg) 0%,
-    #01040a 100%);
+    #eef3fa 100%);
 
-    color:var(--white);
+    color:var(--text);
 
-    min-height:100vh;
+    line-height:1.8;
 
     overflow-x:hidden;
-
-    line-height:1.75;
-
-    position:relative;
 
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
 }
 
 /* =========================================================
-   SYMBOLIC AURA BACKGROUND
+   SOFT BACKGROUND GRID
 ========================================================= */
 
 body::before{
@@ -101,55 +97,12 @@ body::before{
     inset:0;
 
     background-image:
-    radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+    linear-gradient(rgba(15,23,42,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,.025) 1px, transparent 1px);
 
-    background-size:50px 50px;
-
-    opacity:.35;
-
-    pointer-events:none;
-}
-
-/* =========================================================
-   FLOATING SYMBOL LIGHTS
-========================================================= */
-
-body::after{
-
-    content:"";
-
-    position:fixed;
-    inset:0;
-
-    background:
-    radial-gradient(circle at 20% 20%,
-    rgba(110,168,255,.12),
-    transparent 18%),
-
-    radial-gradient(circle at 80% 30%,
-    rgba(156,125,255,.10),
-    transparent 18%),
-
-    radial-gradient(circle at 50% 80%,
-    rgba(87,255,225,.10),
-    transparent 18%);
-
-    filter:blur(30px);
+    background-size:40px 40px;
 
     pointer-events:none;
-
-    animation:floatAura 12s ease infinite alternate;
-}
-
-@keyframes floatAura{
-
-    from{
-        transform:translateY(0px);
-    }
-
-    to{
-        transform:translateY(-20px);
-    }
 }
 
 /* =========================================================
@@ -158,7 +111,7 @@ body::after{
 
 .container{
 
-    width:min(1220px,92%);
+    width:min(1180px,92%);
     margin:auto;
 }
 
@@ -173,13 +126,13 @@ nav{
 
     z-index:999;
 
-    backdrop-filter:blur(18px);
-
     background:
-    rgba(3,7,18,.72);
+    rgba(255,255,255,.88);
+
+    backdrop-filter:blur(14px);
 
     border-bottom:
-    1px solid rgba(255,255,255,.05);
+    1px solid rgba(15,23,42,.06);
 
     padding:18px 0;
 }
@@ -188,7 +141,7 @@ nav .container{
 
     display:flex;
     justify-content:center;
-    gap:38px;
+    gap:34px;
     flex-wrap:wrap;
 }
 
@@ -196,16 +149,16 @@ nav a{
 
     position:relative;
 
-    color:var(--muted);
-
     text-decoration:none;
+
+    color:var(--muted);
 
     font-size:.82rem;
     font-weight:700;
 
-    letter-spacing:2px;
-
     text-transform:uppercase;
+
+    letter-spacing:2px;
 
     transition:var(--transition);
 }
@@ -236,10 +189,7 @@ nav a::after{
 nav a:hover,
 nav a.active{
 
-    color:var(--white);
-
-    text-shadow:
-    0 0 18px rgba(110,168,255,.55);
+    color:var(--title);
 }
 
 nav a:hover::after,
@@ -253,92 +203,76 @@ nav a.active::after{
 
 header{
 
-    position:relative;
-
     text-align:center;
 
     padding:
-    170px 20px 120px;
+    120px 20px 90px;
 }
 
 /* =========================================================
-   SYMBOLIC PROFILE IMAGE
+   PROFILE IMAGE
+   SAME SIZE ACROSS ALL PAGES
 ========================================================= */
 
 .profile-wrapper{
 
     position:relative;
 
-    width:260px;
-    height:260px;
+    width:220px;
+    height:220px;
 
-    margin:auto auto 45px;
+    min-width:220px;
+    min-height:220px;
+
+    max-width:220px;
+    max-height:220px;
+
+    margin:auto auto 35px;
 
     border-radius:50%;
 }
 
-/* OUTER SYMBOLIC RING */
+/* OUTER GLOW */
 
 .profile-wrapper::before{
 
     content:"";
 
     position:absolute;
-    inset:-22px;
+    inset:-12px;
 
     border-radius:50%;
 
     background:
-    conic-gradient(
-    from 0deg,
+    linear-gradient(
+    135deg,
     var(--primary),
     var(--cyan),
-    var(--purple),
-    var(--pink),
-    var(--primary));
+    var(--purple));
 
-    animation:rotateRing 8s linear infinite;
+    opacity:.22;
 
-    filter:blur(20px);
-
-    opacity:.95;
+    filter:blur(18px);
 }
 
-/* SYMBOLIC INNER RING */
+/* CLEAN RING */
 
 .profile-wrapper::after{
 
     content:"";
 
     position:absolute;
-    inset:-8px;
+    inset:-5px;
 
     border-radius:50%;
 
     border:
-    2px solid rgba(255,255,255,.12);
-
-    box-shadow:
-    inset 0 0 25px rgba(255,255,255,.08);
+    2px solid rgba(37,99,235,.14);
 }
 
-@keyframes rotateRing{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-/* IMAGE */
+/* PROFILE IMAGE */
 
 header img{
-
-    position:relative;
-    z-index:5;
 
     width:100%;
     height:100%;
@@ -347,11 +281,14 @@ header img{
 
     border-radius:50%;
 
+    position:relative;
+    z-index:2;
+
     border:
-    5px solid rgba(255,255,255,.12);
+    5px solid #ffffff;
 
     box-shadow:
-    0 30px 80px rgba(0,0,0,.55);
+    0 15px 40px rgba(15,23,42,.12);
 
     transition:var(--transition);
 }
@@ -359,38 +296,7 @@ header img{
 header img:hover{
 
     transform:
-    scale(1.05)
-    rotate(1deg);
-}
-
-/* STATUS BADGE */
-
-.profile-status{
-
-    position:absolute;
-
-    right:-10px;
-    bottom:25px;
-
-    z-index:10;
-
-    padding:14px 20px;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(
-    135deg,
-    var(--primary),
-    var(--cyan));
-
-    color:#06101f;
-
-    font-size:.78rem;
-    font-weight:800;
-
-    box-shadow:
-    0 18px 40px rgba(0,0,0,.4);
+    scale(1.03);
 }
 
 /* =========================================================
@@ -403,12 +309,12 @@ header img:hover{
 
     margin-bottom:18px;
 
-    color:var(--cyan);
+    color:var(--primary);
 
-    font-size:.84rem;
+    font-size:.82rem;
     font-weight:800;
 
-    letter-spacing:5px;
+    letter-spacing:4px;
 
     text-transform:uppercase;
 }
@@ -416,24 +322,17 @@ header img:hover{
 header h1{
 
     font-size:
-    clamp(3.5rem,8vw,7rem);
+    clamp(3rem,7vw,5.5rem);
 
     font-weight:900;
 
-    line-height:1;
+    line-height:1.05;
 
-    letter-spacing:-5px;
+    letter-spacing:-3px;
+
+    color:var(--title);
 
     margin-bottom:22px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #ffffff,
-    var(--primary));
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
 }
 
 .hero-text{
@@ -444,42 +343,34 @@ header h1{
 
     color:var(--text);
 
-    font-size:1.1rem;
+    font-size:1.05rem;
 }
 
 /* =========================================================
-   SYMBOLIC GLASS SECTIONS
+   SECTIONS
 ========================================================= */
 
 .glass-section{
 
     position:relative;
 
-    overflow:hidden;
+    padding:55px;
 
-    padding:60px;
-
-    margin-bottom:50px;
+    margin-bottom:45px;
 
     border-radius:var(--radius);
 
-    background:
-    linear-gradient(
-    135deg,
-    rgba(255,255,255,.08),
-    rgba(255,255,255,.03));
+    background:var(--card);
 
     border:
-    1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(18px);
+    1px solid var(--border);
 
     box-shadow:var(--shadow);
 
     transition:var(--transition);
 }
 
-/* SYMBOL TOP LINE */
+/* TOP ACCENT */
 
 .glass-section::before{
 
@@ -492,81 +383,55 @@ header h1{
     width:100%;
     height:5px;
 
+    border-radius:
+    28px 28px 0 0;
+
     background:
     linear-gradient(
     90deg,
     var(--primary),
     var(--cyan),
-    var(--purple),
-    var(--pink));
-}
-
-/* GLOW EFFECT */
-
-.glass-section::after{
-
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-    radial-gradient(circle at top right,
-    rgba(110,168,255,.12),
-    transparent 35%);
-
-    opacity:0;
-
-    transition:var(--transition);
+    var(--purple));
 }
 
 .glass-section:hover{
 
     transform:
-    translateY(-10px);
-
-    border-color:
-    rgba(110,168,255,.25);
+    translateY(-6px);
 
     box-shadow:var(--shadow-hover);
 }
 
-.glass-section:hover::after{
-    opacity:1;
-}
-
 /* =========================================================
-   SYMBOLIC TITLES
+   SECTION TITLES
 ========================================================= */
 
 .section-title{
 
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:16px;
 
-    margin-bottom:36px;
+    margin-bottom:34px;
 
-    font-size:1.4rem;
+    font-size:1.35rem;
     font-weight:800;
+
+    color:var(--title);
 
     text-transform:uppercase;
 
     letter-spacing:1px;
 }
 
-/* SYMBOL ICON */
+/* ICON */
 
 .section-title::before{
 
-    content:"◆";
+    content:"";
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    width:32px;
-    height:32px;
+    width:14px;
+    height:14px;
 
     border-radius:50%;
 
@@ -576,12 +441,8 @@ header h1{
     var(--primary),
     var(--cyan));
 
-    color:#07111f;
-
-    font-size:.9rem;
-
     box-shadow:
-    0 0 18px rgba(110,168,255,.45);
+    0 0 10px rgba(37,99,235,.25);
 }
 
 .section-title::after{
@@ -594,29 +455,28 @@ header h1{
     background:
     linear-gradient(
     to right,
-    rgba(255,255,255,.18),
+    rgba(15,23,42,.12),
     transparent);
 }
 
 /* =========================================================
-   PREMIUM CARDS
+   BEAUTIFIED CARDS
 ========================================================= */
 
 .card{
 
-    position:relative;
+    padding:34px;
 
-    overflow:hidden;
-
-    padding:36px;
-
-    border-radius:28px;
+    border-radius:24px;
 
     background:
-    rgba(255,255,255,.05);
+    linear-gradient(
+    180deg,
+    #ffffff,
+    #f8fbff);
 
     border:
-    1px solid rgba(255,255,255,.08);
+    1px solid rgba(15,23,42,.06);
 
     transition:var(--transition);
 }
@@ -624,17 +484,17 @@ header h1{
 .card:hover{
 
     transform:
-    translateY(-8px);
-
-    background:
-    rgba(255,255,255,.07);
+    translateY(-5px);
 
     border-color:
-    rgba(110,168,255,.25);
+    rgba(37,99,235,.18);
+
+    box-shadow:
+    0 12px 30px rgba(15,23,42,.08);
 }
 
 /* =========================================================
-   SYMBOLIC STAT GRID
+   STAT GRID
 ========================================================= */
 
 .stat-grid{
@@ -654,7 +514,7 @@ header h1{
 
 .stat-card h2{
 
-    font-size:3.2rem;
+    font-size:3rem;
     font-weight:900;
 
     margin-bottom:10px;
@@ -673,7 +533,7 @@ header h1{
 
     color:var(--muted);
 
-    font-size:.92rem;
+    font-size:.9rem;
 
     text-transform:uppercase;
 
@@ -681,7 +541,54 @@ header h1{
 }
 
 /* =========================================================
-   SYMBOLIC TECH TAGS
+   SKILLS
+========================================================= */
+
+.skill{
+
+    margin-bottom:28px;
+}
+
+.skill-top{
+
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+    color:var(--title);
+}
+
+.skill-bar{
+
+    width:100%;
+    height:14px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:
+    #dfe8f5;
+}
+
+.skill-fill{
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    90deg,
+    var(--primary),
+    var(--cyan));
+}
+
+/* =========================================================
+   TECH TAGS
 ========================================================= */
 
 .tech-tags{
@@ -689,46 +596,24 @@ header h1{
     display:flex;
     flex-wrap:wrap;
 
-    gap:18px;
+    gap:16px;
 }
 
 .tech-tag{
 
-    position:relative;
+    padding:14px 22px;
 
-    overflow:hidden;
-
-    padding:16px 26px;
-
-    border-radius:18px;
+    border-radius:16px;
 
     background:
-    rgba(255,255,255,.05);
+    #f5f9ff;
 
     border:
-    1px solid rgba(255,255,255,.08);
+    1px solid rgba(37,99,235,.08);
 
-    color:var(--text);
+    color:var(--title);
 
     font-weight:600;
-
-    transition:var(--transition);
-}
-
-.tech-tag::before{
-
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(110,168,255,.12),
-    transparent);
-
-    opacity:0;
 
     transition:var(--transition);
 }
@@ -736,17 +621,13 @@ header h1{
 .tech-tag:hover{
 
     transform:
-    translateY(-5px);
+    translateY(-4px);
+
+    background:
+    #edf5ff;
 
     border-color:
-    rgba(110,168,255,.25);
-
-    box-shadow:
-    0 18px 40px rgba(0,0,0,.35);
-}
-
-.tech-tag:hover::before{
-    opacity:1;
+    rgba(37,99,235,.18);
 }
 
 /* =========================================================
@@ -757,19 +638,15 @@ header h1{
 
     display:flex;
     justify-content:center;
-    gap:18px;
+    gap:16px;
     flex-wrap:wrap;
 }
 
 .btn{
 
-    position:relative;
+    padding:16px 30px;
 
-    overflow:hidden;
-
-    padding:18px 34px;
-
-    border-radius:20px;
+    border-radius:18px;
 
     text-decoration:none;
 
@@ -793,113 +670,86 @@ header h1{
     var(--primary),
     var(--cyan));
 
-    color:#07111f;
+    color:#ffffff;
 
     box-shadow:
-    0 18px 40px rgba(110,168,255,.35);
+    0 10px 25px rgba(37,99,235,.18);
 }
 
 .btn-primary:hover{
 
     transform:
-    translateY(-5px);
+    translateY(-4px);
 
     box-shadow:
-    0 25px 55px rgba(110,168,255,.45);
+    0 16px 35px rgba(37,99,235,.24);
 }
 
 /* OUTLINE */
 
 .btn-outline{
 
-    background:
-    rgba(255,255,255,.05);
+    background:#ffffff;
 
     border:
-    1px solid rgba(255,255,255,.12);
+    1px solid rgba(15,23,42,.10);
 
-    color:var(--white);
+    color:var(--title);
 }
 
 .btn-outline:hover{
 
     transform:
-    translateY(-5px);
+    translateY(-4px);
 
-    background:
-    rgba(255,255,255,.08);
+    background:#f8fbff;
 }
 
 /* =========================================================
-   CTA
+   CTA SECTION
 ========================================================= */
 
 .cta{
 
-    position:relative;
-
-    overflow:hidden;
-
     text-align:center;
 
-    padding:90px 40px;
+    padding:75px 40px;
 
-    border-radius:40px;
+    border-radius:34px;
 
     background:
     linear-gradient(
     135deg,
-    rgba(110,168,255,.14),
-    rgba(255,255,255,.03));
+    rgba(37,99,235,.05),
+    rgba(6,182,212,.04));
 
     border:
-    1px solid rgba(255,255,255,.08);
+    1px solid rgba(37,99,235,.08);
 
     box-shadow:
-    0 30px 90px rgba(0,0,0,.45);
-}
-
-.cta::before{
-
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-    radial-gradient(circle at top right,
-    rgba(110,168,255,.14),
-    transparent 30%);
-
-    pointer-events:none;
+    0 15px 40px rgba(15,23,42,.06);
 }
 
 .cta h2{
 
-    position:relative;
+    font-size:2.7rem;
 
-    z-index:2;
+    color:var(--title);
 
-    font-size:3rem;
-
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .cta p{
 
-    position:relative;
-
-    z-index:2;
-
     max-width:760px;
 
-    margin:auto auto 34px;
+    margin:auto auto 32px;
 
     color:var(--text);
 }
 
 /* =========================================================
-   WHATSAPP FLOAT
+   WHATSAPP
 ========================================================= */
 
 .whatsapp{
@@ -909,8 +759,8 @@ header h1{
     right:24px;
     bottom:24px;
 
-    width:74px;
-    height:74px;
+    width:68px;
+    height:68px;
 
     border-radius:50%;
 
@@ -920,14 +770,14 @@ header h1{
     align-items:center;
     justify-content:center;
 
-    color:#fff;
+    color:#ffffff;
 
-    font-size:34px;
+    font-size:32px;
 
     z-index:1000;
 
     box-shadow:
-    0 20px 45px rgba(0,0,0,.45);
+    0 15px 35px rgba(15,23,42,.15);
 
     transition:var(--transition);
 }
@@ -935,8 +785,7 @@ header h1{
 .whatsapp:hover{
 
     transform:
-    scale(1.12)
-    rotate(6deg);
+    scale(1.08);
 }
 
 /* =========================================================
@@ -945,7 +794,7 @@ header h1{
 
 footer{
 
-    padding:80px 20px;
+    padding:70px 20px;
 
     text-align:center;
 
@@ -963,7 +812,7 @@ footer{
 }
 
 ::-webkit-scrollbar-track{
-    background:#030712;
+    background:#eef3fa;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -984,24 +833,31 @@ footer{
 @media(max-width:768px){
 
     header{
-        padding-top:130px;
+        padding-top:100px;
     }
 
     header h1{
-        font-size:3rem;
+        font-size:2.7rem;
     }
 
     .profile-wrapper{
-        width:190px;
-        height:190px;
+
+        width:180px;
+        height:180px;
+
+        min-width:180px;
+        min-height:180px;
+
+        max-width:180px;
+        max-height:180px;
     }
 
     .glass-section{
-        padding:36px;
+        padding:34px;
     }
 
     .cta h2{
-        font-size:2.2rem;
+        font-size:2rem;
     }
 
     .btn{
@@ -1009,6 +865,6 @@ footer{
     }
 
     .stat-card h2{
-        font-size:2.5rem;
+        font-size:2.4rem;
     }
 }
