@@ -1,6 +1,6 @@
 /* =========================================================
-   QUANTUM ELITE UI
-   Ultra Modern • Recruiter Focused • Premium Portfolio
+   NOVA SYMBOLIC ELITE UI
+   Futuristic • Cinematic • Premium Portfolio Experience
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -9,34 +9,35 @@
 
     /* BACKGROUND */
 
-    --bg:#050816;
-    --bg-soft:#0d1326;
-    --card:#121a31;
+    --bg:#030712;
+    --bg-soft:#0b1222;
+    --bg-card:#121b31;
 
-    /* COLORS */
+    /* ACCENTS */
 
-    --primary:#5ea2ff;
-    --primary-light:#8fc1ff;
+    --primary:#6ea8ff;
+    --cyan:#57ffe1;
+    --purple:#9c7dff;
+    --pink:#ff7fd1;
 
-    --cyan:#55ffe0;
-    --purple:#9f7cff;
+    /* TEXT */
 
     --white:#ffffff;
-    --text:#d9e5ff;
-    --muted:#9fb0d0;
+    --text:#dbe8ff;
+    --muted:#95a8c9;
 
     /* UI */
 
-    --glass:rgba(255,255,255,0.05);
-    --border:rgba(255,255,255,0.10);
+    --glass:rgba(255,255,255,.05);
+    --border:rgba(255,255,255,.09);
 
-    --radius:30px;
+    --radius:32px;
 
     --shadow:
-    0 25px 70px rgba(0,0,0,.45);
+    0 25px 80px rgba(0,0,0,.45);
 
     --shadow-hover:
-    0 35px 90px rgba(0,0,0,.6);
+    0 35px 100px rgba(0,0,0,.65);
 
     --transition:
     all .45s cubic-bezier(.22,.61,.36,1);
@@ -62,23 +63,23 @@ body{
 
     background:
     radial-gradient(circle at top right,
-    rgba(94,162,255,.18),
+    rgba(110,168,255,.15),
     transparent 20%),
 
     radial-gradient(circle at bottom left,
-    rgba(85,255,224,.12),
+    rgba(87,255,225,.10),
     transparent 25%),
 
     linear-gradient(
     180deg,
     var(--bg) 0%,
-    #02040b 100%);
+    #01040a 100%);
 
     color:var(--white);
 
-    overflow-x:hidden;
-
     min-height:100vh;
+
+    overflow-x:hidden;
 
     line-height:1.75;
 
@@ -89,7 +90,7 @@ body{
 }
 
 /* =========================================================
-   PREMIUM GRID BACKGROUND
+   SYMBOLIC AURA BACKGROUND
 ========================================================= */
 
 body::before{
@@ -100,14 +101,55 @@ body::before{
     inset:0;
 
     background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
 
-    background-size:45px 45px;
+    background-size:50px 50px;
 
-    opacity:.4;
+    opacity:.35;
 
     pointer-events:none;
+}
+
+/* =========================================================
+   FLOATING SYMBOL LIGHTS
+========================================================= */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 20% 20%,
+    rgba(110,168,255,.12),
+    transparent 18%),
+
+    radial-gradient(circle at 80% 30%,
+    rgba(156,125,255,.10),
+    transparent 18%),
+
+    radial-gradient(circle at 50% 80%,
+    rgba(87,255,225,.10),
+    transparent 18%);
+
+    filter:blur(30px);
+
+    pointer-events:none;
+
+    animation:floatAura 12s ease infinite alternate;
+}
+
+@keyframes floatAura{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(-20px);
+    }
 }
 
 /* =========================================================
@@ -116,7 +158,7 @@ body::before{
 
 .container{
 
-    width:min(1180px,92%);
+    width:min(1220px,92%);
     margin:auto;
 }
 
@@ -134,7 +176,7 @@ nav{
     backdrop-filter:blur(18px);
 
     background:
-    rgba(5,8,22,.72);
+    rgba(3,7,18,.72);
 
     border-bottom:
     1px solid rgba(255,255,255,.05);
@@ -146,7 +188,7 @@ nav .container{
 
     display:flex;
     justify-content:center;
-    gap:34px;
+    gap:38px;
     flex-wrap:wrap;
 }
 
@@ -161,9 +203,9 @@ nav a{
     font-size:.82rem;
     font-weight:700;
 
-    text-transform:uppercase;
-
     letter-spacing:2px;
+
+    text-transform:uppercase;
 
     transition:var(--transition);
 }
@@ -197,7 +239,7 @@ nav a.active{
     color:var(--white);
 
     text-shadow:
-    0 0 18px rgba(94,162,255,.55);
+    0 0 18px rgba(110,168,255,.55);
 }
 
 nav a:hover::after,
@@ -216,52 +258,53 @@ header{
     text-align:center;
 
     padding:
-    150px 20px 110px;
+    170px 20px 120px;
 }
 
 /* =========================================================
-   PROFILE IMAGE — STANDOUT DESIGN
+   SYMBOLIC PROFILE IMAGE
 ========================================================= */
 
 .profile-wrapper{
 
     position:relative;
 
-    width:240px;
-    height:240px;
+    width:260px;
+    height:260px;
 
-    margin:auto auto 40px;
+    margin:auto auto 45px;
 
     border-radius:50%;
 }
 
-/* OUTER GLOW */
+/* OUTER SYMBOLIC RING */
 
 .profile-wrapper::before{
 
     content:"";
 
     position:absolute;
-    inset:-18px;
+    inset:-22px;
 
     border-radius:50%;
 
     background:
     conic-gradient(
-    from 180deg,
+    from 0deg,
     var(--primary),
     var(--cyan),
     var(--purple),
+    var(--pink),
     var(--primary));
 
-    animation:rotate 8s linear infinite;
+    animation:rotateRing 8s linear infinite;
 
-    filter:blur(25px);
+    filter:blur(20px);
 
-    opacity:.9;
+    opacity:.95;
 }
 
-/* GLASS RING */
+/* SYMBOLIC INNER RING */
 
 .profile-wrapper::after{
 
@@ -273,12 +316,13 @@ header{
     border-radius:50%;
 
     border:
-    2px solid rgba(255,255,255,.14);
+    2px solid rgba(255,255,255,.12);
 
-    backdrop-filter:blur(12px);
+    box-shadow:
+    inset 0 0 25px rgba(255,255,255,.08);
 }
 
-@keyframes rotate{
+@keyframes rotateRing{
 
     from{
         transform:rotate(0deg);
@@ -289,12 +333,11 @@ header{
     }
 }
 
-/* PROFILE IMAGE */
+/* IMAGE */
 
 header img{
 
     position:relative;
-
     z-index:5;
 
     width:100%;
@@ -305,10 +348,10 @@ header img{
     border-radius:50%;
 
     border:
-    5px solid rgba(255,255,255,.14);
+    5px solid rgba(255,255,255,.12);
 
     box-shadow:
-    0 25px 70px rgba(0,0,0,.55);
+    0 30px 80px rgba(0,0,0,.55);
 
     transition:var(--transition);
 }
@@ -326,12 +369,12 @@ header img:hover{
 
     position:absolute;
 
-    right:8px;
-    bottom:18px;
+    right:-10px;
+    bottom:25px;
 
-    z-index:20;
+    z-index:10;
 
-    padding:12px 18px;
+    padding:14px 20px;
 
     border-radius:30px;
 
@@ -341,13 +384,13 @@ header img:hover{
     var(--primary),
     var(--cyan));
 
-    color:#08111f;
+    color:#06101f;
 
     font-size:.78rem;
     font-weight:800;
 
     box-shadow:
-    0 15px 35px rgba(0,0,0,.35);
+    0 18px 40px rgba(0,0,0,.4);
 }
 
 /* =========================================================
@@ -360,9 +403,9 @@ header img:hover{
 
     margin-bottom:18px;
 
-    color:var(--primary-light);
+    color:var(--cyan);
 
-    font-size:.82rem;
+    font-size:.84rem;
     font-weight:800;
 
     letter-spacing:5px;
@@ -373,13 +416,13 @@ header img:hover{
 header h1{
 
     font-size:
-    clamp(3.2rem,8vw,6.5rem);
+    clamp(3.5rem,8vw,7rem);
 
     font-weight:900;
 
     line-height:1;
 
-    letter-spacing:-4px;
+    letter-spacing:-5px;
 
     margin-bottom:22px;
 
@@ -387,7 +430,7 @@ header h1{
     linear-gradient(
     135deg,
     #ffffff,
-    var(--primary-light));
+    var(--primary));
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -405,7 +448,7 @@ header h1{
 }
 
 /* =========================================================
-   GLASS SECTIONS
+   SYMBOLIC GLASS SECTIONS
 ========================================================= */
 
 .glass-section{
@@ -414,9 +457,9 @@ header h1{
 
     overflow:hidden;
 
-    padding:55px;
+    padding:60px;
 
-    margin-bottom:45px;
+    margin-bottom:50px;
 
     border-radius:var(--radius);
 
@@ -436,7 +479,7 @@ header h1{
     transition:var(--transition);
 }
 
-/* TOP GLOW */
+/* SYMBOL TOP LINE */
 
 .glass-section::before{
 
@@ -447,30 +490,18 @@ header h1{
     left:0;
 
     width:100%;
-    height:4px;
+    height:5px;
 
     background:
     linear-gradient(
     90deg,
     var(--primary),
     var(--cyan),
-    var(--purple));
+    var(--purple),
+    var(--pink));
 }
 
-/* HOVER EFFECT */
-
-.glass-section:hover{
-
-    transform:
-    translateY(-10px);
-
-    border-color:
-    rgba(94,162,255,.25);
-
-    box-shadow:var(--shadow-hover);
-}
-
-/* SECTION GLOW */
+/* GLOW EFFECT */
 
 .glass-section::after{
 
@@ -481,7 +512,7 @@ header h1{
 
     background:
     radial-gradient(circle at top right,
-    rgba(94,162,255,.10),
+    rgba(110,168,255,.12),
     transparent 35%);
 
     opacity:0;
@@ -489,36 +520,53 @@ header h1{
     transition:var(--transition);
 }
 
+.glass-section:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    rgba(110,168,255,.25);
+
+    box-shadow:var(--shadow-hover);
+}
+
 .glass-section:hover::after{
     opacity:1;
 }
 
 /* =========================================================
-   SECTION TITLES
+   SYMBOLIC TITLES
 ========================================================= */
 
 .section-title{
 
     display:flex;
     align-items:center;
-    gap:16px;
+    gap:18px;
 
-    margin-bottom:34px;
+    margin-bottom:36px;
 
-    font-size:1.35rem;
+    font-size:1.4rem;
     font-weight:800;
 
-    letter-spacing:1px;
-
     text-transform:uppercase;
+
+    letter-spacing:1px;
 }
+
+/* SYMBOL ICON */
 
 .section-title::before{
 
-    content:"";
+    content:"◆";
 
-    width:14px;
-    height:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:32px;
+    height:32px;
 
     border-radius:50%;
 
@@ -528,8 +576,12 @@ header h1{
     var(--primary),
     var(--cyan));
 
+    color:#07111f;
+
+    font-size:.9rem;
+
     box-shadow:
-    0 0 18px rgba(94,162,255,.5);
+    0 0 18px rgba(110,168,255,.45);
 }
 
 .section-title::after{
@@ -542,12 +594,12 @@ header h1{
     background:
     linear-gradient(
     to right,
-    rgba(255,255,255,.15),
+    rgba(255,255,255,.18),
     transparent);
 }
 
 /* =========================================================
-   ATTRACTIVE CARDS
+   PREMIUM CARDS
 ========================================================= */
 
 .card{
@@ -556,9 +608,9 @@ header h1{
 
     overflow:hidden;
 
-    padding:34px;
+    padding:36px;
 
-    border-radius:26px;
+    border-radius:28px;
 
     background:
     rgba(255,255,255,.05);
@@ -574,15 +626,15 @@ header h1{
     transform:
     translateY(-8px);
 
-    border-color:
-    rgba(94,162,255,.25);
-
     background:
     rgba(255,255,255,.07);
+
+    border-color:
+    rgba(110,168,255,.25);
 }
 
 /* =========================================================
-   STAT GRID
+   SYMBOLIC STAT GRID
 ========================================================= */
 
 .stat-grid{
@@ -595,9 +647,14 @@ header h1{
     gap:24px;
 }
 
+.stat-card{
+
+    text-align:center;
+}
+
 .stat-card h2{
 
-    font-size:3rem;
+    font-size:3.2rem;
     font-weight:900;
 
     margin-bottom:10px;
@@ -605,8 +662,8 @@ header h1{
     background:
     linear-gradient(
     135deg,
-    var(--primary-light),
-    #fff);
+    var(--primary),
+    var(--cyan));
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -618,13 +675,13 @@ header h1{
 
     font-size:.92rem;
 
-    letter-spacing:1px;
-
     text-transform:uppercase;
+
+    letter-spacing:1px;
 }
 
 /* =========================================================
-   TECH TAGS
+   SYMBOLIC TECH TAGS
 ========================================================= */
 
 .tech-tags{
@@ -632,12 +689,16 @@ header h1{
     display:flex;
     flex-wrap:wrap;
 
-    gap:16px;
+    gap:18px;
 }
 
 .tech-tag{
 
-    padding:15px 24px;
+    position:relative;
+
+    overflow:hidden;
+
+    padding:16px 26px;
 
     border-radius:18px;
 
@@ -647,9 +708,27 @@ header h1{
     border:
     1px solid rgba(255,255,255,.08);
 
+    color:var(--text);
+
     font-weight:600;
 
-    color:var(--text);
+    transition:var(--transition);
+}
+
+.tech-tag::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(110,168,255,.12),
+    transparent);
+
+    opacity:0;
 
     transition:var(--transition);
 }
@@ -659,14 +738,15 @@ header h1{
     transform:
     translateY(-5px);
 
-    background:
-    rgba(94,162,255,.08);
-
     border-color:
-    rgba(94,162,255,.25);
+    rgba(110,168,255,.25);
 
     box-shadow:
-    0 18px 40px rgba(0,0,0,.3);
+    0 18px 40px rgba(0,0,0,.35);
+}
+
+.tech-tag:hover::before{
+    opacity:1;
 }
 
 /* =========================================================
@@ -677,15 +757,19 @@ header h1{
 
     display:flex;
     justify-content:center;
-    gap:16px;
+    gap:18px;
     flex-wrap:wrap;
 }
 
 .btn{
 
-    padding:17px 32px;
+    position:relative;
 
-    border-radius:18px;
+    overflow:hidden;
+
+    padding:18px 34px;
+
+    border-radius:20px;
 
     text-decoration:none;
 
@@ -699,6 +783,8 @@ header h1{
     transition:var(--transition);
 }
 
+/* PRIMARY */
+
 .btn-primary{
 
     background:
@@ -707,10 +793,10 @@ header h1{
     var(--primary),
     var(--cyan));
 
-    color:#08111f;
+    color:#07111f;
 
     box-shadow:
-    0 18px 40px rgba(94,162,255,.3);
+    0 18px 40px rgba(110,168,255,.35);
 }
 
 .btn-primary:hover{
@@ -719,8 +805,10 @@ header h1{
     translateY(-5px);
 
     box-shadow:
-    0 22px 55px rgba(94,162,255,.45);
+    0 25px 55px rgba(110,168,255,.45);
 }
+
+/* OUTLINE */
 
 .btn-outline{
 
@@ -743,48 +831,75 @@ header h1{
 }
 
 /* =========================================================
-   CTA SECTION
+   CTA
 ========================================================= */
 
 .cta{
 
+    position:relative;
+
+    overflow:hidden;
+
     text-align:center;
 
-    padding:80px 40px;
+    padding:90px 40px;
 
-    border-radius:38px;
+    border-radius:40px;
 
     background:
     linear-gradient(
     135deg,
-    rgba(94,162,255,.14),
+    rgba(110,168,255,.14),
     rgba(255,255,255,.03));
 
     border:
     1px solid rgba(255,255,255,.08);
 
     box-shadow:
-    0 25px 80px rgba(0,0,0,.4);
+    0 30px 90px rgba(0,0,0,.45);
+}
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(110,168,255,.14),
+    transparent 30%);
+
+    pointer-events:none;
 }
 
 .cta h2{
 
-    font-size:2.8rem;
+    position:relative;
 
-    margin-bottom:18px;
+    z-index:2;
+
+    font-size:3rem;
+
+    margin-bottom:20px;
 }
 
 .cta p{
 
+    position:relative;
+
+    z-index:2;
+
     max-width:760px;
 
-    margin:auto auto 32px;
+    margin:auto auto 34px;
 
     color:var(--text);
 }
 
 /* =========================================================
-   FLOATING WHATSAPP
+   WHATSAPP FLOAT
 ========================================================= */
 
 .whatsapp{
@@ -794,8 +909,8 @@ header h1{
     right:24px;
     bottom:24px;
 
-    width:72px;
-    height:72px;
+    width:74px;
+    height:74px;
 
     border-radius:50%;
 
@@ -812,7 +927,7 @@ header h1{
     z-index:1000;
 
     box-shadow:
-    0 20px 40px rgba(0,0,0,.4);
+    0 20px 45px rgba(0,0,0,.45);
 
     transition:var(--transition);
 }
@@ -820,7 +935,7 @@ header h1{
 .whatsapp:hover{
 
     transform:
-    scale(1.1)
+    scale(1.12)
     rotate(6deg);
 }
 
@@ -830,7 +945,7 @@ header h1{
 
 footer{
 
-    padding:70px 20px;
+    padding:80px 20px;
 
     text-align:center;
 
@@ -848,7 +963,7 @@ footer{
 }
 
 ::-webkit-scrollbar-track{
-    background:#050816;
+    background:#030712;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -869,24 +984,24 @@ footer{
 @media(max-width:768px){
 
     header{
-        padding-top:120px;
+        padding-top:130px;
     }
 
     header h1{
-        font-size:2.8rem;
+        font-size:3rem;
     }
 
     .profile-wrapper{
-        width:180px;
-        height:180px;
+        width:190px;
+        height:190px;
     }
 
     .glass-section{
-        padding:34px;
+        padding:36px;
     }
 
     .cta h2{
-        font-size:2rem;
+        font-size:2.2rem;
     }
 
     .btn{
@@ -894,6 +1009,6 @@ footer{
     }
 
     .stat-card h2{
-        font-size:2.4rem;
+        font-size:2.5rem;
     }
 }
