@@ -1,47 +1,45 @@
 /* =========================================================
-   AURORA ELITE UI
-   Clean • Premium • Easy Reading • Modern Luxury
+   QUANTUM ELITE UI
+   Ultra Modern • Recruiter Focused • Premium Portfolio
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root{
 
-    /* BACKGROUNDS */
+    /* BACKGROUND */
 
-    --bg:#07111f;
-    --bg-secondary:#0f1b2d;
-    --bg-card:#13243b;
+    --bg:#050816;
+    --bg-soft:#0d1326;
+    --card:#121a31;
 
-    /* ACCENTS */
+    /* COLORS */
 
-    --primary:#58a6ff;
-    --primary-light:#8cc2ff;
+    --primary:#5ea2ff;
+    --primary-light:#8fc1ff;
 
-    --cyan:#4de2d1;
-    --violet:#9d7dff;
+    --cyan:#55ffe0;
+    --purple:#9f7cff;
 
-    /* TEXT */
-
-    --white:#f8fbff;
-    --text:#d7e3f4;
-    --muted:#9db0c7;
+    --white:#ffffff;
+    --text:#d9e5ff;
+    --muted:#9fb0d0;
 
     /* UI */
 
-    --glass:rgba(255,255,255,0.06);
+    --glass:rgba(255,255,255,0.05);
     --border:rgba(255,255,255,0.10);
 
-    --radius:28px;
+    --radius:30px;
 
     --shadow:
-    0 20px 60px rgba(0,0,0,.35);
+    0 25px 70px rgba(0,0,0,.45);
 
     --shadow-hover:
-    0 25px 80px rgba(0,0,0,.45);
+    0 35px 90px rgba(0,0,0,.6);
 
     --transition:
-    all .4s cubic-bezier(.22,.61,.36,1);
+    all .45s cubic-bezier(.22,.61,.36,1);
 }
 
 /* =========================================================
@@ -64,34 +62,34 @@ body{
 
     background:
     radial-gradient(circle at top right,
-    rgba(88,166,255,.16),
+    rgba(94,162,255,.18),
     transparent 20%),
 
     radial-gradient(circle at bottom left,
-    rgba(77,226,209,.14),
+    rgba(85,255,224,.12),
     transparent 25%),
 
     linear-gradient(
     180deg,
     var(--bg) 0%,
-    #050b14 100%);
+    #02040b 100%);
 
     color:var(--white);
 
-    min-height:100vh;
-
     overflow-x:hidden;
+
+    min-height:100vh;
 
     line-height:1.75;
 
+    position:relative;
+
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
-
-    position:relative;
 }
 
 /* =========================================================
-   SOFT BACKGROUND GRID
+   PREMIUM GRID BACKGROUND
 ========================================================= */
 
 body::before{
@@ -105,7 +103,7 @@ body::before{
     linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
 
-    background-size:40px 40px;
+    background-size:45px 45px;
 
     opacity:.4;
 
@@ -123,7 +121,7 @@ body::before{
 }
 
 /* =========================================================
-   NAVBAR
+   NAVIGATION
 ========================================================= */
 
 nav{
@@ -136,10 +134,10 @@ nav{
     backdrop-filter:blur(18px);
 
     background:
-    rgba(6,12,22,.72);
+    rgba(5,8,22,.72);
 
     border-bottom:
-    1px solid rgba(255,255,255,.06);
+    1px solid rgba(255,255,255,.05);
 
     padding:18px 0;
 }
@@ -163,9 +161,9 @@ nav a{
     font-size:.82rem;
     font-weight:700;
 
-    letter-spacing:2px;
-
     text-transform:uppercase;
+
+    letter-spacing:2px;
 
     transition:var(--transition);
 }
@@ -199,7 +197,7 @@ nav a.active{
     color:var(--white);
 
     text-shadow:
-    0 0 14px rgba(88,166,255,.5);
+    0 0 18px rgba(94,162,255,.55);
 }
 
 nav a:hover::after,
@@ -213,59 +211,91 @@ nav a.active::after{
 
 header{
 
-    padding:
-    140px 20px 90px;
+    position:relative;
 
     text-align:center;
 
-    position:relative;
+    padding:
+    150px 20px 110px;
 }
+
+/* =========================================================
+   PROFILE IMAGE — STANDOUT DESIGN
+========================================================= */
 
 .profile-wrapper{
 
     position:relative;
 
-    width:190px;
-    height:190px;
+    width:240px;
+    height:240px;
 
-    margin:auto auto 35px;
+    margin:auto auto 40px;
+
+    border-radius:50%;
 }
+
+/* OUTER GLOW */
 
 .profile-wrapper::before{
 
     content:"";
 
     position:absolute;
-    inset:-14px;
+    inset:-18px;
 
     border-radius:50%;
 
     background:
-    linear-gradient(
-    135deg,
+    conic-gradient(
+    from 180deg,
     var(--primary),
     var(--cyan),
-    var(--violet));
+    var(--purple),
+    var(--primary));
 
-    filter:blur(24px);
+    animation:rotate 8s linear infinite;
 
-    opacity:.7;
+    filter:blur(25px);
 
-    animation:pulse 5s ease infinite;
+    opacity:.9;
 }
 
-@keyframes pulse{
+/* GLASS RING */
 
-    0%,100%{
-        transform:scale(1);
+.profile-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+    inset:-8px;
+
+    border-radius:50%;
+
+    border:
+    2px solid rgba(255,255,255,.14);
+
+    backdrop-filter:blur(12px);
+}
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
     }
 
-    50%{
-        transform:scale(1.06);
+    to{
+        transform:rotate(360deg);
     }
 }
+
+/* PROFILE IMAGE */
 
 header img{
+
+    position:relative;
+
+    z-index:5;
 
     width:100%;
     height:100%;
@@ -274,13 +304,11 @@ header img{
 
     border-radius:50%;
 
-    border:4px solid rgba(255,255,255,.16);
-
-    position:relative;
-    z-index:2;
+    border:
+    5px solid rgba(255,255,255,.14);
 
     box-shadow:
-    0 20px 60px rgba(0,0,0,.45);
+    0 25px 70px rgba(0,0,0,.55);
 
     transition:var(--transition);
 }
@@ -288,8 +316,43 @@ header img{
 header img:hover{
 
     transform:
-    scale(1.05);
+    scale(1.05)
+    rotate(1deg);
 }
+
+/* STATUS BADGE */
+
+.profile-status{
+
+    position:absolute;
+
+    right:8px;
+    bottom:18px;
+
+    z-index:20;
+
+    padding:12px 18px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--cyan));
+
+    color:#08111f;
+
+    font-size:.78rem;
+    font-weight:800;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.35);
+}
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
 
 .title-tag{
 
@@ -310,15 +373,15 @@ header img:hover{
 header h1{
 
     font-size:
-    clamp(3rem,7vw,6rem);
+    clamp(3.2rem,8vw,6.5rem);
 
     font-weight:900;
 
-    line-height:1.05;
+    line-height:1;
 
-    letter-spacing:-3px;
+    letter-spacing:-4px;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 
     background:
     linear-gradient(
@@ -338,11 +401,11 @@ header h1{
 
     color:var(--text);
 
-    font-size:1.08rem;
+    font-size:1.1rem;
 }
 
 /* =========================================================
-   GLASS SECTION
+   GLASS SECTIONS
 ========================================================= */
 
 .glass-section{
@@ -351,16 +414,16 @@ header h1{
 
     overflow:hidden;
 
-    padding:50px;
+    padding:55px;
 
-    margin-bottom:40px;
+    margin-bottom:45px;
 
     border-radius:var(--radius);
 
     background:
     linear-gradient(
     135deg,
-    rgba(255,255,255,.07),
+    rgba(255,255,255,.08),
     rgba(255,255,255,.03));
 
     border:
@@ -373,16 +436,7 @@ header h1{
     transition:var(--transition);
 }
 
-.glass-section:hover{
-
-    transform:
-    translateY(-8px);
-
-    box-shadow:var(--shadow-hover);
-
-    border-color:
-    rgba(88,166,255,.25);
-}
+/* TOP GLOW */
 
 .glass-section::before{
 
@@ -399,27 +453,83 @@ header h1{
     linear-gradient(
     90deg,
     var(--primary),
-    var(--cyan));
+    var(--cyan),
+    var(--purple));
+}
+
+/* HOVER EFFECT */
+
+.glass-section:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    rgba(94,162,255,.25);
+
+    box-shadow:var(--shadow-hover);
+}
+
+/* SECTION GLOW */
+
+.glass-section::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(94,162,255,.10),
+    transparent 35%);
+
+    opacity:0;
+
+    transition:var(--transition);
+}
+
+.glass-section:hover::after{
+    opacity:1;
 }
 
 /* =========================================================
-   TITLES
+   SECTION TITLES
 ========================================================= */
 
 .section-title{
 
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:16px;
 
-    margin-bottom:32px;
+    margin-bottom:34px;
 
-    font-size:1.3rem;
+    font-size:1.35rem;
     font-weight:800;
 
-    text-transform:uppercase;
-
     letter-spacing:1px;
+
+    text-transform:uppercase;
+}
+
+.section-title::before{
+
+    content:"";
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--cyan));
+
+    box-shadow:
+    0 0 18px rgba(94,162,255,.5);
 }
 
 .section-title::after{
@@ -432,8 +542,43 @@ header h1{
     background:
     linear-gradient(
     to right,
-    rgba(255,255,255,.18),
+    rgba(255,255,255,.15),
     transparent);
+}
+
+/* =========================================================
+   ATTRACTIVE CARDS
+========================================================= */
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:34px;
+
+    border-radius:26px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    transition:var(--transition);
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px);
+
+    border-color:
+    rgba(94,162,255,.25);
+
+    background:
+    rgba(255,255,255,.07);
 }
 
 /* =========================================================
@@ -447,34 +592,7 @@ header h1{
     grid-template-columns:
     repeat(auto-fit,minmax(240px,1fr));
 
-    gap:22px;
-}
-
-.stat-card{
-
-    padding:38px 28px;
-
-    border-radius:24px;
-
-    background:
-    rgba(255,255,255,.05);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
-    transition:var(--transition);
-}
-
-.stat-card:hover{
-
-    transform:
-    translateY(-8px);
-
-    border-color:
-    rgba(88,166,255,.35);
-
-    background:
-    rgba(255,255,255,.07);
+    gap:24px;
 }
 
 .stat-card h2{
@@ -488,7 +606,7 @@ header h1{
     linear-gradient(
     135deg,
     var(--primary-light),
-    #ffffff);
+    #fff);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -498,59 +616,11 @@ header h1{
 
     color:var(--muted);
 
-    font-size:.9rem;
+    font-size:.92rem;
 
     letter-spacing:1px;
 
     text-transform:uppercase;
-}
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skill{
-
-    margin-bottom:26px;
-}
-
-.skill-top{
-
-    display:flex;
-    justify-content:space-between;
-
-    margin-bottom:12px;
-
-    font-weight:700;
-}
-
-.skill-bar{
-
-    width:100%;
-    height:14px;
-
-    overflow:hidden;
-
-    border-radius:20px;
-
-    background:
-    rgba(255,255,255,.06);
-}
-
-.skill-fill{
-
-    height:100%;
-
-    border-radius:20px;
-
-    background:
-    linear-gradient(
-    90deg,
-    var(--primary),
-    var(--cyan));
-
-    box-shadow:
-    0 0 18px rgba(88,166,255,.4);
 }
 
 /* =========================================================
@@ -567,7 +637,7 @@ header h1{
 
 .tech-tag{
 
-    padding:14px 22px;
+    padding:15px 24px;
 
     border-radius:18px;
 
@@ -577,10 +647,9 @@ header h1{
     border:
     1px solid rgba(255,255,255,.08);
 
-    color:var(--text);
-
-    font-size:.92rem;
     font-weight:600;
+
+    color:var(--text);
 
     transition:var(--transition);
 }
@@ -590,14 +659,14 @@ header h1{
     transform:
     translateY(-5px);
 
-    border-color:
-    rgba(88,166,255,.3);
-
     background:
-    rgba(88,166,255,.08);
+    rgba(94,162,255,.08);
+
+    border-color:
+    rgba(94,162,255,.25);
 
     box-shadow:
-    0 18px 35px rgba(0,0,0,.3);
+    0 18px 40px rgba(0,0,0,.3);
 }
 
 /* =========================================================
@@ -614,7 +683,7 @@ header h1{
 
 .btn{
 
-    padding:16px 30px;
+    padding:17px 32px;
 
     border-radius:18px;
 
@@ -638,10 +707,10 @@ header h1{
     var(--primary),
     var(--cyan));
 
-    color:#06111d;
+    color:#08111f;
 
     box-shadow:
-    0 15px 35px rgba(88,166,255,.25);
+    0 18px 40px rgba(94,162,255,.3);
 }
 
 .btn-primary:hover{
@@ -650,72 +719,72 @@ header h1{
     translateY(-5px);
 
     box-shadow:
-    0 20px 45px rgba(88,166,255,.35);
+    0 22px 55px rgba(94,162,255,.45);
 }
 
 .btn-outline{
+
+    background:
+    rgba(255,255,255,.05);
 
     border:
     1px solid rgba(255,255,255,.12);
 
     color:var(--white);
-
-    background:
-    rgba(255,255,255,.04);
 }
 
 .btn-outline:hover{
 
-    background:
-    rgba(255,255,255,.08);
-
     transform:
     translateY(-5px);
+
+    background:
+    rgba(255,255,255,.08);
 }
 
 /* =========================================================
-   CTA
+   CTA SECTION
 ========================================================= */
 
 .cta{
 
     text-align:center;
 
-    padding:70px 40px;
+    padding:80px 40px;
 
-    border-radius:34px;
+    border-radius:38px;
 
     background:
     linear-gradient(
     135deg,
-    rgba(88,166,255,.12),
+    rgba(94,162,255,.14),
     rgba(255,255,255,.03));
 
     border:
     1px solid rgba(255,255,255,.08);
 
     box-shadow:
-    0 20px 70px rgba(0,0,0,.35);
+    0 25px 80px rgba(0,0,0,.4);
 }
 
 .cta h2{
 
-    font-size:2.5rem;
+    font-size:2.8rem;
 
-    margin-bottom:16px;
+    margin-bottom:18px;
 }
 
 .cta p{
 
-    max-width:720px;
+    max-width:760px;
 
-    margin:auto auto 30px;
+    margin:auto auto 32px;
 
     color:var(--text);
 }
 
 /* =========================================================
-   FLOATING BUTTONS
+   FLOATING WHATSAPP
 ========================================================= */
 
 .whatsapp{
@@ -725,8 +794,8 @@ header h1{
     right:24px;
     bottom:24px;
 
-    width:68px;
-    height:68px;
+    width:72px;
+    height:72px;
 
     border-radius:50%;
 
@@ -738,12 +807,12 @@ header h1{
 
     color:#fff;
 
-    font-size:32px;
+    font-size:34px;
 
     z-index:1000;
 
     box-shadow:
-    0 15px 35px rgba(0,0,0,.35);
+    0 20px 40px rgba(0,0,0,.4);
 
     transition:var(--transition);
 }
@@ -752,7 +821,7 @@ header h1{
 
     transform:
     scale(1.1)
-    rotate(5deg);
+    rotate(6deg);
 }
 
 /* =========================================================
@@ -761,7 +830,7 @@ header h1{
 
 footer{
 
-    padding:60px 20px;
+    padding:70px 20px;
 
     text-align:center;
 
@@ -779,7 +848,7 @@ footer{
 }
 
 ::-webkit-scrollbar-track{
-    background:#08111e;
+    background:#050816;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -800,20 +869,20 @@ footer{
 @media(max-width:768px){
 
     header{
-        padding-top:110px;
+        padding-top:120px;
     }
 
     header h1{
-        font-size:2.7rem;
-    }
-
-    .glass-section{
-        padding:30px;
+        font-size:2.8rem;
     }
 
     .profile-wrapper{
-        width:150px;
-        height:150px;
+        width:180px;
+        height:180px;
+    }
+
+    .glass-section{
+        padding:34px;
     }
 
     .cta h2{
