@@ -1,2 +1,1 @@
-# Coach
-ICT-related learning 
+Jamal Fahad is an ICT Teacher and Digital Skills Trainer based in Hargeisa, Somaliland. He specializes in Pearson Edexcel ICT, web design, graphic design, digital literacy, and technology education. He is passionate about helping students develop practical ICT skills for academic and professional success.
