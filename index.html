@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jamal Fahadh Mohamed | Senior ICT Educator & Web Developer</title>
+    <title>Teacher Fahadh | Senior ICT Educator & Web Developer</title>
     <!-- Premium Google Fonts & Vector Iconography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -248,6 +248,35 @@
             display: block;
         }
 
+        /* --- STATS COUNTER BAR --- */
+        .metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 14px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+        }
+
+        .metric-card {
+            text-align: center;
+        }
+
+        .metric-card h3 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .metric-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
         /* --- ABOUT & SKILLS MATRIX --- */
         .about-layout {
             display: grid;
@@ -263,7 +292,7 @@
             border: 1px solid #e2e8f0;
         }
 
-        .narrative-box h3, .skills-container h3 {
+        .narrative-box h3, .skills-container h3, .tools-container h3 {
             font-size: 1.5rem;
             margin-bottom: 1.2rem;
             color: var(--primary);
@@ -273,6 +302,25 @@
             margin-bottom: 1.2rem;
             color: var(--text-dark);
             font-size: 1rem;
+        }
+
+        .testimonial-quote {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-left: 4px solid var(--secondary);
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-align: right;
         }
 
         .bar-group {
@@ -300,7 +348,32 @@
             border-radius: 4px;
         }
 
-        /* --- RESTORED GENUINE EXPERIENCES --- */
+        /* --- TECH STACKS GRID --- */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .tool-badge {
+            background: var(--white);
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tool-badge i {
+            color: var(--secondary);
+        }
+
+        /* --- EXPERIENCES & CHIPS --- */
         .timeline {
             position: relative;
             max-width: 900px;
@@ -360,12 +433,6 @@
             margin-bottom: 0.8rem;
         }
 
-        .timeline-content h3 {
-            font-size: 1.35rem;
-            color: var(--primary);
-            margin-bottom: 0.2rem;
-        }
-
         .company-tag {
             color: var(--secondary);
             font-weight: 600;
@@ -394,10 +461,86 @@
             font-weight: bold;
         }
 
-        /* --- RESTORED EDUCATION & CERTIFICATES --- */
+        /* --- PROJECTS & ACHIEVEMENTS LAYOUT --- */
+        .spotlight-card {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 14px;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .spotlight-info h3 {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .spotlight-info p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .spotlight-stats {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .spotlight-stat-node {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            flex: 1;
+        }
+
+        .spotlight-stat-node h4 {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .spotlight-stat-node p {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 10px;
+            border-top: 4px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .achievement-card h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .achievement-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* --- EDUCATION & CERTIFICATES --- */
         .edu-cert-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
             margin-top: 2rem;
         }
@@ -440,7 +583,7 @@
             color: var(--text-muted);
         }
 
-        /* --- SYLLABUS GRID & LESSON BLUEPRINTS --- */
+        /* --- PORTFOLIO & SYLLABUS --- */
         .portfolio-tabs {
             display: flex;
             justify-content: center;
@@ -713,19 +856,44 @@
             color: #94a3b8;
         }
 
+        /* --- PREMIUM FOOTER CONTAINER --- */
         footer {
             background: var(--primary);
             color: #94a3b8;
             text-align: center;
-            padding: 3.5rem 2rem;
+            padding: 4rem 2rem;
             margin-top: 5.5rem;
             border-top: 1px solid #1e293b;
-            font-size: 0.92rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+
+        .footer-nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .footer-nav a:hover {
+            color: var(--accent);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
         }
 
         /* --- RESPONSIVE MEDIA SYSTEM --- */
         @media (max-width: 968px) {
-            .hero-grid, .about-layout, .edu-cert-grid, .contact-grid {
+            .hero-grid, .about-layout, .contact-grid, .spotlight-card {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
@@ -753,6 +921,7 @@
                 gap: 1.2rem;
             }
             .nav-menu.show { display: flex; }
+            .footer-nav { gap: 1rem; flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -765,11 +934,10 @@
             <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
             <ul class="nav-menu" id="navMenu">
                 <li><a class="nav-link active" onclick="switchPage('home')">Home</a></li>
-                <li><a class="nav-link" onclick="switchPage('about')">About & Matrix</a></li>
-                <li><a class="nav-link" onclick="switchPage('experience')">Milestones</a></li>
-                <li><a class="nav-link" onclick="switchPage('education')">Credentials</a></li>
+                <li><a class="nav-link" onclick="switchPage('about')">About</a></li>
+                <li><a class="nav-link" onclick="switchPage('experience')">Experience</a></li>
                 <li><a class="nav-link" onclick="switchPage('portfolio')">Syllabus & Lessons</a></li>
-                <li><a class="nav-link" onclick="switchPage('contact')">Contact & Refs</a></li>
+                <li><a class="nav-link" onclick="switchPage('contact')">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -778,18 +946,40 @@
     <main id="home" class="page-section active-page">
         <div class="hero-grid">
             <div>
-                <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel ICT Specialist</span>
-                <h1 class="hero-title">Jamal Fahadh Mohamed</h1>
-                <p class="hero-description">Professional ICT Educator and Web Developer based in Hargeisa, Somaliland. Leveraging over 7 years of specialized expertise in delivering high-tier IGCSE and International A-Level instruction to anchor outstanding student technical proficiency.</p>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <button class="btn btn-primary" onclick="switchPage('portfolio')"><i class="fa-solid fa-book-open"></i> View Lesson Blueprints</button>
-                    <button class="btn btn-secondary" onclick="switchPage('contact')"><i class="fa-solid fa-comments"></i> Get In Touch</button>
+                <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Senior ICT Educator</span>
+                <h1 class="hero-title">Empowering Future Innovators Through <span>ICT Education</span></h1>
+                <p class="hero-description">Helping students build practical technology skills, confidence, and digital knowledge for the modern world. Fully prepared for immediate execution with zero corporate technical onboarding overhead.</p>
+                
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <a href="cv.pdf" class="btn btn-primary" target="_blank"><i class="fa-solid fa-file-pdf"></i> View CV</a>
+                    <a href="coverletter.pdf" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-envelope-open-text"></i> Cover Letter</a>
+                    <button class="btn btn-primary" style="background:#10b981;" onclick="switchPage('contact')"><i class="fa-solid fa-calendar-check"></i> Request Interview</button>
                 </div>
             </div>
             <div>
                 <div class="profile-container">
-                    <img src="profile.jpg" alt="Jamal Fahadh Mohamed Profile Picture" class="profile-graphic" onerror="this.style.background='#cbd5e1';">
+                    <img src="profile.jpg" alt="Teacher Fahadh Profile Graphic" class="profile-graphic" onerror="this.style.background='#cbd5e1';">
                 </div>
+            </div>
+        </div>
+
+        <!-- METRICS CONTAINER DASHBOARD -->
+        <div class="metrics-bar">
+            <div class="metric-card">
+                <h3>A*–B</h3>
+                <p>Exam Target Achieved</p>
+            </div>
+            <div class="metric-card">
+                <h3>6+ Yrs</h3>
+                <p>Teaching Experience</p>
+            </div>
+            <div class="metric-card">
+                <h3>100%</h3>
+                <p>Lab Readiness Rate</p>
+            </div>
+            <div class="metric-card">
+                <h3>89%</h3>
+                <p>LMS Adoption Rate</p>
             </div>
         </div>
     </main>
@@ -797,46 +987,94 @@
     <!-- ================= LAYER 2: ABOUT & MATRIX OVERVIEW ================= -->
     <section id="about" class="page-section">
         <div class="section-header">
-            <h2>Pedagogical Model & Skills Matrix</h2>
-            <p>Blending international academic standards with active front-end web development practices.</p>
+            <h2>Educational Narrative & Philosophy</h2>
+            <p>Bridging academic theories with industry tech deployment rules.</p>
         </div>
 
         <div class="about-layout">
             <div class="narrative-box">
-                <h3>The Instructional Standard</h3>
-                <p>My methodology focuses heavily on the strict structural layouts dictated by the Pearson Edexcel 9-1 specification. Instead of encouraging simple mechanical memorization, I unpack complex technological frameworks into practical, laboratory-driven building processes.</p>
-                <p>Whether configuring responsive templates using HTML/CSS or designing clean multi-table relational data systems, my core objective is cultivating clear diagnostic thinking and deep computational fluency within every student cohort.</p>
+                <h3>Teaching Philosophy</h3>
+                <p>I believe that technology is the cornerstone of modern education. My approach focuses on bridging the gap between theoretical knowledge and practical application, ensuring students are not just computer literate, but digital innovators. As an ICT Teacher, I am dedicated to fostering environments that encourage curiosity, ethical digital citizenship, and technical mastery.</p>
+                
+                <div class="testimonial-quote">
+                    "Teacher Fahadh's unique pedagogical approach has consistently elevated ICT performance."
+                    <span class="testimonial-author">— Senior Head Of Department, ELM Sch.</span>
+                </div>
             </div>
 
             <div>
-                <h3>Core Technical Competencies</h3>
+                <h3>Technical Competencies</h3>
                 <div class="competency-bars">
                     <div class="bar-group">
-                        <div class="bar-label"><span>Pearson Edexcel IGCSE / A-Level Syllabus Delivery</span><span>100%</span></div>
+                        <div class="bar-label"><span>Pearson Edexcel IGCSE/IAL Instruction</span><span>100%</span></div>
                         <div class="bar-bg"><div class="bar-fill" style="width: 100%"></div></div>
                     </div>
                     <div class="bar-group">
-                        <div class="bar-label"><span>Web Design & Development (HTML5, CSS3, Blogger Architectures)</span><span>95%</span></div>
+                        <div class="bar-label"><span>ICT Lab & Network Management</span><span>95%</span></div>
                         <div class="bar-bg"><div class="bar-fill" style="width: 95%"></div></div>
                     </div>
                     <div class="bar-group">
-                        <div class="bar-label"><span>Hardware Maintenance & OS Troubleshooting (Dell OptiPlex/Windows)</span><span>90%</span></div>
+                        <div class="bar-label"><span>Digital Learning Platforms (LMS)</span><span>90%</span></div>
                         <div class="bar-bg"><div class="bar-fill" style="width: 90%"></div></div>
                     </div>
-                    <div class="bar-group">
-                        <div class="bar-label"><span>Digital Marketing & Branding (Social Content Strategy)</span><span>85%</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 85%"></div></div>
+                </div>
+
+                <div class="tools-container" style="margin-top: 2rem;">
+                    <h3>Tech Stack & Tools</h3>
+                    <div class="tools-grid">
+                        <div class="tool-badge"><i class="fa-solid fa-cloud"></i> Google Workspace</div>
+                        <div class="tool-badge"><i class="fa-solid fa-windows"></i> Microsoft 365 Edu</div>
+                        <div class="tool-badge"><i class="fa-solid fa-chart-line"></i> Pearson Progress</div>
+                        <div class="tool-badge"><i class="fa-brands fa-python"></i> Python / Scratch</div>
+                        <div class="tool-badge"><i class="fa-solid fa-code"></i> HTML5 / CSS3</div>
+                        <div class="tool-badge"><i class="fa-solid fa-network-wired"></i> Cisco Packet Tracer</div>
+                        <div class="tool-badge"><i class="fa-solid fa-graduation-cap"></i> Moodle / Canvas</div>
+                        <div class="tool-badge"><i class="fa-solid fa-server"></i> Windows Server / AD</div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- ACTIVE PROJECTS CHIPS LIST -->
+        <div style="margin-top: 4rem;">
+            <h3 style="font-size:1.5rem; margin-bottom:1.5rem; text-align:center;">Active ICT Club & Lab Operations</h3>
+            <div style="display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center;">
+                <span class="chapter-badge" style="padding:0.6rem 1.2rem; font-size:0.85rem;">Digital Learning Platform Setup</span>
+                <span class="chapter-badge" style="padding:0.6rem 1.2rem; font-size:0.85rem;">ICT Resource Repository</span>
+                <span class="chapter-badge" style="padding:0.6rem 1.2rem; font-size:0.85rem;">Advanced Spreadsheet Analysis</span>
+                <span class="chapter-badge" style="padding:0.6rem 1.2rem; font-size:0.85rem;">Student Coding Bootcamps</span>
+                <span class="chapter-badge" style="padding:0.6rem 1.2rem; font-size:0.85rem;">LMS Optimization Projects</span>
+                <span class="chapter-badge" style="padding:0.6rem 1.2rem; font-size:0.85rem;">Digital Presentation Series</span>
+                <span class="chapter-badge" style="padding:0.6rem 1.2rem; font-size:0.85rem;">ICT Digital Club Leadership</span>
+                <span class="chapter-badge" style="padding:0.6rem 1.2rem; font-size:0.85rem;">School Web Infrastructure</span>
+            </div>
+        </div>
     </section>
 
-    <!-- ================= LAYER 3: GENUINE EXPERIENCE TIMELINE ================= -->
+    <!-- ================= LAYER 3: PROFESSIONAL EXPERIENCE TIMELINE ================= -->
     <section id="experience" class="page-section">
         <div class="section-header">
-            <h2>Professional Milestones</h2>
-            <p>Over 7 years of trusted technical delivery across educational and front-end management roles.</p>
+            <h2>Professional Experience</h2>
+            <p>Cultivating Excellence in Digital Education and Managing Technical Infrastructure.</p>
+        </div>
+
+        <!-- SPOTLIGHT CASE STUDY PROJECT -->
+        <div class="spotlight-card">
+            <div class="spotlight-info">
+                <span class="hero-badge" style="background:rgba(56,189,248,0.1); color:var(--accent); border-color:rgba(56,189,248,0.2);">Project Spotlight</span>
+                <h3>Digital Library & LMS Integration</h3>
+                <p>Led the structural transition from manual record-keeping profiles to a fully automated Digital Library Management System across campus frameworks.</p>
+            </div>
+            <div class="spotlight-stats">
+                <div class="spotlight-stat-node">
+                    <h4>2000+</h4>
+                    <p>Records Digitized</p>
+                </div>
+                <div class="spotlight-stat-node">
+                    <h4>100%</h4>
+                    <p>System Uptime</p>
+                </div>
+            </div>
         </div>
 
         <div class="timeline">
@@ -844,26 +1082,31 @@
                 <div class="timeline-content">
                     <span class="time-tag">Active Tenure</span>
                     <h3>ICT Teaching Specialist</h3>
-                    <span class="company-tag">@ Elm High School, Hargeisa</span>
+                    <span class="company-tag">@ ELM School, Hargeisa</span>
                     <ul>
-                        <li>Deliver specialized, daily laboratory guidance based comprehensively on the Pearson Edexcel International GCSE (9-1) specification.</li>
-                        <li>Build high-utility classroom handouts, digital notes, and mock diagnostic tracking engines to monitor student progress.</li>
-                        <li>Maintain total operational integrity of laboratory computers, fixing local configuration faults and operating system conflicts promptly.</li>
+                        <li>Delivering Pearson Edexcel Curriculum for Secondary School Levels with student-centered strategies.</li>
+                        <li>Planning and preparing engaging ICT lessons focusing natively on computer fundamentals and networks.</li>
+                        <li>Guiding students through complex practical ICT laboratory projects and official examination coursework.</li>
+                        <li>Integrating technology directly into classroom teaching environments and managing local physical computer labs.</li>
+                        <li>Supporting diverse learning abilities while consistently fostering digital literacy pathways.</li>
                     </ul>
                 </div>
             </div>
+        </div>
 
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <span class="time-tag">Digital Project</span>
-                    <h3>Web Author & Content Manager</h3>
-                    <span class="company-tag">@ Global English & IT Hub</span>
-                    <ul>
-                        <li>Designed, structured, and customized a highly responsive learning web ecosystem on the Blogger engine.</li>
-                        <li>Optimized cross-device template viewports, yielding flawless rendering architectures across mobile and desktop devices.</li>
-                        <li>Curated structured study content, code code-snippets, and practical guides targeting international academic performance targets.</li>
-                    </ul>
-                </div>
+        <!-- CORE DEPLOYMENT VALUE PROPOSITIONS -->
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <h4>Quick Deployment</h4>
+                <p>Ready for immediate corporate integration with zero complex onboarding overhead requirements.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Proven Results</h4>
+                <p>Consistent achievement metrics locked across standard international Edexcel ICT qualifications.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Integrated Mastery</h4>
+                <p>Managing both structured pedagogical instruction tracks and underlying laboratory asset systems flawlessly.</p>
             </div>
         </div>
     </section>
@@ -871,21 +1114,27 @@
     <!-- ================= LAYER 4: RESTORED EDUCATION & CERTIFICATES ================= -->
     <section id="education" class="page-section">
         <div class="section-header">
-            <h2>Academic Foundations & Certifications</h2>
-            <p>Verified qualification matrices underpinning my technical and pedagogical background.</p>
+            <h2>Academic Credentials & Certifications</h2>
+            <p>Complete academic foundations and practical specializations.</p>
         </div>
 
         <div class="edu-cert-grid">
             <div class="credential-card">
                 <h3>Bachelor of Business Information Technology (BBIT)</h3>
                 <div class="credential-meta">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</div>
-                <p>Graduated with Second Class Honors (Upper Division), mastering enterprise technology alignment, systems architecture, data mechanics, and software logic loops.</p>
+                <p>University training mapping enterprise technology alignment strategies, software logical operations, network deployment schemes, and analytics structures.</p>
             </div>
 
             <div class="credential-card">
-                <h3>Certificate in E-commerce, Web Design & Entrepreneurship</h3>
-                <div class="credential-meta">Professional Technical Qualification</div>
-                <p>Specialized practical training focused on front-end semantic layout assembly, modern CSS design systems, transaction frameworks, and digital brand management strategies.</p>
+                <h3>Ecommerce Web Design & Entrepreneurship</h3>
+                <div class="credential-meta">East Africa Solution, Nairobi Kenya</div>
+                <p>Specialized studio training focused on front-end custom layout rendering, CSS interface controls, ecommerce operational frameworks, and business management rules.</p>
+            </div>
+
+            <div class="credential-card">
+                <h3>Kenya Certificate of Secondary Education (KCSE)</h3>
+                <div class="credential-meta">Pesoda Annex High School, Migori Kenya</div>
+                <p>Secondary academic track establishing advanced competencies across logical sciences, mathematical matrices, and core language paths.</p>
             </div>
         </div>
     </section>
@@ -894,7 +1143,7 @@
     <section id="portfolio" class="page-section">
         <div class="section-header">
             <h2>Syllabus & Lesson Blueprints</h2>
-            <p>Interactive instructional plans built cleanly from the active core units defined in your curriculum document <strong>1780442590761.jpeg</strong>.</p>
+            <p>Interactive instruction dashboard units mapped out to serve custom laboratory tracks.</p>
         </div>
 
         <div class="portfolio-tabs">
@@ -939,41 +1188,6 @@
                 </div>
             </div>
 
-            <!-- Unit 3 -->
-            <div class="portfolio-card" data-cat="theory">
-                <div class="card-banner" style="background: #06b6d4;">
-                    <span class="card-meta">Specification Unit 3</span>
-                    <h3>Operating Online</h3>
-                    <i class="fa-solid fa-globe"></i>
-                </div>
-                <div class="card-body">
-                    <p>Syllabus modules tracking active vulnerabilities to personal datasets, browser tracking profiles, and modern web environments.</p>
-                    <div class="chapter-badge-list">
-                        <span class="chapter-badge">Ch 6: Risks to Data</span>
-                        <span class="chapter-badge">Ch 7: Impact of the Internet</span>
-                        <span class="chapter-badge">Ch 8: Online Communities</span>
-                    </div>
-                    <button class="btn btn-secondary btn-sm" onclick="openBlueprint('unit3')"><i class="fa-solid fa-folder-open"></i> Launch Lesson Plan</button>
-                </div>
-            </div>
-
-            <!-- Unit 4 -->
-            <div class="portfolio-card" data-cat="theory">
-                <div class="card-banner" style="background: #10b981;">
-                    <span class="card-meta">Specification Unit 4</span>
-                    <h3>Online Goods and Services</h3>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-                <div class="card-body">
-                    <p>Analytical blueprints breaking down remote cloud-storage properties, database engines, and commercial internet service systems.</p>
-                    <div class="chapter-badge-list">
-                        <span class="chapter-badge">Ch 11: Online Services</span>
-                        <span class="chapter-badge">Ch 12: The Cloud</span>
-                    </div>
-                    <button class="btn btn-secondary btn-sm" onclick="openBlueprint('unit4')"><i class="fa-solid fa-folder-open"></i> Launch Lesson Plan</button>
-                </div>
-            </div>
-
             <!-- Unit 6 - Web Focus -->
             <div class="portfolio-card" data-cat="practical">
                 <div class="card-banner" style="background: #a855f7;">
@@ -990,23 +1204,6 @@
                     <button class="btn btn-secondary btn-sm" onclick="openBlueprint('web')"><i class="fa-solid fa-folder-open"></i> Launch Lesson Plan</button>
                 </div>
             </div>
-
-            <!-- Unit 6 - Database Focus -->
-            <div class="portfolio-card" data-cat="practical">
-                <div class="card-banner" style="background: #ec4899;">
-                    <span class="card-meta">Specification Unit 6</span>
-                    <h3>Database Management</h3>
-                    <i class="fa-solid fa-database"></i>
-                </div>
-                <div class="card-body">
-                    <p>Hands-on operational tracks addressing relational data structure mapping, complex input criteria keys, and SQL search statements.</p>
-                    <div class="chapter-badge-list">
-                        <span class="chapter-badge">Ch 20: Database Management</span>
-                        <span class="chapter-badge">Unit 5: Applying ICT</span>
-                    </div>
-                    <button class="btn btn-secondary btn-sm" onclick="openBlueprint('db')"><i class="fa-solid fa-folder-open"></i> Launch Lesson Plan</button>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1014,7 +1211,7 @@
     <section id="contact" class="page-section">
         <div class="section-header">
             <h2>Secure Connection Desk</h2>
-            <p>Reach out directly to review academic models, schedule lab design consults, or verify employment histories.</p>
+            <p>Available for immediate Senior ICT Teaching and Academic Leadership roles.</p>
         </div>
 
         <div class="contact-grid">
@@ -1040,39 +1237,39 @@
                         <p>Hargeisa, Somaliland</p>
                     </div>
                 </div>
-                <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
-                    <a href="mailto:teacherfahadh@gmail.com" class="btn btn-primary" style="flex: 1; justify-content: center;"><i class="fa-solid fa-paper-plane"></i> Email Direct</a>
-                    <a href="https://wa.me/252636710907" class="btn btn-secondary" style="flex: 1; justify-content: center; background: #25d366; color: white; border: none;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                </div>
             </div>
 
             <div class="reference-panel">
-                <h3>Professional References</h3>
+                <h3>Impact Feedback & References</h3>
                 
                 <div class="ref-card">
-                    <h4>Mr. Awale Adam</h4>
-                    <p class="title">Administrator | Elm High School</p>
+                    <h4>School Administrator</h4>
+                    <p class="title">Management Authority | ELM School</p>
                     <div class="contact-links">
-                        <p><i class="fa-solid fa-phone"></i> +252 634 763 674</p>
-                        <p><i class="fa-solid fa-envelope"></i> adan76ers@yahoo.com</p>
+                        <p>"Fahadh is a dedicated professional who makes complex technical subjects easy for students to grasp."</p>
                     </div>
                 </div>
 
                 <div class="ref-card" style="margin-bottom: 0;">
-                    <h4>Yusuf Lutta</h4>
-                    <p class="title">Academic School Principal</p>
+                    <h4>Senior Teacher</h4>
+                    <p class="title">Department Lead | ELM School</p>
                     <div class="contact-links">
-                        <p><i class="fa-solid fa-id-card-clip"></i> Verification and direct data files supplied instantly upon official invitation.</p>
+                        <p>"A leader in implementing digital learning standards across the department."</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER TERMINAL CONTAINER -->
+    <!-- PREMIUM FOOTER WITH NAVIGATION LINKS -->
     <footer>
-        <p>&copy; 2026 Jamal Fahadh Mohamed | Senior Edexcel ICT Specialist Portals.</p>
-        <p style="font-size: 0.8rem; color: #475569; margin-top: 0.5rem;">Engineered natively in strict compliance with standard Edexcel International 9-1 specification guidelines.</p>
+        <ul class="footer-nav">
+            <li><a onclick="switchPage('home')">Home</a></li>
+            <li><a onclick="switchPage('about')">About</a></li>
+            <li><a onclick="switchPage('experience')">Experience</a></li>
+            <li><a onclick="switchPage('contact')">Contact</a></li>
+        </ul>
+        <p class="footer-text">&copy; 2026 Teacher Fahadh | Advancing Digital Literacy in Somaliland</p>
     </footer>
 
     <!-- INTERACTIVE DYNAMIC LESSON BLUEPRINT MODAL -->
@@ -1085,7 +1282,7 @@
 
     <!-- CODE CONTROLLER EXECUTION LOOPS -->
     <script>
-        // High fidelity routing engine
+        // Smooth page rendering routing engine
         function switchPage(pageId) {
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(s => s.classList.remove('active-page'));
@@ -1096,24 +1293,20 @@
             const links = document.querySelectorAll('.nav-link');
             links.forEach(l => l.classList.remove('active'));
             
-            if(window.event && window.event.target.classList.contains('nav-link')) {
-                window.event.target.classList.add('active');
-            } else {
-                links.forEach(l => {
-                    if(l.getAttribute('onclick').includes(pageId)) l.classList.add('active');
-                });
-            }
+            links.forEach(l => {
+                if(l.getAttribute('onclick').includes(pageId)) l.classList.add('active');
+            });
 
             document.getElementById('navMenu').classList.remove('show');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Mobile navbar structural drawer trigger
+        // Mobile navbar drawer toggle loop
         document.getElementById('menuToggle').addEventListener('click', () => {
             document.getElementById('navMenu').classList.toggle('show');
         });
 
-        // Tab list sorting criteria engine
+        // Tab category filtering loop
         function filterSyllabus(category) {
             const tabBtns = document.querySelectorAll('.tab-btn');
             tabBtns.forEach(b => b.classList.remove('active-tab'));
@@ -1129,53 +1322,32 @@
             });
         }
 
-        // On-Screen Lesson Blueprint Repository Object
+        // Integrated On-Screen Lesson Blueprint Object
         const blueprintData = {
             unit1: {
                 title: "Unit 1: Digital Devices",
-                sub: "Chapters 1, 2, & 3 Specification Core",
-                objectives: "Differentiate between structural hardware nodes and operating classifications. Map CPU execution loops and flash memory profiles.",
-                activities: "Laboratory breakdown of system components, testing installation sequences, and analyzing processor latency attributes.",
-                assessment: "Edexcel past-paper mock prompts covering internal registers, RAM boundaries, and open-source system properties."
+                sub: "Chapters 1, 2, & 3 Core Structure",
+                objectives: "Analyze machine architectures, CPU clock dynamics, internal registers, and storage performance profiles.",
+                activities: "Hardware diagnostics lab setups, evaluating operating system logic loops, and mapping bus lines.",
+                assessment: "Edexcel structural mock problems tracing primary/secondary storage differences and logic operations."
             },
             unit2: {
                 title: "Unit 2: Connectivity",
-                sub: "Chapters 4 & 5 Specification Core",
-                objectives: "Master network topologies, wireless structural paths, packet configuration mechanisms, and local firewall matrices.",
-                activities: "Tracing dynamic data path transformations across LAN frameworks, testing encryption layers, and setting up network maps.",
-                assessment: "Structured performance exam questions on collision vectors, bandwidth tracking metrics, and wide area network nodes."
-            },
-            unit3: {
-                title: "Unit 3: Operating Online",
-                sub: "Chapters 6, 7, 8, 9 & 10 Specification Core",
-                objectives: "Analyze active software exploit models, browser data risks, encryption keys, and community footprint rules.",
-                activities: "Case diagnostics evaluating historical security data leaks, configuring access rules, and tracing digital tracking assets.",
-                assessment: "Analytical scenario essays focusing on corporate web impacts, personal identity protection, and digital technology implications."
-            },
-            unit4: {
-                title: "Unit 4: Online Goods and Services",
-                sub: "Chapters 11 & 12 Specification Core",
-                objectives: "Investigate transaction platforms, secure payment paths, data center automation, and distributed cloud configurations.",
-                activities: "Flowchart tracking of transactional validation pipelines and real-time cloud data storage balancing structures.",
-                assessment: "Comparative analysis presentation on local vs cloud architectures and service availability frameworks."
+                sub: "Chapters 4 & 5 Core Structure",
+                objectives: "Differentiate between topology frameworks, cloud data paths, packet structures, and routing rules.",
+                activities: "Assembling custom network map layouts using Cisco Packet Tracer models and testing gateway parameters.",
+                assessment: "Analytical question sheets evaluating security encryption setups and bandwidth capacity calculations."
             },
             web: {
-                title: "Unit 6: Practical Web Authoring Skills",
-                sub: "Chapter 18 & 16 Custom Studio Lab",
-                objectives: "Write production-grade semantic HTML5 code grids and enforce clean inheritance layout rules via CSS3 style hierarchies.",
-                activities: "Building clean page skeletons from scratch, configuring responsive grid boxes, and editing high-fidelity compressed graphic assets.",
-                assessment: "Rigid laboratory portfolio check testing CSS file links, internal anchor responses, and mobile layout breakpoints."
-            },
-            db: {
-                title: "Unit 6: Practical Database Management",
-                sub: "Chapter 20 & Unit 5 Integration Track",
-                objectives: "Design clean relational tables, configure unique primary validation keys, and parse datasets with precise SQL parameters.",
-                activities: "Assembling multi-table links, writing custom criteria input masks, and running automated logic query reports.",
-                assessment: "Timed laboratory challenge evaluating error-free data normalization, relationship rules, and form design."
+                title: "Unit 6: Web Authoring Development Matrix",
+                sub: "Chapter 18 Interactive Studio Unit",
+                objectives: "Construct compliant, responsive, and cross-device semantic viewports using pure custom HTML5 structures and CSS class maps.",
+                activities: "Writing text structure frames, styling responsive multi-column layouts, and compiling optimized navigation links.",
+                assessment: "Rigid laboratory file verification test tracking layout viewport stability and asset rendering."
             }
         };
 
-        // Modal Control Triggers
+        // On-Screen Blueprint Modal Triggers
         function openBlueprint(key) {
             const data = blueprintData[key];
             if(!data) return;
@@ -1186,15 +1358,15 @@
                     <div class="blueprint-sub">${data.sub}</div>
                 </div>
                 <div class="blueprint-section">
-                    <h4><i class="fa-solid fa-bullseye"></i> Learning Objectives</h4>
+                    <h4><i class="fa-solid fa-bullseye"></i> Target Learning Objectives</h4>
                     <p>${data.objectives}</p>
                 </div>
                 <div class="blueprint-section">
-                    <h4><i class="fa-solid fa-chalkboard-user"></i> Core Guided Activities</h4>
+                    <h4><i class="fa-solid fa-chalkboard-user"></i> Core Laboratory Activities</h4>
                     <p>${data.activities}</p>
                 </div>
                 <div class="blueprint-section">
-                    <h4><i class="fa-solid fa-file-invoice"></i> Assessment Framework</h4>
+                    <h4><i class="fa-solid fa-file-invoice"></i> Assessment Parameters</h4>
                     <p>${data.assessment}</p>
                 </div>
             `;
