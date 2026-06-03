@@ -46,14 +46,57 @@
             letter-spacing: -0.02em;
         }
 
-        /* --- NAVIGATION INFRASTRUCTURE --- */
+        /* --- GLOBAL HEADER & CONTACT BANNER --- */
+        .global-contact-strip {
+            background: #0b1120;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: border-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1001;
+        }
+        
+        .strip-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .strip-cluster {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .strip-cluster a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+        }
+
+        .strip-cluster a:hover {
+            color: var(--accent);
+        }
+
         header {
             background-color: rgba(15, 23, 42, 0.96);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             position: fixed;
             width: 100%;
-            top: 0;
+            top: 34px;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: var(--shadow-sm);
@@ -113,7 +156,7 @@
         /* --- APP VIEWPORTS --- */
         .app-view-container {
             display: none;
-            padding: 8rem 2rem 5rem 2rem;
+            padding: 10rem 2rem 5rem 2rem;
             max-width: 1300px;
             margin: 0 auto;
             animation: viewTransition 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -156,26 +199,20 @@
             min-height: 55vh;
         }
 
-        .hero-pill-badge {
-            background-color: rgba(2, 132, 199, 0.06);
+        .hero-headline-profile {
+            font-size: 1.1rem;
             color: var(--secondary);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
             font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(2, 132, 199, 0.12);
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            display: block;
         }
 
         .hero-main-title {
-            font-size: 3.4rem;
+            font-size: 3rem;
             color: var(--primary);
-            line-height: 1.15;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
             font-weight: 800;
         }
@@ -187,8 +224,8 @@
         }
 
         .hero-sub-text {
-            font-size: 1.15rem;
-            color: var(--text-muted);
+            font-size: 1.1rem;
+            color: var(--text-main);
             margin-bottom: 2.5rem;
             max-width: 680px;
         }
@@ -235,14 +272,14 @@
         .avatar-frame-box {
             position: relative;
             width: 100%;
-            max-width: 380px;
+            max-width: 360px;
             margin: 0 auto;
         }
 
         .avatar-element {
             width: 100%;
-            height: auto;
-            border-radius: var(--radius-lg);
+            height: 360px;
+            border-radius: 50%;
             box-shadow: var(--shadow-lg);
             border: 6px solid #ffffff;
             display: block;
@@ -339,6 +376,53 @@
         .ops-badge-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-top: 1.5rem; }
         .ops-standalone-badge { background: #f1f5f9; color: #334155; font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.2rem; border-radius: 6px; border: 1px solid #e2e8f0; }
 
+        /* --- STUDENT PROJECTS SECTION --- */
+        .showcase-grid-system {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .showcase-node-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .showcase-visual-container {
+            background: #e2e8f0;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        .showcase-visual-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .showcase-meta-body {
+            padding: 1.5rem;
+        }
+
+        .showcase-meta-body h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .showcase-meta-body p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
         /* --- TIMELINE TRACK --- */
         .spotlight-dashboard-card {
             background: linear-gradient(135deg, #0f172a, #1e293b); color: #ffffff; padding: 3rem; border-radius: var(--radius-lg);
@@ -430,10 +514,13 @@
 
         /* --- RESPONSIVE MEDIA --- */
         @media (max-width: 1024px) {
+            .global-contact-strip { display: none; }
+            header { top: 0; }
             .hero-layout-grid, .matrix-split-layout, .gateway-split-grid, .spotlight-dashboard-card { grid-template-columns: 1fr; gap: 3rem; }
             .hero-layout-grid { text-align: center; }
-            .hero-main-title { font-size: 2.6rem; }
-            .avatar-frame-box { max-width: 300px; }
+            .hero-main-title { font-size: 2.4rem; }
+            .avatar-frame-box { max-width: 280px; }
+            .avatar-element { height: 280px; }
             .interactive-action-cluster { justify-content: center; }
             .grid-dashboard-metrics { grid-template-columns: repeat(2, 1fr); }
             .timeline-track::after { left: 20px; }
@@ -449,10 +536,22 @@
 </head>
 <body>
 
+    <!-- PERSISTENT TOP CONTACT SYSTEM STRIP -->
+    <div class="global-contact-strip">
+        <div class="strip-inner">
+            <div><i class="fa-solid fa-location-dot"></i> Hargeisa, Somaliland</div>
+            <div class="strip-cluster">
+                <a href="tel:+252636710907"><i class="fa-solid fa-phone"></i> +252 636 710 907</a>
+                <a href="mailto:teacherfahadh@gmail.com"><i class="fa-solid fa-envelope"></i> teacherfahadh@gmail.com</a>
+                <a href="https://wa.me/252636710907" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
     <!-- SYSTEM LAYER NAVIGATION ARCHITECTURE -->
     <header>
         <div class="nav-wrapper">
-            <a class="brand-logo" onclick="routeToView('home')">Jamal <span>Fahadh</span></a>
+            <a class="brand-logo" onclick="routeToView('home')">Jamal <span>Fahad</span></a>
             <i class="fa-solid fa-bars-staggered mobile-drawer-trigger" id="drawerTrigger"></i>
             <ul class="nav-links-cluster" id="navCluster">
                 <li><a class="nav-action-link active-view" onclick="routeToView('home')">Home Hub</a></li>
@@ -468,20 +567,20 @@
     <main id="home" class="app-view-container active-view">
         <div class="hero-layout-grid">
             <div>
-                <span class="hero-pill-badge"><i class="fa-solid fa-user-tie"></i> Professional ICT Educator Portfolio</span>
-                <h1 class="hero-main-title">Bridging International Academic Specs with <span>Technical Production</span></h1>
-                <p class="hero-sub-text">Hi, I'm Jamal Fahadh Mohamed, a professional ICT Educator and Web Developer based in Hargeisa. I deliver robust Pearson Edexcel IGCSE and A-Level computer specifications, direct modern classroom technologies, and optimize student performance trends.</p>
+                <span class="hero-headline-profile">ICT Teacher | Pearson Edexcel ICT Specialist | Digital Skills Trainer</span>
+                <h1 class="hero-main-title">Academic Achievement & <span>Digital Transformation</span></h1>
+                <p class="hero-sub-text">Jamal Fahad is an ICT Teacher and Digital Skills Trainer based in Hargeisa, Somaliland. He specializes in Pearson Edexcel ICT, web design, graphic design, digital literacy, Microsoft Office, and technology education. He is passionate about helping students develop practical ICT skills that support academic achievement, career development, and digital transformation.</p>
                 
                 <div class="interactive-action-cluster">
-                    <a href="cv.pdf" class="system-btn system-btn-primary" target="_blank"><i class="fa-solid fa-file-pdf"></i> Access Curriculum Vitae</a>
-                    <a href="coverletter.pdf" class="system-btn system-btn-secondary" target="_blank"><i class="fa-solid fa-paperclip"></i> Cover Letter Asset</a>
-                    <button class="system-btn system-btn-success" onclick="routeToView('contact')"><i class="fa-solid fa-calendar-check"></i> Request Direct Interview</button>
+                    <a href="cv.pdf" class="system-btn system-btn-primary" download><i class="fa-solid fa-arrow-down-to-line"></i> Download CV</a>
+                    <a href="coverletter.pdf" class="system-btn system-btn-secondary" target="_blank"><i class="fa-solid fa-paperclip"></i> View Cover Letter</a>
+                    <button class="system-btn system-btn-success" onclick="routeToView('contact')"><i class="fa-solid fa-calendar-check"></i> Book Interview Opportunity</button>
                 </div>
             </div>
             <div>
                 <div class="avatar-frame-box">
-                    <!-- Standardized Image Layer Holder -->
-                    <img src="avatar.jpg" alt="Jamal Fahadh Mohamed - ICT Specialist" class="avatar-element" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600';">
+                    <!-- Standardized Profile Headshot Link (Unified Across Platforms) -->
+                    <img src="profile.jpg" alt="Jamal Fahad - Professional Headshot" class="avatar-element" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600';">
                 </div>
             </div>
         </div>
@@ -490,7 +589,7 @@
         <div class="grid-dashboard-metrics">
             <div class="metric-dashboard-node">
                 <h3>7+ Yrs</h3>
-                <p>Sector Milestone Experience</p>
+                <p>Teaching & Training Experience</p>
             </div>
             <div class="metric-dashboard-node">
                 <h3>A*–B</h3>
@@ -498,11 +597,11 @@
             </div>
             <div class="metric-dashboard-node">
                 <h3>100%</h3>
-                <p>Lab Infrastructure Uptime</p>
+                <p>Classroom Tech Integration</p>
             </div>
             <div class="metric-dashboard-node">
                 <h3>Upper</h3>
-                <p>Honors Classification Target</p>
+                <p>Honors Degree Classification</p>
             </div>
         </div>
     </main>
@@ -510,15 +609,15 @@
     <!-- ================= ENGINE 2: PROFILE PARAMETERS ================= -->
     <section id="about" class="app-view-container">
         <div class="view-header-block">
-            <h2>Educational Narrative & Competencies</h2>
-            <p>Deconstructing professional capacities across international curriculum instruction and web engineering frameworks.</p>
+            <h2>Educational Narrative & Target Vectors</h2>
+            <p>Deconstructing professional capacities across international curriculum frameworks and computer training modules.</p>
         </div>
 
         <div class="matrix-split-layout">
             <div class="narrative-card-engine">
-                <h3>Instructional Philosophy</h3>
-                <p>As a specialized ICT Teacher with over 7 years of deep technical and educational experience, I design learning environments that bridge pure technical computing logic with practical implementation. My core instructional focus target maps directly to the Pearson Edexcel 9-1 specification constraints, ensuring high digital proficiency trends alongside predictable examination success markers.</p>
-                <p>Beyond classroom boundaries, I develop real-world tech systems, utilize responsive development stacks to author portfolio assets, manage physical server topologies, and optimize system administration parameters.</p>
+                <h3>Instructional Framework</h3>
+                <p>With an established track record as an ICT Teacher and Digital Skills Trainer, my classroom execution focuses on delivering practical, job-ready capabilities. I prepare secondary students and professionals to navigate complex computational challenges while confidently meeting international test metrics.</p>
+                <p>My methodology emphasizes active systems engineering loops—enabling students to build web infrastructure, parse complex datasets, design graphic branding arrays, and troubleshoot hardware systems natively instead of just memorizing theory.</p>
                 
                 <div class="blockquote-system">
                     <p>"Teacher Fahadh has repeatedly demonstrated unparalleled dedication to establishing rigorous computing standards across all classroom layers."</p>
@@ -528,49 +627,78 @@
 
             <div>
                 <div class="competency-wrapper">
-                    <h3>Technical Vectors</h3>
+                    <h3>Specialized Training Vectors</h3>
                     <div class="gauge-metric-row">
-                        <div class="gauge-label-group"><span>Pearson Edexcel IGCSE / IAL Track Instruction</span><span>100%</span></div>
+                        <div class="gauge-label-group"><span>Pearson Edexcel ICT Curriculum Expertise</span><span>100%</span></div>
                         <div class="gauge-track-bg"><div class="gauge-fill-bar" style="width: 100%"></div></div>
                     </div>
                     <div class="gauge-metric-row">
-                        <div class="gauge-label-group"><span>Web Authoring (HTML5, CSS3, Platforms)</span><span>95%</span></div>
+                        <div class="gauge-label-group"><span>Web Design & Graphic Design Training</span><span>95%</span></div>
                         <div class="gauge-track-bg"><div class="gauge-fill-bar" style="width: 95%"></div></div>
                     </div>
                     <div class="gauge-metric-row">
-                        <div class="gauge-label-group"><span>Hardware Diagnostics & SysAdmin Routing</span><span>90%</span></div>
+                        <div class="gauge-label-group"><span>Microsoft Office & Google Workspace Training</span><span>95%</span></div>
+                        <div class="gauge-track-bg"><div class="gauge-fill-bar" style="width: 95%"></div></div>
+                    </div>
+                    <div class="gauge-metric-row">
+                        <div class="gauge-label-group"><span>Digital Literacy & Classroom Tech Integration</span><span>90%</span></div>
                         <div class="gauge-track-bg"><div class="gauge-fill-bar" style="width: 90%"></div></div>
                     </div>
                 </div>
 
                 <div style="margin-top: 2.5rem;">
-                    <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem;">Infrastructure & Engineering Stack</h3>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem;">Infrastructure & Engine Competencies</h3>
                     <div class="tech-chips-assembly">
-                        <div class="tech-node-chip"><i class="fa-solid fa-code"></i> HTML5 / CSS3 Logic</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-cubes"></i> Blogger Engine System</div>
-                        <div class="tech-node-chip"><i class="fa-brands fa-windows"></i> Microsoft 365 Education</div>
+                        <div class="tech-node-chip"><i class="fa-solid fa-graduation-cap"></i> Edexcel IGCSE / IAL</div>
+                        <div class="tech-node-chip"><i class="fa-solid fa-code"></i> HTML5 & CSS3 Architecture</div>
+                        <div class="tech-node-chip"><i class="fa-solid fa-file-excel"></i> Advanced Spreadsheet Labs</div>
+                        <div class="tech-node-chip"><i class="fa-brands fa-windows"></i> Microsoft 365 Core Suite</div>
+                        <div class="tech-node-chip"><i class="fa-brands fa-google"></i> Google Workspace Tools</div>
+                        <div class="tech-node-chip"><i class="fa-solid fa-bezier-curve"></i> Graphic Design Mechanics</div>
                         <div class="tech-node-chip"><i class="fa-solid fa-microchip"></i> Hardware Diagnostics</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-network-wired"></i> Network Topologies</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-server"></i> Moodle / Progress LMS</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-bullhorn"></i> Digital Brand Management</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-chart-pie"></i> Complex Data Analysis</div>
+                        <div class="tech-node-chip"><i class="fa-solid fa-chalkboard-user"></i> Digital Literacy Pedagogy</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ACTIVE SYSTEM IMPLEMENTATIONS -->
-        <div class="operations-panel-block" style="margin-top: 4rem;">
-            <h3 style="text-align: center; font-size: 1.4rem; margin-bottom: 1.5rem;">Active Implementations & Extracurricular Leadership</h3>
-            <div class="ops-badge-cloud">
-                <span class="ops-standalone-badge">Digital Assessment Framework Setup</span>
-                <span class="ops-standalone-badge">Global English & IT Hub Administration</span>
-                <span class="ops-standalone-badge">Responsive Interface Development</span>
-                <span class="ops-standalone-badge">Advanced Spreadsheet Operations Workshops</span>
-                <span class="ops-standalone-badge">Hardware Diagnostics Bootcamps</span>
-                <span class="ops-standalone-badge">Academic Calendar Digital Architecture</span>
-                <span class="ops-standalone-badge">Social Media Brand Optimization Strategies</span>
-                <span class="ops-standalone-badge">ICT Digital Club Executive Coaching</span>
+        <!-- NEW CORE IMPROVEMENT: ACTIVE VISUAL STUDENT SHOWCASE -->
+        <div style="margin-top: 5rem;">
+            <div class="view-header-block" style="margin-bottom: 2rem;">
+                <h3>Student Project Showcase</h3>
+                <p>Direct evidence of student achievements, including live websites, graphics, and technical work developed under my guidance.</p>
+            </div>
+            
+            <div class="showcase-grid-system">
+                <div class="showcase-node-card">
+                    <div class="showcase-visual-container">
+                        <img src="student-web.jpg" alt="Student Web Project" onerror="this.src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=400';">
+                    </div>
+                    <div class="showcase-meta-body">
+                        <h4>Responsive Landing Matrices</h4>
+                        <p>Semantic HTML5 and CSS structures built completely from scratch by Level 11 IGCSE curriculum blocks during web authoring labs.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-node-card">
+                    <div class="showcase-visual-container">
+                        <img src="student-graphics.jpg" alt="Student Graphic Design Work" onerror="this.src='https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=400';">
+                    </div>
+                    <div class="showcase-meta-body">
+                        <h4>Digital Branding & Print Assets</h4>
+                        <p>Vector layouts, promotional posters, and social media flyers engineered by students using modern vector styling software tools.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-node-card">
+                    <div class="showcase-visual-container">
+                        <img src="student-sheets.jpg" alt="Student Spreadsheet Models" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400';">
+                    </div>
+                    <div class="showcase-meta-body">
+                        <h4>Automated Financial Modeling</h4>
+                        <p>Complex business balance sheets integrating VLOOKUP arrays, nested logic operators, and predictive data tracking lines.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -578,60 +706,28 @@
     <!-- ================= ENGINE 3: MILESTONE LEDGER ================= -->
     <section id="experience" class="app-view-container">
         <div class="view-header-block">
-            <h2>Verified Professional Timeline</h2>
-            <p>Chronological milestones demonstrating technical instruction execution and laboratory setup optimization.</p>
-        </div>
-
-        <!-- EXPERIENCE HIGHLIGHT -->
-        <div class="spotlight-dashboard-card">
-            <div class="spotlight-content">
-                <span class="hero-pill-badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent); border: 1px solid rgba(56,189,248,0.2);">Execution Spotlight</span>
-                <h3>International School Academic Calendar Design</h3>
-                <p>Architected, cross-checked, and deployed a fully digitized 2026-2027 multi-page academic school calendar for international school tracking workflows in Somaliland. Completely mapped to precise functional and stylistic constraints.</p>
-            </div>
-            <div class="spotlight-stat-box">
-                <div class="spotlight-stat-node">
-                    <h4>Multi-Page</h4>
-                    <p>Format Array</p>
-                </div>
-                <div class="spotlight-stat-node">
-                    <h4>100%</h4>
-                    <p>Design Delivery</p>
-                </div>
-            </div>
+            <h2>Teaching & Training Experience Ledger</h2>
+            <p>Chronological overview of institutional computing roles, target age groups, and curriculum delivery metrics.</p>
         </div>
 
         <!-- TIMELINE FLOW -->
         <div class="timeline-track">
             <div class="timeline-node-item node-left">
                 <div class="timeline-block-frame">
-                    <span class="node-time-stamp">Primary Active Engagement</span>
-                    <h3>ICT Teaching Specialist</h3>
-                    <span class="node-institution">@ Elm High School, Hargeisa</span>
+                    <span class="node-time-stamp">7+ Years Active Track</span>
+                    <h3>ICT Teaching & Training Specialist</h3>
+                    <span class="node-institution">@ Elm High School & Training Centers (Hargeisa)</span>
+                    <p style="font-size: 0.9rem; color: var(--secondary); margin-bottom: 1rem; font-weight: 600;">
+                        Target Student Base: Secondary (Age 13-18) & Professional Adult Learners
+                    </p>
                     <ul>
-                        <li>Deliver comprehensive Pearson Edexcel curriculum protocols across Secondary, IGCSE, and International A-Level tiers.</li>
-                        <li>Formulate explicit technical lesson plans, student progress matrices, and visual demonstration slide blocks.</li>
-                        <li>Direct practical laboratory application sessions detailing processor management, logical operators, and network structures.</li>
-                        <li>Maintain total computing room physical hardware integrity, optimizing systems performance trends and updating assets.</li>
-                        <li>Incorporate digital learning platforms into daily instruction workflows to scale engagement.</li>
+                        <li>Deliver specialized Pearson Edexcel IGCSE and International A-Level ICT tracks, consistently maintaining high pass performance trends.</li>
+                        <li>Direct technical bootcamps focusing on Web Authoring design loops, Vector Graphic creation, and Microsoft Office / Google Workspace optimization.</li>
+                        <li>Lead Digital Literacy initiatives across school systems to integrate technology smoothly into all classrooms and empower faculty pipelines.</li>
+                        <li>Formulate actionable performance tracking sheets to monitor student grade development and optimize lesson delivery targets.</li>
+                        <li>Provide hardware diagnostic leadership, maintaining total computer laboratory operational infrastructure integrity.</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-
-        <!-- VALUE SECTORS -->
-        <div class="value-propositions-grid" style="margin-top: 4rem;">
-            <div class="value-prop-card">
-                <h4>Curriculum Alignment</h4>
-                <p>Deep operational specialization inside Pearson Edexcel 9-1 guidelines, past-paper rubric structures, and examination criteria tracking.</p>
-            </div>
-            <div class="value-prop-card">
-                <h4>Full-Stack Operations</h4>
-                <p>Capable of executing both high-level instructional lecturing and micro-level physical computer hardware troubleshooting routines.</p>
-            </div>
-            <div class="value-prop-card">
-                <h4>Localized Expertise</h4>
-                <p>Established professional footprint within the educational ecosystems of Hargeisa, backed by strong regional references.</p>
             </div>
         </div>
     </section>
@@ -639,8 +735,8 @@
     <!-- ================= ENGINE 4: SYLLABUS & CREDENTIALS ================= -->
     <section id="portfolio" class="app-view-container">
         <div class="view-header-block">
-            <h2>Academic Credentials & Specification Matrices</h2>
-            <p>Verified historical academic background and interactive curriculum structures mapping directly to live instruction pipelines.</p>
+            <h2>Academic Records & Certifications Array</h2>
+            <p>Verified academic milestones and educational IT qualifications targeting international specifications.</p>
         </div>
 
         <!-- ACADEMIC CREDENTIALS CARD DECK -->
@@ -648,25 +744,25 @@
             <div class="creds-panel-card">
                 <h3>Bachelor of Business Information Technology (BBIT)</h3>
                 <div class="creds-meta-stamp">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</div>
-                <p>Graduated with **Second Class Honors (Upper Division)**. Core curriculum tracks focused heavily on enterprise system architectures, relational database administration, software lifecycle engineering, and complex programming arrays.</p>
+                <p>Graduated with **Second Class Honors (Upper Division)**. Intensive studies in enterprise network architectures, relational database management, and structured systems analytics.</p>
             </div>
 
             <div class="creds-panel-card">
                 <h3>Certificate in E-commerce, Web Design & Entrepreneurship</h3>
-                <div class="creds-meta-stamp">Professional Development Institute Block</div>
-                <p>Studio certification training covering semantic structural HTML5 coding, styling systems inheritance patterns, responsive multi-view interface builds, and business infrastructure management metrics.</p>
+                <div class="creds-meta-stamp">Professional Development Certification</div>
+                <p>Comprehensive training in semantic styling architectures, user flow layouts, conversion mechanics, and cross-platform responsive development models.</p>
             </div>
 
             <div class="creds-panel-card">
-                <h3>Kenya Certificate of Secondary Education (KCSE)</h3>
-                <div class="creds-meta-stamp">Pesoda Annex High School, Migori Kenya</div>
-                <p>Formal secondary education matriculation certificate documenting strong milestones across logical mathematical tracking metrics, communications, and foundational scientific fields.</p>
+                <h3>Professional Skills & IT Credentials</h3>
+                <div class="creds-meta-stamp">Google, Microsoft, and Digital Competency Blocks</div>
+                <p>Validated training tracks covering advanced cloud operations, automated spreadsheet processing, network path setups, and modern digital teaching methods.</p>
             </div>
         </div>
 
         <div class="view-header-block" style="margin-bottom: 2rem;">
             <h3>Interactive Specification Blueprints</h3>
-            <p>Search or sort individual technical curriculum modules derived directly from standard Pearson Edexcel documentation parameters.</p>
+            <p>Search or filter individual technical curriculum modules derived directly from standard Pearson Edexcel documentation parameters.</p>
         </div>
 
         <!-- INTERACTIVE FILTERS LINK -->
@@ -692,7 +788,7 @@
                     <i class="fa-solid fa-microchip"></i>
                 </div>
                 <div class="deck-card-body">
-                    <p>Core operational layout covering computer form-factors, processor performance speeds, cache boundaries, structural RAM/ROM properties, and system softwafe categories.</p>
+                    <p>Core operational layout covering computer form-factors, processor performance speeds, cache boundaries, structural RAM/ROM properties, and system software categories.</p>
                     <div class="chapter-badge-list">
                         <span class="chapter-badge">Ch 1: Digital Devices</span>
                         <span class="chapter-badge">Ch 2: Software Systems</span>
@@ -766,34 +862,34 @@
                 <div class="gateway-comms-card">
                     <i class="fa-solid fa-envelope-shield"></i>
                     <div class="comms-meta-text">
-                        <h4>Direct Recruiter Inbox</h4>
+                        <h4>Recruiter Email Channel</h4>
                         <p><a href="mailto:teacherfahadh@gmail.com">teacherfahadh@gmail.com</a></p>
                     </div>
                 </div>
                 <div class="gateway-comms-card">
                     <i class="fa-solid fa-square-phone"></i>
                     <div class="comms-meta-text">
-                        <h4>Mobile Communications Link</h4>
+                        <h4>Mobile Hotlink Connection</h4>
                         <p><a href="tel:+252636710907">+252 636 710 907</a></p>
                     </div>
                 </div>
                 <div class="gateway-comms-card">
-                    <i class="fa-solid fa-map-location-dot"></i>
+                    <i class="fa-solid fa-comments"></i>
                     <div class="comms-meta-text">
-                        <h4>Primary Headquarters</h4>
-                        <p>Hargeisa, Somaliland</p>
+                        <h4>Instant Chat Gateway</h4>
+                        <p><a href="https://wa.me/252636710907" target="_blank">Launch Live WhatsApp Thread</a></p>
                     </div>
                 </div>
                 
                 <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
-                    <a href="mailto:teacherfahadh@gmail.com" class="system-btn system-btn-primary" style="flex: 1; justify-content: center;"><i class="fa-solid fa-paper-plane"></i> Initialize Mail Loop</a>
-                    <a href="https://wa.me/252636710907" class="system-btn" style="flex: 1; justify-content: center; background: #25d366; color: white;" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Interface</a>
+                    <a href="mailto:teacherfahadh@gmail.com" class="system-btn system-btn-primary" style="flex: 1; justify-content: center;"><i class="fa-solid fa-paper-plane"></i> Direct Email</a>
+                    <a href="https://wa.me/252636710907" class="system-btn" style="flex: 1; justify-content: center; background: #25d366; color: white;" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat WhatsApp</a>
                 </div>
             </div>
 
-            <!-- STANDARDIZED MANAGEMENT REFERENCES -->
+            <!-- STANDARDIZED MANAGEMENT REFERENCES & TESTIMONIALS -->
             <div class="secure-reference-vault">
-                <h3>Institutional Endorsements</h3>
+                <h3>Institutional Endorsements & Feedback</h3>
                 
                 <div class="vault-reference-node">
                     <h4>Yusuf Lutta</h4>
@@ -825,6 +921,11 @@
             <li><a onclick="routeToView('portfolio')">Syllabus & Credentials</a></li>
             <li><a onclick="routeToView('contact')">Secure Connection</a></li>
         </ul>
+        <div style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+            <span><i class="fa-solid fa-envelope"></i> teacherfahadh@gmail.com</span>
+            <span><i class="fa-solid fa-phone"></i> +252 636 710 907</span>
+            <span><i class="fa-location-dot"></i> Hargeisa, Somaliland</span>
+        </div>
         <p class="footer-copyright-notice">&copy; 2026 Jamal Fahadh Mohamed | Advanced ICT Instructional Portfolio Engine</p>
     </footer>
 
