@@ -4,16 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jamal Fahad | ICT Teacher & Digital Skills Trainer</title>
+<title>Jamal Fahadh Mohamed | Professional ICT Educator Portfolio Engine</title>
 
-<meta name="description" content="Jamal Fahad - ICT Teacher, Pearson Edexcel ICT Specialist, Digital Skills Trainer, Web & Graphic Design Instructor in Hargeisa, Somaliland.">
-<meta name="keywords" content="ICT Teacher Somaliland, Pearson Edexcel ICT, Digital Skills Trainer, Web Design Trainer, Hargeisa Teacher, ICT Education">
+<!-- SEO -->
+<meta name="description" content="Jamal Fahadh Mohamed - Professional ICT Educator, Pearson Edexcel ICT Specialist, and Web Developer in Hargeisa, Somaliland.">
+<meta name="keywords" content="ICT Teacher Somaliland, Pearson Edexcel ICT, Jamal Fahadh, Digital Skills Trainer, Web Developer Hargeisa">
 
-<meta property="og:title" content="Jamal Fahad - ICT Teacher Portfolio">
-<meta property="og:image" content="10401.jpg">
-<meta property="og:description" content="ICT Teacher and Digital Skills Trainer specializing in Pearson Edexcel ICT, web design, and digital literacy.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -26,8 +24,9 @@
     --text:#1e293b;
     --muted:#64748b;
     --border:#e2e8f0;
-    --radius:12px;
-    --shadow:0 10px 25px rgba(0,0,0,0.05);
+    --radius:16px;
+    --shadow:0 10px 30px rgba(0,0,0,0.04);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body{
@@ -36,671 +35,895 @@ body{
     background:var(--bg);
     color:var(--text);
     box-sizing: border-box;
-    line-height: 1.6;
+    line-height: 1.7;
+    transition: var(--transition);
 }
 
-/* NAV */
+/* NAVBAR ARCHITECTURE */
 header{
     position:fixed;
     width:100%;
     top:0;
-    background:var(--primary);
+    background:rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(8px);
     color:white;
-    padding:15px 30px;
+    padding:18px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     z-index:1000;
     box-sizing: border-box;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-header a{
+.logo-block b {
+    font-size: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+header nav a, .footer-nav a {
     color:white;
-    margin:0 12px;
+    margin:0 15px;
     text-decoration:none;
     font-weight:600;
     font-size: 0.95rem;
-    transition: color 0.2s ease;
+    transition: var(--transition);
+    opacity: 0.85;
 }
 
-header a:hover{color:#38bdf8}
-
-/* HERO */
-.hero{
-    margin-top:70px;
-    display:grid;
-    grid-template-columns:1.2fr 0.8fr;
-    padding:80px 60px;
-    gap:50px;
-    align-items:center;
+header nav a:hover, .footer-nav a:hover, header nav a.active-link {
+    color:#38bdf8;
+    opacity: 1;
 }
 
-.hero h1{
-    font-size:42px;
-    margin: 0 0 15px 0;
-    line-height: 1.2;
+/* APP PAGE LAYER CONTROL */
+.app-page {
+    display: none;
+    animation: fadeIn 0.4s ease;
+    padding-top: 80px;
 }
 
-.hero span{color:#38bdf8}
-
-.profile-headline {
-    color: var(--accent);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.95rem;
-    margin-bottom: 8px;
+.app-page.active-page {
     display: block;
 }
 
-.hero p{
-    color:var(--muted);
-    font-size: 1.05rem;
-    margin-bottom: 30px;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* BUTTONS */
-.btn{
+/* HERO SYSTEM */
+.hero-block {
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    padding:100px 60px;
+    gap:60px;
+    align-items:center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    border-radius: 0 0 40px 40px;
+    box-shadow: var(--shadow);
+}
+
+.hero-block h1 {
+    font-size:48px;
+    margin: 0 0 20px 0;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.hero-block span { color:#38bdf8; }
+
+.profile-tag {
+    color: #38bdf8;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.hero-block p {
+    color:#94a3b8;
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    max-width: 650px;
+}
+
+/* BASE UI COMPONENTS */
+section {
+    padding: 90px 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.section-head {
+    margin-bottom: 50px;
+}
+
+.section-head h2 {
+    font-size: 2.25rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.section-head p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.card {
+    background:var(--card);
+    padding:35px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    margin-bottom:25px;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.06);
+}
+
+.grid-3 {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+}
+
+.grid-2 {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+/* BUTTON ENGINE */
+.btn {
     display:inline-flex;
     align-items: center;
-    gap: 8px;
-    padding:12px 22px;
-    margin:10px 10px 0 0;
-    border-radius:8px;
+    gap: 10px;
+    padding:14px 28px;
+    margin:10px 12px 0 0;
+    border-radius:10px;
     text-decoration:none;
     font-weight:600;
     font-size: 0.95rem;
-    transition: all 0.2s ease;
+    transition: var(--transition);
     border: none;
     cursor: pointer;
 }
 
-.btn-primary{background:var(--accent);color:white;}
-.btn-primary:hover{background:var(--accent-hover); transform: translateY(-1px);}
-.btn-dark{background:rgba(255,255,255,0.1);color:white; border: 1px solid rgba(255,255,255,0.2);}
-.btn-dark:hover{background:rgba(255,255,255,0.2);}
-.btn-secondary{background: #ffffff; color: var(--primary); border: 1px solid var(--border);}
-.btn-secondary:hover{background: #f1f5f9; border-color: #94a3b8;}
+.btn-primary { background:var(--accent); color:white; }
+.btn-primary:hover { background:var(--accent-hover); transform: translateY(-2px); }
+.btn-dark { background:rgba(255,255,255,0.1); color:white; border: 1px solid rgba(255,255,255,0.15); }
+.btn-dark:hover { background:rgba(255,255,255,0.2); }
+.btn-secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--bg); border-color: #94a3b8; }
 
-.img-container {
+.img-frame {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
-img.profile-avatar {
+img.avatar {
     width: 100%;
     border-radius: 50%;
-    max-width: 320px;
-    height: 320px;
+    max-width: 340px;
+    height: 340px;
     object-fit: cover;
-    border: 6px solid var(--card);
+    border: 8px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--shadow);
 }
 
-/* SECTIONS & STRUCTURAL GRIDS */
-section{
-    padding:80px 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-section h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 2px;
-}
-
-.card{
-    background:var(--card);
-    padding:30px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    margin-bottom:20px;
-    border: 1px solid var(--border);
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
-
-.two-col {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
-}
-
-/* METRICS COMPONENT */
-.metrics-row {
+/* DATA METRICS LAYOUT */
+.metrics-panel {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-bottom: 20px;
+    gap: 25px;
+    margin-top: -50px;
+    padding: 0 60px;
+    position: relative;
+    z-index: 10;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
-.metric-card {
+.metric-node {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     box-shadow: var(--shadow);
 }
 
-.metric-card h3 {
+.metric-node h3 {
     margin: 0 0 5px 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--accent);
+    font-weight: 700;
 }
 
-.metric-card p {
+.metric-node p {
     margin: 0;
     font-size: 0.85rem;
     color: var(--muted);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* PROGRESS BARS */
-.skills-container {
-    margin-top: 15px;
-}
-
-.skill-bar-wrapper {
-    margin-bottom: 20px;
-}
-
-.skill-meta {
+/* PROGRESS ARRAYS */
+.skill-group { margin-top: 20px; }
+.skill-item { margin-bottom: 25px; }
+.skill-label {
     display: flex;
     justify-content: space-between;
     font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 6px;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
 }
-
 .skill-track {
     background: var(--border);
-    height: 8px;
-    border-radius: 4px;
+    height: 10px;
+    border-radius: 5px;
     overflow: hidden;
 }
-
 .skill-fill {
     background: linear-gradient(90deg, var(--accent), #38bdf8);
     height: 100%;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-/* CHIPS */
-.chip-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 15px;
-}
-
-.chip {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-/* INTERACTIVE SEARCH & CATALOG ARCHITECTURE */
-.filter-bar {
+/* SEARCH & CATALOG SYSTEM */
+.filter-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     background: var(--card);
-    padding: 15px;
+    padding: 20px;
     border-radius: var(--radius);
     border: 1px solid var(--border);
 }
-
-.search-box {
+.search-container {
     position: relative;
     flex-grow: 1;
-    max-width: 400px;
+    max-width: 450px;
 }
-
-.search-box i {
+.search-container i {
     position: absolute;
-    left: 15px;
+    left: 18px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--muted);
 }
-
-.search-box input {
+.search-container input {
     width: 100%;
-    padding: 10px 15px 10px 40px;
-    border-radius: 6px;
+    padding: 12px 15px 12px 48px;
+    border-radius: 8px;
     border: 1px solid var(--border);
     background: var(--bg);
     color: var(--text);
     outline: none;
     box-sizing: border-box;
+    font-size: 0.95rem;
 }
-
-.tab-cluster {
-    display: flex;
-    gap: 8px;
-}
-
-.tab-btn {
-    padding: 8px 16px;
-    border-radius: 6px;
+.tab-row { display: flex; gap: 10px; }
+.tab-trigger {
+    padding: 10px 20px;
+    border-radius: 8px;
     border: 1px solid var(--border);
     background: var(--card);
     color: var(--text);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: var(--transition);
 }
-
-.tab-btn.active {
+.tab-trigger.active-tab {
     background: var(--accent);
     color: white;
     border-color: var(--accent);
 }
 
-.catalog-card {
+.catalog-node {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
-.catalog-banner {
-    padding: 20px;
+.catalog-head {
+    padding: 22px;
     color: white;
-    border-radius: 8px 8px 0 0;
-    margin: -20px -20px 20px -20px;
+    border-radius: 12px 12px 0 0;
+    margin: -35px -35px 25px -35px;
     font-weight: 700;
+    font-size: 1.1rem;
 }
 
-/* MODAL SYSTEM LAYER */
-.modal-overlay {
+.chip-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+.chip-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* TIMELINE DESIGNS */
+.timeline-stem {
+    position: relative;
+    border-left: 3px solid var(--border);
+    padding-left: 35px;
+    margin-left: 15px;
+}
+.timeline-block {
+    position: relative;
+    margin-bottom: 45px;
+}
+.timeline-block::before {
+    content: '';
+    position: absolute;
+    left: -42px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 4px solid var(--card);
+    box-shadow: 0 0 0 4px var(--border);
+}
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+/* REFERENCE CARDS */
+.feedback-card {
+    border-left: 4px solid var(--accent);
+    background: var(--card);
+}
+.feedback-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+}
+.feedback-meta h4 { margin:0; font-size:1rem; }
+.feedback-meta span { font-size:0.8rem; color:var(--accent); font-weight:600; }
+
+/* MODAL SYSTEM OVERLAY */
+.modal-mask {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(4px);
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(5px);
     z-index: 2000;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 25px;
     box-sizing: border-box;
 }
-
-.modal-content {
+.modal-wrapper {
     background: var(--card);
-    padding: 40px;
+    padding: 45px;
     border-radius: var(--radius);
-    max-width: 650px;
+    max-width: 680px;
     width: 100%;
     position: relative;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.18);
     border: 1px solid var(--border);
+    animation: modalSlide 0.3s ease;
 }
-
-.close-modal {
+@keyframes modalSlide {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.close-trigger {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 1.5rem;
+    top: 25px;
+    right: 25px;
+    font-size: 1.75rem;
     cursor: pointer;
     color: var(--muted);
+    transition: var(--transition);
 }
+.close-trigger:hover { color: var(--text); }
+.modal-node { margin-top: 25px; }
+.modal-node h4 { margin: 0 0 6px 0; color: var(--accent); font-size: 1.05rem; }
 
-.modal-section {
-    margin-top: 20px;
-}
-
-.modal-section h4 {
-    margin: 0 0 5px 0;
-    color: var(--accent);
-}
-
-/* FOOTER & CONNECTIVITY VAULT */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 40px;
-}
-
-.contact-link-card {
+/* CONTACT CONFIGURATIONS */
+.info-strip {
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-bottom: 15px;
-}
-
-.contact-link-card i {
-    font-size: 1.5rem;
-    color: var(--accent);
-    background: var(--bg);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-}
-
-.reference-node {
-    border-left: 3px solid var(--accent);
-    padding-left: 15px;
     margin-bottom: 25px;
 }
-
-.reference-node h4 { margin: 0; font-size: 1.1rem; }
-.reference-node .title-stamp { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
-.reference-node p { margin: 5px 0 0 0; font-style: italic; color: var(--muted); font-size: 0.92rem; }
-
-footer{
-    text-align:center;
-    padding:40px;
-    background:var(--primary);
-    color:white;
-    border-top: 1px solid rgba(255,255,255,0.05);
+.info-strip i {
+    font-size: 1.4rem;
+    color: var(--accent);
+    background: var(--bg);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* DARK MODE OVERRIDES */
+/* FOOTER */
+footer{
+    padding: 60px 40px;
+    background: var(--primary);
+    color: white;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* GLOBAL DARK OVERRIDES */
 .dark{
     --bg:#0f172a;
     --card:#1e293b;
     --text:#f1f5f9;
     --muted:#94a3b8;
     --border:#334155;
+    --shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+.dark header { background: #0b1120; }
+.dark .tab-trigger { background: var(--primary); }
+
+.toggle-engine {
+    cursor:pointer;
+    background:none;
+    border:none;
+    color:white;
+    font-size:18px;
+    padding: 5px;
+    transition: var(--transition);
 }
 
-.dark header {
-    background: #0b1120;
+/* RESPONSIBITIY BREAKPOINTS */
+@media (max-width: 1024px) {
+    .hero-block, .grid-2, .contact-grid-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .hero-block { text-align: center; padding: 60px 30px; }
+    .img-frame { order: -1; }
+    img.avatar { max-width: 260px; height: 260px; }
+    .metrics-panel { grid-template-columns: repeat(2, 1fr); padding: 0 30px; margin-top: -30px; }
+    section { padding: 60px 30px; }
+    .filter-wrapper { flex-direction: column; align-items: stretch; }
 }
-
-/* RESPONSIVE DESIGN BREAKPOINTS */
-@media (max-width: 968px) {
-    .hero, .two-col, .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .hero {
-        text-align: center;
-        padding: 40px 20px;
-    }
-    img.profile-avatar {
-        max-width: 260px;
-        height: 260px;
-    }
-    .metrics-row {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    section {
-        padding: 50px 20px;
-    }
-    .filter-bar {
-        flex-direction: column;
-        align-items: stretch;
-    }
+@media (max-width: 640px) {
+    .metrics-panel { grid-template-columns: 1fr; }
+    header { padding: 15px 20px; }
+    header nav { display: none; } /* Mobile enhancement recommended via selector scripts */
+    .footer-wrap { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- UNIVERSAL NAVIGATION LAYER -->
 <header>
-    <div><b>Jamal Fahad</b></div>
+    <div class="logo-block"><b>Jamal Fahadh Mohamed</b></div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#portfolio">Syllabus & Portfolio</a>
-        <a href="#contact">Contact</a>
+    <nav id="topNav">
+        <a href="#home" class="nav-item active-link" onclick="routeToPage('home', event)">Home</a>
+        <a href="#about" class="nav-item" onclick="routeToPage('about', event)">About & Experience</a>
+        <a href="#contact" class="nav-item" onclick="routeToPage('contact', event)">Contact Vault</a>
     </nav>
 
-    <button class="toggle" onclick="toggleDark()">
-        <i class="fas fa-moon" id="toggleIcon"></i>
+    <button class="toggle-engine" onclick="toggleSystemTheme()" aria-label="Toggle High-Contrast Engine">
+        <i class="fas fa-moon" id="themeIcon"></i>
     </button>
 </header>
 
-<section class="hero" id="home">
-    <div>
-        <span class="profile-headline">ICT Teacher | Pearson Edexcel Specialist | Digital Skills Trainer</span>
-        <h1>Academic Achievement & <span>Digital Transformation</span></h1>
 
-        <p>
-            Jamal Fahad is a professional ICT educator and Digital Skills Trainer based in Hargeisa, Somaliland. He specializes in Pearson Edexcel ICT curricula, web authoring layout architecture, vector graphic configurations, advanced database tracking models, and systematic hardware laboratory execution.
-        </p>
-
-        <a class="btn btn-primary" href="cv.pdf" download><i class="fas fa-download"></i> Download CV</a>
-        <a class="btn btn-secondary" href="#contact"><i class="fas fa-paper-plane"></i> Book Interview</a>
-    </div>
-
-    <div class="img-container">
-        <img src="10401.jpg" class="profile-avatar" onerror="this.onerror=function(){this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600'};this.src='1780442590761.jpeg';" alt="Jamal Fahad Profile Headshot" />
-    </div>
-</section>
-
-<section id="about">
-    <h2>About Profile</h2>
+<!-- ========================================================================= -->
+<!-- PAGE 1: HOME PAGE -->
+<!-- ========================================================================= -->
+<main class="app-page active-page" id="page-home">
     
-    <div class="two-col">
-        <div class="card">
-            <h3>Instructional Framework</h3>
-            <p>With an established track record as an ICT Teacher and Digital Skills Trainer, my classroom execution focuses on delivering practical, job-ready capabilities. I prepare secondary students and professionals to navigate complex computational challenges while confidently meeting international testing metrics.</p>
-            <p>My methodology emphasizes active computing loops—enabling students to build web infrastructure, parse complex datasets, design graphic branding arrays, and troubleshoot hardware networks natively rather than memorizing static theory maps.</p>
-        </div>
-
+    <!-- Hero Block Section -->
+    <div class="hero-block">
         <div>
-            <div class="card" style="height: 100%; box-sizing: border-box;">
-                <h3>Specialized Training Vectors</h3>
-                <div class="skills-container">
-                    <div class="skill-bar-wrapper">
-                        <div class="skill-meta"><span>Pearson Edexcel ICT Curriculum</span><span>100%</span></div>
-                        <div class="skill-track"><div class="skill-fill" style="width: 100%"></div></div>
-                    </div>
-                    <div class="skill-bar-wrapper">
-                        <div class="skill-meta"><span>Web Design & Graphic Layouts</span><span>95%</span></div>
-                        <div class="skill-track"><div class="skill-fill" style="width: 95%"></div></div>
-                    </div>
-                    <div class="skill-bar-wrapper">
-                        <div class="skill-meta"><span>Microsoft Office & Google Workspace</span><span>95%</span></div>
-                        <div class="skill-track"><div class="skill-fill" style="width: 95%"></div></div>
-                    </div>
-                    <div class="skill-bar-wrapper">
-                        <div class="skill-meta"><span>Digital Literacy & Tech Integration</span><span>90%</span></div>
-                        <div class="skill-track"><div class="skill-fill" style="width: 90%"></div></div>
-                    </div>
-                </div>
+            <span class="profile-tag">Professional ICT Educator & Web Developer</span>
+            <h1>Cultivating Digital Literacy & Technical Competence</h1>
+            <p>
+                Jamal Fahadh Mohamed is an experienced ICT Educator and Web Developer based in Hargeisa. Specializing in the standard Pearson Edexcel ICT curriculum, he balances robust systems execution with rigorous academic delivery to drive meaningful student and organizational transformation.
+            </p>
+            <button class="btn btn-primary" onclick="routeToPage('about')"><i class="fas fa-arrow-right"></i> Review Academic Matrix</button>
+            <button class="btn btn-dark" onclick="routeToPage('contact')"><i class="fas fa-paper-plane"></i> Initiate Contact</button>
+        </div>
+        <div class="img-frame">
+            <img src="10401.jpg" class="avatar" onerror="this.onerror=function(){this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600'};this.src='1780442590761.jpeg';" alt="Jamal Fahadh Mohamed Profile Representation" />
+        </div>
+    </div>
+
+    <!-- Metrics Strip Core Component -->
+    <div class="metrics-panel">
+        <div class="metric-node"><h3>7+ Yrs</h3><p>Active Teaching Track</p></div>
+        <div class="metric-node"><h3>Upper</h3><p>Honors BBIT Degree</p></div>
+        <div class="metric-node"><h3>100%</h3><p>Edexcel Lab Standard</p></div>
+        <div class="metric-node"><h3>Dual</h3><p>Technical Focus</p></div>
+    </div>
+
+    <!-- Core Philosophy Section -->
+    <section id="home-philosophy">
+        <div class="section-head">
+            <h2>Instructional Core & Philosophy</h2>
+            <p>Translating absolute conceptual frameworks into interactive computing studio models.</p>
+        </div>
+        <div class="grid-2">
+            <div class="card">
+                <div style="color:var(--accent); font-size:2rem; margin-bottom:15px;"><i class="fas fa-graduationcap"></i></div>
+                <h3>Active Pedagogy Loops</h3>
+                <p>Computing labs should not rely on static theory maps or memorized commands. My standard operational design loops guide secondary and adult learners to construct live web infrastructure, manage complex spreadsheet relational files, and run diagnostic test sequences directly inside the laboratory environment.</p>
+            </div>
+            <div class="card">
+                <div style="color:var(--accent); font-size:2rem; margin-bottom:15px;"><i class="fas fa-cubes"></i></div>
+                <h3>Curriculum Alignment Matrix</h3>
+                <p>Specialized alignment with the Pearson Edexcel international specifications ensures that classrooms scale directly towards A*–B testing metrics. By matching digital skills training with verified exam grading guides, academic trajectories track precisely with global technical competencies.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="experience">
-    <h2>Experience Ledger</h2>
-
-    <div class="metrics-row">
-        <div class="metric-card"><h3>7+ Yrs</h3><p>Teaching Pipeline</p></div>
-        <div class="metric-card"><h3>A*–B</h3><p>Edexcel Target Band</p></div>
-        <div class="metric-card"><h3>100%</h3><p>Lab Management</p></div>
-        <div class="metric-card"><h3>Upper</h3><p>Honors Degree</p></div>
-    </div>
-
-    <div class="card">
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline;">
-            <h3>ICT Teaching & Training Specialist</h3>
-            <span style="font-weight: 700; color: var(--accent); font-size: 0.9rem;">7+ YEARS ACTIVE TRACK</span>
+    <!-- Technical Competence Array Section -->
+    <section id="home-competence" style="background: rgba(2, 132, 199, 0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="section-head">
+            <h2>Technical Competence & Disciplines</h2>
+            <p>The core structural elements deployed in my daily instructional arrays.</p>
         </div>
-        <p style="margin: 0 0 15px 0; font-weight: 600; color: var(--muted);">Elm High School & Training Centers — Hargeisa</p>
-        <p style="font-size: 0.92rem; color: var(--accent); font-weight: 600; margin-bottom: 10px;">Target Student Base: Secondary Learners (Ages 13-18) & Professional Adults</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Pearson Edexcel Specialization</h3>
+                <p>Complete execution of IGCSE and International A-Level curriculum specifications, mapping hardware registers, communications infrastructure, and computational parameters.</p>
+            </div>
+            <div class="card">
+                <h3>Web Authoring Infrastructure</h3>
+                <p>Developing layouts with semantic HTML5, clean CSS tree logic, and structural optimizations for responsive web display.</p>
+            </div>
+            <div class="card">
+                <h3>Advanced Data Modeling</h3>
+                <p>Constructing multi-tier spreadsheet models using lookup variables, absolute coordination tags, and complex syntax arrays for accurate data tracking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- High Level Overview Component -->
+    <section id="home-overview">
+        <div class="card" style="background: var(--primary); color: white; padding: 50px; text-align: center; border: none; position: relative; overflow: hidden;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px; color: white;">Ready to scale institutional technology metrics?</h2>
+            <p style="color: #94a3b8; max-width: 700px; margin: 0 auto 30px auto; font-size: 1.1rem;">
+                Explore the complete breakdown of professional certifications, documented curriculum lessons, and official reference verification blocks.
+            </p>
+            <button class="btn btn-primary" onclick="routeToPage('about')">Explore Syllabus & Experience</button>
+        </div>
+    </section>
+</main>
+
+
+<!-- ========================================================================= -->
+<!-- PAGE 2: ABOUT & EXPERIENCE PAGE -->
+<!-- ========================================================================= -->
+<main class="app-page" id="page-about">
+    
+    <!-- Academic Ledger & Qualifications Section -->
+    <section id="about-education">
+        <div class="section-head">
+            <h2>Academic History & Credentials</h2>
+            <p>Verified university degrees and technical training certifications.</p>
+        </div>
+        <div class="grid-2">
+            <div class="card">
+                <span class="timeline-date">Jomo Kenyatta University of Agriculture and Technology</span>
+                <h3>Bachelor of Business Information Technology (BBIT)</h3>
+                <p style="color: var(--accent); font-weight: 600; margin-top:-5px;">Second Class Honors (Upper Division)</p>
+                <p>This program builds strong competencies in enterprise information design, structural database query development, system validation logic, and corporate network deployments.</p>
+            </div>
+            <div class="card">
+                <span class="timeline-date">Specialized Technical Certification</span>
+                <h3>Certificate in E-commerce, Web Design & Entrepreneurship</h3>
+                <p style="color: var(--accent); font-weight: 600; margin-top:-5px;">Verified Application Matrix</p>
+                <p>Focused training covering structural web authoring deployment, transaction data pathways, interface wireframing, and business optimization strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Block -->
+    <section id="about-experience" style="background: rgba(2, 132, 199, 0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="section-head">
+            <h2>Professional Experience Ledger</h2>
+            <p>Over 7 years of recorded technical execution in ICT instructional and training spaces.</p>
+        </div>
         
-        <ul style="margin: 0; padding-left: 20px; color: var(--text);">
-            <li style="margin-bottom: 8px;">Deliver structured Pearson Edexcel IGCSE and International A-Level ICT tracks, maximizing cross-cohort performance outcomes.</li>
-            <li style="margin-bottom: 8px;">Direct technical development bootcamps covering HTML/CSS web authoring, vector graphic systems, and advanced spreadsheet modeling.</li>
-            <li style="margin-bottom: 8px;">Lead institutional digital literacy initiatives, configuring hardware diagnostics and managing structural computer laboratory up-time.</li>
-        </ul>
-    </div>
-</section>
+        <div class="timeline-stem">
+            <div class="timeline-block">
+                <div class="card">
+                    <span class="timeline-date">Active Tenor — Hargeisa</span>
+                    <h3>ICT Teaching & Training Specialist</h3>
+                    <h4 style="margin:0; color: var(--muted); font-weight: 600;">Elm High School</h4>
+                    <p style="font-size:0.95rem; color: var(--accent); font-weight:600; margin-bottom:15px;">Target: Secondary Cohorts (Ages 13-18) & Professional Adults</p>
+                    <ul style="padding-left: 20px; margin: 0;">
+                        <li style="margin-bottom:8px;">Deliver structured Pearson Edexcel IGCSE and International A-Level ICT tracks, maximizing cross-cohort performance outcomes.</li>
+                        <li style="margin-bottom:8px;">Direct technical development bootcamps covering HTML/CSS web authoring, vector graphic systems, and advanced spreadsheet modeling.</li>
+                        <li style="margin-bottom:8px;">Lead institutional digital literacy initiatives, configuring hardware diagnostics and managing structural computer laboratory up-time.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="portfolio">
-    <h2>Syllabus & Portfolio Systems</h2>
+    <!-- Interactive Lessons & Syllabus Library -->
+    <section id="about-lessons">
+        <div class="section-head">
+            <h2>Pearson Edexcel Syllabus Catalog</h2>
+            <p>Interactive repository covering verified examination units. Use the tools below to filter by chapter and core criteria.</p>
+        </div>
+
+        <div class="filter-wrapper">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="catalogSearch" placeholder="Filter by chapter tags, unit name, keywords..." oninput="runCatalogEvaluation()">
+            </div>
+            <div class="tab-row">
+                <button class="tab-trigger active-tab" onclick="adjustCatalogCategory('all', this)">All Blocks</button>
+                <button class="tab-trigger" onclick="adjustCatalogCategory('theory', this)">Theory Core</button>
+                <button class="tab-trigger" onclick="adjustCatalogCategory('practical', this)">Practical Studio</button>
+            </div>
+        </div>
+
+        <div class="grid-3" id="catalogDisplayGrid">
+            <!-- Unit 1 -->
+            <div class="card catalog-node" data-category="theory" data-search-tags="digital devices hardware computer software storage memory architecture peripherals chapter 1 2 3">
+                <div>
+                    <div class="catalog-head" style="background:#ef4444;">Specification Unit 1</div>
+                    <h3>Digital Devices Framework</h3>
+                    <p style="color:var(--muted); font-size:0.9rem;">Deconstructs system architecture parameters, alternative memory profiles, system software functions, and peripheral arrays.</p>
+                    <div class="chip-stack">
+                        <span class="chip-item">Ch 1: Hardware</span><span class="chip-item">Ch 2: Software</span><span class="chip-item">Ch 3: Memory</span>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" style="margin-top:25px; width:100%; justify-content:center;" onclick="openSystemModal('unit1')"><i class="fas fa-network-wired"></i> View Detailed Map</button>
+            </div>
+
+            <!-- Unit 2 -->
+            <div class="card catalog-node" data-category="theory" data-search-tags="connectivity networks data transmission packets protocols network topologies communication chapter 4 5">
+                <div>
+                    <div class="catalog-head" style="background:#f59e0b;">Specification Unit 2</div>
+                    <h3>Connectivity & Topologies</h3>
+                    <p style="color:var(--muted); font-size:0.9rem;">Analyzes wide area connection layouts, routing pathways, data transfer network protocols, and packet assembly rules.</p>
+                    <div class="chip-stack">
+                        <span class="chip-item">Ch 4: Communications</span><span class="chip-item">Ch 5: Topologies</span>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" style="margin-top:25px; width:100%; justify-content:center;" onclick="openSystemModal('unit2')"><i class="fas fa-network-wired"></i> View Detailed Map</button>
+            </div>
+
+            <!-- Unit 6 Web -->
+            <div class="card catalog-node" data-category="practical" data-search-tags="web authoring html css website layout styling student project graphics development chapter 18 16">
+                <div>
+                    <div class="catalog-head" style="background:#a855f7;">Specification Unit 6 (Web)</div>
+                    <h3>Web Authoring Studio</h3>
+                    <p style="color:var(--muted); font-size:0.9rem;">Applied programming studio covering semantic HTML5 structures, CSS layouts, and student development tracking.</p>
+                    <div class="chip-stack">
+                        <span class="chip-item">Ch 18: Web Architecture</span><span class="chip-item">Ch 16: Graphics</span>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" style="margin-top:25px; width:100%; justify-content:center;" onclick="openSystemModal('web')"><i class="fas fa-network-wired"></i> View Detailed Map</button>
+            </div>
+
+            <!-- Unit 6 Spreadsheets -->
+            <div class="card catalog-node" data-category="practical" data-search-tags="spreadsheets formulas functions data modeling vlookup analysis excel training sheet automation chapter 14">
+                <div>
+                    <div class="catalog-head" style="background:#10b981;">Specification Unit 6 (Data)</div>
+                    <h3>Spreadsheet Logic Systems</h3>
+                    <p style="color:var(--muted); font-size:0.9rem;">Advanced logical operations tracking data lookup rules (=VLOOKUP, =IF), coordinate indexing, and visualization.</p>
+                    <div class="chip-stack">
+                        <span class="chip-item">Ch 14: Data Modeling</span>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" style="margin-top:25px; width:100%; justify-content:center;" onclick="openSystemModal('spreadsheets')"><i class="fas fa-network-wired"></i> View Detailed Map</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!-- ========================================================================= -->
+<!-- PAGE 3: CONTACT & VERIFICATION PAGE -->
+<!-- ========================================================================= -->
+<main class="app-page" id="page-contact">
     
-    <div class="card" style="margin-bottom: 40px;">
-        <h3>Academic Records</h3>
-        <p style="margin-bottom: 5px;"><b>Bachelor of Business Information Technology (BBIT)</b> — JJKUAT</p>
-        <p style="color: var(--muted); margin: 0 0 15px 0;">Graduated with Second Class Honors (Upper Division).</p>
-        <p style="margin-bottom: 5px;"><b>Certificate in E-commerce, Web Design & Entrepreneurship</b></p>
-        <p style="color: var(--muted); margin: 0;">Verified specialized professional application matrix.</p>
-    </div>
-
-    <div class="filter-bar">
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" id="syllabusSearch" placeholder="Search chapters, unit titles, keywords..." oninput="evaluateCatalog()">
+    <section id="contact-vault">
+        <div class="section-head">
+            <h2>Secure Connection Gateway</h2>
+            <p>Direct communication paths for technical projects or institutional interviews.</p>
         </div>
-        <div class="tab-cluster">
-            <button class="tab-btn active" onclick="filterCategory('all', this)">All Specs</button>
-            <button class="tab-btn" onclick="filterCategory('theory', this)">Theory Blocks</button>
-            <button class="tab-btn" onclick="filterCategory('practical', this)">Practical Studios</button>
-        </div>
-    </div>
 
-    <div class="grid" id="catalogGrid">
-        <div class="card catalog-card" data-cat="theory" data-tags="digital devices hardware computer software storage memory system architecture peripherals chapter 1 2 3">
+        <div class="grid-2 contact-grid-wrap">
+            <!-- Detailed Call to Action Channels -->
             <div>
-                <div class="catalog-banner" style="background: #ef4444;">Specification Unit 1</div>
-                <h3>Digital Devices Framework</h3>
-                <p style="color: var(--muted); font-size: 0.92rem;">Core operational layout covering computer architectures, memory storage profiles, operating system structures, and peripheral categories.</p>
-                <div class="chip-cloud">
-                    <span class="chip">Ch 1: Hardware</span><span class="chip">Ch 2: Software</span><span class="chip">Ch 3: Memory</span>
+                <div class="card">
+                    <h3>Communication Channels</h3>
+                    <p style="color:var(--muted); margin-bottom:30px;">Reach out directly for curricular planning, web architecture, or digital training projects.</p>
+                    
+                    <div class="info-strip">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 style="margin:0;">Email Channel</h4>
+                            <a href="mailto:teacherfahadh@gmail.com" style="color:var(--text); text-decoration:none; font-weight:500;">teacherfahadh@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-strip">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4 style="margin:0;">Mobile Direct</h4>
+                            <a href="tel:+252636710907" style="color:var(--text); text-decoration:none; font-weight:500;">+252 636 710 907</a>
+                        </div>
+                    </div>
+
+                    <div class="info-strip">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4 style="margin:0;">WhatsApp Routing</h4>
+                            <a href="https://wa.me/252636710907" target="_blank" style="color:var(--text); text-decoration:none; font-weight:500;">Launch Instant Messaging</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: rgba(2, 132, 199, 0.05); border-color: var(--accent);">
+                    <h3>Deployment & Deployment Logs</h3>
+                    <p style="font-size:0.9rem; margin-bottom:0;">
+                        This platform functions as a single-file static responsive application architecture built using HTML5, CSS3 typography tokens, and native JavaScript state routing loops. It serves as an open technical reference for educational panels and employment assessment reviews.
+                    </p>
                 </div>
             </div>
-            <button class="btn btn-secondary" style="margin-top:20px; width:100%; justify-content:center;" onclick="deployModal('unit1')"><i class="fas fa-folder-tree"></i> Load Operational Map</button>
-        </div>
 
-        <div class="card catalog-card" data-cat="theory" data-tags="connectivity networks data transmission packets protocols network topologies communication chapter 4 5">
+            <!-- Peer Endorsements & Reference Gate -->
             <div>
-                <div class="catalog-banner" style="background: #f59e0b;">Specification Unit 2</div>
-                <h3>Connectivity & Topologies</h3>
-                <p style="color: var(--muted); font-size: 0.92rem;">Analysis of network setup path systems, packet routing parameters, structural data transfer protocols, and encryption maps.</p>
-                <div class="chip-cloud">
-                    <span class="chip">Ch 4: Comms</span><span class="chip">Ch 5: Network Loops</span>
-                </div>
-            </div>
-            <button class="btn btn-secondary" style="margin-top:20px; width:100%; justify-content:center;" onclick="deployModal('unit2')"><i class="fas fa-folder-tree"></i> Load Operational Map</button>
-        </div>
+                <div class="card" style="background:var(--primary); color:white; border:none; height:100%; box-sizing:border-box;">
+                    <h3 style="color:#38bdf8; margin-top:0;">Institutional Endorsements</h3>
+                    <p style="color:#94a3b8; font-size:0.95rem; margin-bottom:30px;">What colleagues and administrators say about my classroom execution.</p>
+                    
+                    <div class="card feedback-card" style="background:rgba(255,255,255,0.05); border:none; margin-bottom:30px;">
+                        <p style="font-style:italic; margin:0; color:#cbd5e1; font-size:0.95rem;">
+                            "Jamal maintains an exceptional balance of structured technical systems control and rigorous curriculum delivery standards."
+                        </p>
+                        <div class="feedback-author">
+                            <div class="feedback-meta">
+                                <h4 style="color:white;">Yusuf Lutta</h4>
+                                <span>School Principal Reference</span>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="card catalog-card" data-cat="practical" data-tags="web authoring html css website layout styling student project graphics chapter 18 16">
-            <div>
-                <div class="catalog-banner" style="background: #a855f7;">Specification Unit 6 (Web)</div>
-                <h3>Web Authoring & Student Work</h3>
-                <p style="color: var(--muted); font-size: 0.92rem;">Applied programming studio showcasing HTML5 semantic tag layouts, CSS style trees, and projects built under my training guidelines.</p>
-                <div class="chip-cloud">
-                    <span class="chip">Ch 18: Web Architecture</span><span class="chip">Ch 16: Graphics</span>
-                </div>
-            </div>
-            <button class="btn btn-secondary" style="margin-top:20px; width:100%; justify-content:center;" onclick="deployModal('web')"><i class="fas fa-folder-tree"></i> Load Operational Map</button>
-        </div>
-
-        <div class="card catalog-card" data-cat="practical" data-tags="spreadsheets formulas functions data modeling vlookup analysis excel training sheet chapter 14">
-            <div>
-                <div class="catalog-banner" style="background: #10b981;">Specification Unit 6 (Data)</div>
-                <h3>Spreadsheet Logic Systems</h3>
-                <p style="color: var(--muted); font-size: 0.92rem;">Advanced automation tracking covering cascading nested formulas, absolute cell coordinate coordinates, and custom database processing sheets.</p>
-                <div class="chip-cloud">
-                    <span class="chip">Ch 14: Data Models</span>
-                </div>
-            </div>
-            <button class="btn btn-secondary" style="margin-top:20px; width:100%; justify-content:center;" onclick="deployModal('spreadsheets')"><i class="fas fa-folder-tree"></i> Load Operational Map</button>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Secure Connection Gate</h2>
-    
-    <div class="contact-grid">
-        <div>
-            <div class="contact-link-card">
-                <i class="fas fa-envelope"></i>
-                <div>
-                    <h4 style="margin:0;">Email Channel</h4>
-                    <a href="mailto:teacherfahadh@gmail.com" style="color:var(--text); text-decoration:none; font-size:0.95rem;">teacherfahadh@gmail.com</a>
-                </div>
-            </div>
-            <div class="contact-link-card">
-                <i class="fas fa-phone"></i>
-                <div>
-                    <h4 style="margin:0;">Mobile Direct</h4>
-                    <a href="tel:+252636710907" style="color:var(--text); text-decoration:none; font-size:0.95rem;">+252 636 710 907</a>
-                </div>
-            </div>
-            <div class="contact-link-card">
-                <i class="fab fa-whatsapp"></i>
-                <div>
-                    <h4 style="margin:0;">WhatsApp Routing</h4>
-                    <a href="https://wa.me/252636710907" target="_blank" style="color:var(--text); text-decoration:none; font-size:0.95rem;">Launch Live Chat Engine</a>
+                    <div class="card feedback-card" style="background:rgba(255,255,255,0.05); border:none; margin-bottom:0;">
+                        <p style="font-style:italic; margin:0; color:#cbd5e1; font-size:0.95rem;">
+                            "His targeted pedagogy directly translated into measurable classroom development metrics across our computing classes."
+                        </p>
+                        <div class="feedback-author">
+                            <div class="feedback-meta">
+                                <h4 style="color:white;">Awale Adam</h4>
+                                <span>Administrator | Elm High School</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+</main>
 
-        <div>
-            <div class="card" style="background: var(--primary); color: white; border: none;">
-                <h3 style="color: #38bdf8; margin-top: 0;">Institutional Endorsements</h3>
-                
-                <div class="reference-node">
-                    <h4>Yusuf Lutta</h4>
-                    <div class="title-stamp">School Principal Reference</div>
-                    <p>"Jamal maintains an exceptional balance of structured technical systems control and rigorous curriculum delivery standards."</p>
-                </div>
-                
-                <div class="reference-node" style="margin-bottom:0;">
-                    <h4>Awale Adam</h4>
-                    <div class="title-stamp">Administrator | Elm High School</div>
-                    <p>"His targeted pedagogy directly translated into measurable classroom development metrics across our computing classes."</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<footer>
-    © 2026 Jamal Fahad | Advanced ICT Instructional Portfolio Engine
-</footer>
-
-<div class="modal-overlay" id="systemModal" onclick="closeModalOutside(event)">
-    <div class="modal-content">
-        <i class="fas fa-circle-xmark close-modal" onclick="hideModal()"></i>
-        <div id="modalTarget"></div>
+<!-- ========================================================================= -->
+<!-- SYSTEM MODAL WINDOW COMPONENT -->
+<!-- ========================================================================= -->
+<div class="modal-mask" id="globalAppModal" onclick="dismissModalOnOutsideClick(event)">
+    <div class="modal-wrapper">
+        <i class="fas fa-circle-xmark close-trigger" onclick="closeSystemModal()"></i>
+        <div id="modalInjectionTarget"></div>
     </div>
 </div>
 
+
+<!-- ========================================================================= -->
+<!-- UNIVERSAL FOOTER NAVIGATION LAYER -->
+<!-- ========================================================================= -->
+<footer>
+    <div class="footer-wrap">
+        <div>
+            <p style="margin:0; font-weight:600; font-size:0.95rem;">© 2026 Jamal Fahadh Mohamed</p>
+            <p style="margin:5px 0 0 0; color:#94a3b8; font-size:0.8rem;">Advanced ICT Instructional Portfolio Engine</p>
+        </div>
+        <div class="footer-nav" id="bottomNav">
+            <a href="#home" class="footer-nav-item" onclick="routeToPage('home', event)">Home</a>
+            <a href="#about" class="footer-nav-item" onclick="routeToPage('about', event)">About & Experience</a>
+            <a href="#contact" class="footer-nav-item" onclick="routeToPage('contact', event)">Contact Vault</a>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ========================================================================= -->
+<!-- APPLICATION LOGIC ENGINE -->
+<!-- ========================================================================= -->
 <script>
-// Dark Mode Toggle
-function toggleDark(){
+// Stateful Page Routing Engine
+function routeToPage(targetId, event) {
+    if (event) {
+        event.preventDefault();
+    }
+
+    // Deactivate all app content wrappers
+    const pages = document.querySelectorAll('.app-page');
+    pages.forEach(page => page.classList.remove('active-page'));
+
+    // Activate the targeted page layout
+    const activeTarget = document.getElementById(`page-${targetId}`);
+    if (activeTarget) {
+        activeTarget.classList.add('active-page');
+    }
+
+    // Synchronize Top Navbar Link States
+    const topLinks = document.querySelectorAll('#topNav .nav-item');
+    topLinks.forEach(link => {
+        if (link.getAttribute('href') === `#${targetId}`) {
+            link.classList.add('active-link');
+        } else {
+            link.classList.remove('active-link');
+        }
+    });
+
+    // Scroll display to absolute top coordinates smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// System Contrast Theme Controls
+function toggleSystemTheme() {
     document.body.classList.toggle("dark");
-    const icon = document.getElementById("toggleIcon");
+    const icon = document.getElementById("themeIcon");
     if(document.body.classList.contains("dark")) {
         icon.className = "fas fa-sun";
     } else {
@@ -708,95 +931,97 @@ function toggleDark(){
     }
 }
 
-// Global Filter Variables
-let activeCategory = 'all';
+// Interactive Catalog Processing Engine
+let selectedCategoryFilter = 'all';
 
-function filterCategory(cat, btn) {
-    const btns = document.querySelectorAll('.tab-btn');
-    btns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeCategory = cat;
-    evaluateCatalog();
+function adjustCatalogCategory(category, element) {
+    const triggers = document.querySelectorAll('.tab-trigger');
+    triggers.forEach(t => t.classList.remove('active-tab'));
+    element.classList.add('active-tab');
+    selectedCategoryFilter = category;
+    runCatalogEvaluation();
 }
 
-function evaluateCatalog() {
-    const query = document.getElementById('syllabusSearch').value.toLowerCase().trim();
-    const cards = document.querySelectorAll('.catalog-card');
+function runCatalogEvaluation() {
+    const query = document.getElementById('catalogSearch').value.toLowerCase().trim();
+    const targetNodes = document.querySelectorAll('.catalog-node');
 
-    cards.forEach(card => {
-        const catAttr = card.getAttribute('data-cat');
-        const tagAttr = card.getAttribute('data-tags');
-        
-        const matchesCategory = (activeCategory === 'all' || catAttr === activeCategory);
-        const matchesSearch = tagAttr.includes(query);
+    targetNodes.forEach(node => {
+        const itemCategory = node.getAttribute('data-category');
+        const internalTags = node.getAttribute('data-search-tags');
 
-        if(matchesCategory && matchesSearch) {
-            card.style.display = 'flex';
+        const matchesCategory = (selectedCategoryFilter === 'all' || itemCategory === selectedCategoryFilter);
+        const matchesSearch = internalTags.includes(query);
+
+        if (matchesCategory && matchesSearch) {
+            node.style.display = 'flex';
         } else {
-            card.style.display = 'none';
+            node.style.display = 'none';
         }
     });
 }
 
-// Metric Spec Framework Data Vault
-const dataVault = {
+// Curricular Structured Specification Data Vault
+const curriculumVault = {
     unit1: {
-        title: "Unit 1: Digital Devices Framework",
-        objectives: "Deconstruct system architectures, map cache performance levels, evaluate alternative computing storage formats, and differentiate operating system execution loops.",
-        activities: "Executing laboratory stress diagnostics, configuring system BIOS registers, managing input-output device parameters, and verifying memory allocations.",
-        assessment: "Edexcel examination standard routing loops inspecting capacity calculation metrics and structural logic gate arrays."
+        title: "Unit 1: Digital Devices Framework Parameters",
+        parameters: "Deconstruct system architectures, map cache performance profiles, analyze internal memory registries, and differentiate operational kernel commands.",
+        activities: "Executing physical diagnostic tests, setting up BIOS registers, and troubleshooting system bus line bottlenecks.",
+        assessments: "Pearson Edexcel structural examination parameters targeting network data constraints and logic gate matrices."
     },
     unit2: {
-        title: "Unit 2: Connectivity & Networks",
-        objectives: "Verify digital package routing headers, evaluate network protocol matrices, analyze wide area topologies, and verify endpoint firewall encryption paths.",
-        activities: "Simulating star/mesh topologies via trace nodes, monitoring baseline ping delays, and setting up network routing paths.",
-        assessment: "Timed structural diagnostic sheets checking layout configuration options and packet breakdown evaluations."
+        title: "Unit 2: Connectivity & Network Topology Matrices",
+        parameters: "Verify payload packet encapsulation pathways, analyze network stack models, trace data routing paths, and verify end-to-end security layers.",
+        activities: "Simulating physical connection pathways, configuring custom firewall security levels, and debugging packet transfer delays.",
+        assessments: "Curriculum speed-drills focused on network design layouts and network protocol analysis."
     },
     web: {
-        title: "Unit 6: Web Authoring Deployment Matrix",
-        objectives: "Author standard-compliant HTML5 semantic wrappers and structure external responsive CSS style inheritance sheets from scratch.",
-        activities: "Building structural data layouts, optimizing resolution weights for cross-platform devices, and verifying navigation asset link hooks.",
-        assessment: "Studio production speed test evaluating external style sheet structures and element position coordinate settings."
+        title: "Unit 6: Web Authoring Design Standards",
+        parameters: "Develop web layouts using standard semantic HTML5 structures and external CSS document hierarchy workflows.",
+        activities: "Configuring interface wireframes, optimizing image assets, and establishing absolute and relative layouts for multi-device compatibility.",
+        assessments: "Time-constrained web authoring exams inspecting component architecture accuracy and validation rules."
     },
     spreadsheets: {
-        title: "Unit 6: Spreadsheet Logic Systems",
-        objectives: "Assemble dynamic data sheets using deep logic algorithms, relative row offsets, and coordinate array lookups.",
-        activities: "Writing advanced automated syntax chains (=VLOOKUP, =IF, =COUNTIF) and compiling contextual tracking analytics dashboards.",
-        assessment: "Timed data optimization lab test tracking structural data lookup chains and functional conditional validation errors."
+        title: "Unit 6: Spreadsheet Logic Systems Optimization",
+        parameters: "Design spreadsheet models using absolute references, horizontal/vertical lookups, and nested logical tracking algorithms.",
+        activities: "Automating data tables, configuring form inputs, and structuring interactive dashboard analysis sheets.",
+        assessments: "Practical data processing tests assessing calculation logic and formula structure validation."
     }
 };
 
-// Modal Controls
-function deployModal(key) {
-    const record = dataVault[key];
-    if(!record) return;
+// Application Modal Controller Logic
+function openSystemModal(key) {
+    const record = curriculumVault[key];
+    if (!record) return;
 
-    const html = `
-        <h3 style="margin-top:0; font-size:1.6rem; color:var(--text); border-bottom:2px solid var(--border); padding-bottom:10px;">${record.title}</h3>
-        <div class="modal-section">
+    const formattedHtml = `
+        <h3 style="margin-top:0; font-size:1.5rem; color:var(--text); border-bottom:2px solid var(--border); padding-bottom:12px;">${record.title}</h3>
+        <div class="modal-node">
             <h4><i class="fas fa-crosshairs"></i> Target Parameters</h4>
-            <p style="margin:5px 0 0 0; font-size:0.95rem; color:var(--muted);">${record.objectives}</p>
+            <p style="margin:5px 0 0 0; font-size:0.95rem; color:var(--muted);">${record.parameters}</p>
         </div>
-        <div class="modal-section">
-            <h4><i class="fas fa-laptop-code"></i> Laboratory Activities</h4>
+        <div class="modal-node">
+            <h4><i class="fas fa-laptop-code"></i> Studio Laboratory Activities</h4>
             <p style="margin:5px 0 0 0; font-size:0.95rem; color:var(--muted);">${record.activities}</p>
         </div>
-        <div class="modal-section">
-            <h4><i class="fas fa-clipboard-check"></i> Standard Assessment</h4>
-            <p style="margin:5px 0 0 0; font-size:0.95rem; color:var(--muted);">${record.assessment}</p>
+        <div class="modal-node">
+            <h4><i class="fas fa-clipboard-check"></i> Examination Assessment Standard</h4>
+            <p style="margin:5px 0 0 0; font-size:0.95rem; color:var(--muted);">${record.assessments}</p>
         </div>
     `;
-    
-    document.getElementById('modalTarget').innerHTML = html;
-    document.getElementById('systemModal').style.display = 'flex';
+
+    document.getElementById('modalInjectionTarget').innerHTML = formattedHtml;
+    document.getElementById('globalAppModal').style.display = 'flex';
 }
 
-function hideModal() {
-    document.getElementById('systemModal').style.display = 'none';
+function closeSystemModal() {
+    document.getElementById('globalAppModal').style.display = 'none';
 }
 
-function closeModalOutside(e) {
-    if(e.target === document.getElementById('systemModal')) hideModal();
+function dismissModalOnOutsideClick(e) {
+    if (e.target === document.getElementById('globalAppModal')) {
+        closeSystemModal();
+    }
 }
 </script>
 
