@@ -3,76 +3,953 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jamal Fahadh | Senior ICT Educator Portfolio</title>
+    <title>Jamal Fahadh Mohamed | Education Programme & Digital Communications Specialist</title>
+    
+    <!-- Premium Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
     <style>
-        /* 
-           EXTENSIVE CSS ARCHITECTURE
-           This section is designed to be expanded with specific modular 
-           component styling for all lesson plan sections.
-        */
-        :root { --bg: #2d2420; --card: #3e332e; --text: #e5d3c8; --accent: #d4a373; }
-        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; }
-        header { background: #1a1513; padding: 25px; position: sticky; top: 0; z-index: 1000; text-align: center; border-bottom: 2px solid var(--accent); }
-        nav a { color: var(--accent); margin: 0 20px; text-decoration: none; font-weight: bold; }
-        section { padding: 80px 20px; max-width: 1000px; margin: auto; }
-        .card { background: var(--card); padding: 30px; border-radius: 12px; margin-bottom: 30px; border-left: 6px solid var(--accent); }
-        .lesson-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        /* Placeholder for additional 1500+ lines of specialized layout components */
+        :root {
+            --primary: #DE2910; /* Save the Children Red */
+            --primary-glow: rgba(222, 41, 16, 0.15);
+            --secondary: #0077B6;
+            --secondary-glow: rgba(0, 119, 182, 0.2);
+            --dark-bg: #090d16;
+            --card-bg: #131c2e;
+            --card-border: rgba(255, 255, 255, 0.05);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero Header Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 24px;
+            background: radial-gradient(circle at top right, var(--secondary-glow), transparent 40%),
+                        radial-gradient(circle at bottom left, var(--primary-glow), transparent 40%),
+                        linear-gradient(rgba(9, 13, 22, 0.8), rgba(9, 13, 22, 0.98)), 
+                        url("banner.jpg") center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .profile {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 20px 40px rgba(222, 41, 16, 0.25);
+            transition: var(--transition);
+        }
+
+        .profile-wrapper:hover .profile {
+            transform: scale(1.03) rotate(2deg);
+            border-color: var(--secondary);
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 5px;
+            background: var(--primary);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            border: 2px solid var(--dark-bg);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .hero-title {
+            background: linear-gradient(135deg, #ffffff 40%, #fecaca 70%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            font-family: var(--font-display);
+            color: var(--text-main);
+            margin-bottom: 30px;
+            font-weight: 500;
+            font-size: 1.5rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 780px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Control Buttons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            cursor: pointer;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #ff4d35);
+            color: white;
+            box-shadow: 0 10px 25px rgba(222, 41, 16, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(222, 41, 16, 0.45);
+        }
+
+        .btn-outline {
+            border: 2px solid #1e293b;
+            background: rgba(255, 255, 255, 0.02);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--dark-bg);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Layout Grid Frameworks */
+        section {
+            padding: 110px 10%;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            text-align: center;
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 70px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 20px auto 0 auto;
+            border-radius: 4px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .card h3 {
+            font-family: var(--font-display);
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .info-label {
+            color: var(--text-muted);
+            font-weight: 600;
+            width: 150px;
+            display: inline-block;
+        }
+
+        .benefit-card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            border-top: 4px solid var(--secondary);
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .benefit-card h3 {
+            font-family: var(--font-display);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+
+        .benefit-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Skills Progress Framework */
+        .skill-bar {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .skill-title {
+            color: var(--text-main);
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+        }
+
+        .skill-pct {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .progress {
+            height: 8px;
+            background: #1e293b;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+            border-radius: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+        }
+
+        /* Professional Experience Timeline */
+        .timeline {
+            display: grid;
+            gap: 35px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: var(--card-bg);
+            padding: 40px;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 16px 16px 0;
+            border-top: 1px solid var(--card-border);
+            border-right: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            border-left-color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .timeline-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .company {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 22px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-item ul {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .timeline-item li {
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        /* Portfolio Media Showcase */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            padding: 10px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(222, 41, 16, 0.3);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
+        }
+
+        .project {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--card-border);
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+
+        .project img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 22px;
+            background: rgba(222, 41, 16, 0.1);
+            color: #fca5a5;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        /* FAQ Dropdowns */
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 24px 30px;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+
+        .faq-indicator {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        /* Contact & Forms Architecture */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            padding: 45px;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--dark-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-glow);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .ref-card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .ref-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .ref-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .ref-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-details-side p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-label {
+            color: var(--text-muted);
+            margin-right: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            width: 110px;
+            display: inline-block;
+        }
+
+        .contact-details-side a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details-side a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 992px) {
+            .contact-wrapper { grid-template-columns: 1fr; gap: 50px; }
+            section { padding: 80px 6%; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.6rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 35px; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#lessons">Lesson Plans</a><a href="#contact">Contact</a>
-    </nav>
-</header>
+    <!-- HERO SECTION -->
+    <header>
+        <div class="hero">
+            <div class="profile-wrapper">
+                <img src="profile.jpg" alt="Jamal Fahadh Mohamed" class="profile">
+                <div class="status-badge">Available in Hargeisa</div>
+            </div>
+            <h1><span class="hero-title">Jamal Fahadh Mohamed</span></h1>
+            <h2>Education Programme Support & Communications Specialist</h2>
+            <p>
+                Combining an advanced technical background in Computer Science and Information Technology with 7+ years of classroom experience and digital asset design[span_3](start_span)[span_3](end_span). Specializing in creating child-friendly educational frameworks, managing strict institutional branding guidelines, and deploying accessible training resources.
+            </p>
+            <div class="buttons">
+                <a href="Jamal_Fahad_CV_ICT_Teacher.pdf" download="Jamal_Fahad_CV_ICT_Teacher.pdf" class="btn btn-primary">Download Professional CV</a>
+                <a href="#portfolio" class="btn btn-outline">View Educational Media Portfolio</a>
+            </div>
+        </div>
+    </header>
 
-<section id="home">
-    <h1>Teacher Fahadh</h1>
-    <p>Senior ICT Educator: Empowering Future Innovators Through ICT Education.</p>
-    <div class="lesson-grid">
-        <div class="card"><h3>Exam Target</h3><p>A*-B</p></div>
-        <div class="card"><h3>Lab Readiness</h3><p>100%</p></div>
-        <div class="card"><h3>Adoption Rate</h3><p>89%</p></div>
-    </div>
-</section>
+    <!-- PROFESSIONAL PROFILE SECTION -->
+    <section id="about">
+        <h2 class="section-title">Professional Profile</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Bridging IT, Education, & Graphic Design</h3>
+                <p>
+                    Based in Hargeisa, I hold a Bachelor of Business Information Technology (BIT) from JKUAT[span_4](start_span)[span_4](end_span). My unique combination of technical expertise, creative mastery in Adobe systems and Canva, and deep background as an educator enables me to seamlessly support large-scale educational programs[span_5](start_span)[span_5](end_span). I specialize in designing and distributing accessible development materials that ensure high-impact community engagement.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Contact & Coordinates</h3>
+                <p style="margin-bottom: 16px;"><span class="contact-label">Location:</span> Hargeisa, Somaliland[span_6](start_span)[span_6](end_span)</p>
+                <p style="margin-bottom: 16px;"><span class="contact-label">Mobile:</span> +252 63 6710907[span_7](start_span)[span_7](end_span)</p>
+                <p style="margin-bottom: 16px;"><span class="contact-label">Email:</span> teacherfahadh@gmail.com[span_8](start_span)[span_8](end_span)</p>
+                <p><span class="contact-label">Digital Hub:</span> <a href="https://fahadict.github.io/tech" target="_blank">fahadict.github.io/tech</a>[span_9](start_span)[span_9](end_span)</p>
+            </div>
+        </div>
+    </section>
 
-<section id="lessons">
-    <h2>Instructional & Lesson Repository</h2>
-    <div class="card">
-        <h3>Pearson Edexcel Curriculum Delivery</h3>
-        <p>Comprehensive planning for Secondary School ICT, focusing on computer fundamentals.</p>
-    </div>
-    <div class="card">
-        <h3>Practical Coursework & Bootcamps</h3>
-        <p>Guiding students through hands-on ICT projects, student coding bootcamps, and digital presentation series.</p>
-    </div>
-</section>
+    <!-- CORE COMPETENCY MAPPING TO ROLE -->
+    <section id="responsibilities" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title">Core Capabilities & Value Delivered</h2>
+        <div class="grid-3">
+            <div class="benefit-card">
+                <h3 style="color: var(--primary);">1. Educational Asset Design</h3>
+                <p>Skilled at translating complex curriculum guidelines and campaign goals into child-friendly layout structures, informative booklets, and clear localized training materials.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 style="color: var(--primary);">2. Global Brand & Donor Compliance</h3>
+                <p>Dedicated to upholding strict multi-agency visual identity guidelines, ensuring layout consistency, exact typography, and proper logo attribution across all community assets.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 style="color: var(--primary);">3. Technical Resource Delivery</h3>
+                <p>Expert at standardizing print materials, building intuitive web elements, and deploying lightweight content packages across local digital pathways to guarantee broad reach[span_10](start_span)[span_10](end_span).</p>
+            </div>
+        </div>
+    </section>
 
-<section id="experience">
-    <h2>Professional Overview</h2>
-    <div class="card">
-        <h3>ICT Teaching Specialist @ Elm School, Hargeisa</h3>
-        <p>Delivering Pearson Edexcel curriculum, managing computer labs, and integrating digital learning platforms (LMS).</p>
-    </div>
-    <div class="card">
-        <h3>Project Spotlight: Digital Library & LMS Integration</h3>
-        <p>Transitioned manual records to an automated system with 89% faculty adoption and 2000+ records digitized.</p>
-    </div>
-</section>
+    <!-- HUMANITARIAN & PROGRAMME EDUCATION ALIGNMENT -->
+    <section id="agency-edge">
+        <h2 class="section-title">Programme Support Methodologies</h2>
+        <div class="grid-3">
+            <div class="benefit-card">
+                <h3>Child-Centered Asset Formatting</h3>
+                <p>Developing pedagogical visual hierarchies and using inclusive layouts to maximize engagement and comprehension for diverse young learners.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Cross-Cultural Content Sizing</h3>
+                <p>Ensuring text frameworks adapt smoothly across dual language flows (English and Somali) while strictly protecting localized visual sensibilities.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Data-Driven Resource Mapping</h3>
+                <p>Utilizing strong computing frameworks to coordinate and track media workflows, evaluate file reach metrics, and securely archive campaign history.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-    <h2>Contact & References</h2>
-    <div class="card">
-        <p><strong>Email:</strong> teacherfahadh@gmail.com</p>
-        <p><strong>Phone:</strong> +252 636 710 907</p>
-        <h3>Professional Reference</h3>
-        <p>Mr. Awale Adam (Administrator, Elm High School)</p>
-        <p>Phone: +252 634 763 674 | Email: adan76ers@yahoo.com</p>
-    </div>
-</section>
+    <!-- SOFTWARE & TOOL MASTERY -->
+    <section id="skills" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title">Technical & Design Tool Matrix</h2>
+        <div class="grid-3">
+            <div class="skill-bar">
+                <div class="skill-info"><span class="skill-title">Adobe Photoshop & Illustrator (Asset Engineering)</span><span class="skill-pct">94%</span></div>
+                <div class="progress"><div class="fill" style="width: 94%"></div></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-info"><span class="skill-title">Canva Pro / Localized Material Production</span><span class="skill-pct">98%</span></div>
+                <div class="progress"><div class="fill" style="width: 98%"></div></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-info"><span class="skill-title">HTML5 & CSS3 Frameworks (Digital Learning Portals)</span><span class="skill-pct">85%</span></div>
+                <div class="progress"><div class="fill" style="width: 85%"></div></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-info"><span class="skill-title">Network & Resource Optimization</span><span class="skill-pct">90%</span></div>
+                <div class="progress"><div class="fill" style="width: 90%"></div></div>
+            </div>
+        </div>
+    </section>
 
-<!-- Additional content blocks can be inserted here to extend the file to desired length -->
+    <!-- PROFESSIONAL EXPERIENCE TIMELINE -->
+    <section id="experience">
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>ICT Department Lead & Network Administrator</h3>
+                <div class="company">Elm High School | Hargeisa</div>
+                <div class="date">September 2018 - June 2025</div>
+                <ul>
+                    <li>Managed and coordinated instructional design assets, comprehensive student informational magazines, and visual curriculum resources.</li>
+                    <li>Ensured strict institutional branding compliance across all educational media layouts, community-facing publications, and public digital channels.</li>
+                    <li>Utilized local computer networks to maintain high-speed lab ecosystems and optimized digital asset sharing environments.</li>
+                    <li>Led interactive technology workshops and developed structured guides to improve digital literacy among students and educational staff.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>Digital Branding & Creative Consultant</h3>
+                <div class="company">Freelance Creative Services | Hargeisa</div>
+                <div class="date">2018 - Present</div>
+                <ul>
+                    <li>Designed localized educational booklets, targeted informational pamphlets, and multi-scale vectors for community awareness initiatives[span_11](start_span)[span_11](end_span).</li>
+                    <li>Maintained strict typography matrices, unified color standards, and alignment guidelines to match specific multi-stakeholder project targets[span_12](start_span)[span_12](end_span).</li>
+                    <li>Optimized distribution files to create high-impact, lightweight visual assets perfectly compressed for local networks[span_13](start_span)[span_13](end_span).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACADEMIC CREDENTIALS -->
+    <section id="education" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title">Education & Credentials</h2>
+        <div class="grid-2">
+            <div class="card" style="border-right: 4px solid var(--primary);">
+                <h3>Bachelor of Business Information Technology (BIT)</h3>
+                <p>Jomo Kenyatta University of Agriculture and Technology (JKUAT)</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Focused on systems analysis, database management, and digital infrastructure organization.</p>
+            </div>
+            <div class="card" style="border-right: 4px solid var(--primary);">
+                <h3>Certificate in E-Commerce & Web Design</h3>
+                <p>East Africa Solution</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Specialized in responsive web structural design, UI optimization, and digital distribution architecture.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO MEDIA SHOWCASE -->
+    <section id="portfolio">
+        <h2 class="section-title">Selected Materials & Media Specimen</h2>
+        
+        <div class="portfolio-filters">
+            <button class="filter-btn active" onclick="filterGallery(event, 'all')">All Material Classes</button>
+            <button class="filter-btn" onclick="filterGallery(event, 'print')">Print Production</button>
+            <button class="filter-btn" onclick="filterGallery(event, 'branding')">Brand & Information Systems</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="project" data-category="print">
+                <img src="calendar.jpg" alt="Educational Publications Grid">
+                <div class="project-content">
+                    <h3>Educational Calendars & Booklets</h3>
+                    <p>Clean, structured layout formulations built with optimized formatting and safe grid lines for clear, zero-waste community printing runs.</p>
+                    <div class="tag">Community Distribution Ready</div>
+                </div>
+            </div>
+            <div class="project" data-category="print">
+                <img src="billboard.jpg" alt="Large Scale Awareness Banners">
+                <div class="project-content">
+                    <h3>Large-Format Campaign Banners</h3>
+                    <p>High-resolution awareness and campaign signage built with precise vector anchors to ensure clear display across wide public venues.</p>
+                    <div class="tag">Large-Format Advocacy</div>
+                </div>
+            </div>
+            <div class="project" data-category="branding">
+                <img src="logo-project.jpg" alt="Visual Identity Systems">
+                <div class="project-content">
+                    <h3>Unified Visual Ecosystems</h3>
+                    <p>Comprehensive design packages defining exact color palettes, typography boundaries, and usage rules to protect corporate and donor identities.</p>
+                    <div class="tag">Brand & Donor Compliance</div>
+                </div>
+            </div>
+            <div class="project" data-category="branding">
+                <img src="social-media.jpg" alt="Educational Awareness Graphics">
+                <div class="project-content">
+                    <h3>Targeted Engagement Assets</h3>
+                    <p>High-contrast, informative visual structures optimized for rapid loading and effortless viewing across local community web streams[span_14](start_span)[span_14](end_span).</p>
+                    <div class="tag">Digital Literacy Media</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESIGN WORKFLOW & COMPLIANCE FAQ -->
+    <section id="faq" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title">Programme Support & Operations FAQ</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    How do you ensure strict compliance with institutional branding rules?
+                    <div class="faq-indicator">+</div>
+                </div>
+                <div class="faq-answer">
+                    I treat organization identity guides as rigid frameworks. I carefully map layout structures to follow specific color palettes, exact logo spacing rules, font groupings, and donor placement guidelines without deviation.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    How do you adapt assets for communities with limited digital bandwidth?
+                    <div class="faq-indicator">+</div>
+                </div>
+                <div class="faq-answer">
+                    I use advanced compression strategies and vector geometry to minimize file sizes. This ensures educational materials, infographics, and posters can be shared easily via WhatsApp or basic web links without losing clarity[span_15](start_span)[span_15](end_span).
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Can you manage multi-language asset structures (English/Somali)?
+                    <div class="faq-indicator">+</div>
+                </div>
+                <div class="faq-answer">
+                    Yes. My deep understanding of local education dynamics lets me balance text volumes seamlessly across dual-language frameworks[span_16](start_span)[span_16](end_span). I adjust typography size and white space to keep both translations highly readable.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENCES SECTION -->
+    <section id="references">
+        <h2 class="section-title">Professional Endorsements</h2>
+        <div class="grid-2" style="max-width: 800px; margin: 0 auto;">
+            <div class="ref-card">
+                <h4>Yusuf Lutta</h4>
+                <p>Principal, Elm High School</p>
+            </div>
+            <div class="ref-card">
+                <h4>Awale Adam</h4>
+                <p>Administrator, Elm High School</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" style="background: radial-gradient(circle at bottom center, var(--primary-glow), transparent 60%);">
+        <h2 class="section-title">Connect / Request Evaluation</h2>
+        
+        <div class="contact-wrapper">
+            <div class="form-card">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message successfully sent.');">
+                    <div class="form-group">
+                        <label for="name">Your Name / Department</label>
+                        <input type="text" id="name" class="form-control" placeholder="Programme Operations Director" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Official Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="name@savethechildren.org" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Task Outline / Objective Evaluation</label>
+                        <textarea id="message" class="form-control" placeholder="Provide details on project scope, educational design needs, or upcoming advocacy initiatives..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin: 0; border: none; font-family: var(--font-display);">Send Secure Inquiry</button>
+                </form>
+            </div>
+
+            <div class="contact-details-side" style="padding-top: 15px;">
+                <p><span class="contact-label">Hotline:</span> +252 63 6710907[span_17](start_span)[span_17](end_span)</p>
+                <p><span class="contact-label">Direct Mail:</span> teacherfahadh@gmail.com[span_18](start_span)[span_18](end_span)</p>
+                <p><span class="contact-label">Base:</span> Hargeisa, Somaliland[span_19](start_span)[span_19](end_span)</p>
+                <br>
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
+                    Ready to bring technical agility, precise educational asset formatting, and strict brand alignment to your field operations team. Let's maximize impact together.
+                </p>
+                <a href="mailto:teacherfahadh@gmail.com" class="btn btn-outline" style="margin-left: 0; margin-top: 15px;">
+                    Direct Programme Engagement
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2026 Jamal Fahadh Mohamed. Structured for Precision, Educational Impact, and Time-Bound Target Delivery.
+    </footer>
+
+    <!-- INTERACTIVE GALLERY & ACCORDION SCRIPTS -->
+    <script>
+        // Portfolio Sorting Module
+        function filterGallery(e, category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            e.currentTarget.classList.add('active');
+
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                if (category === 'all' || project.getAttribute('data-category') === category) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+
+        // Accordion Component Module
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const indicator = element.querySelector('.faq-indicator');
+            
+            if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                answer.style.maxHeight = '0px';
+                answer.style.padding = '0px 30px';
+                indicator.textContent = '+';
+                element.parentElement.style.borderColor = 'var(--card-border)';
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 40 + 'px';
+                answer.style.padding = '20px 30px 30px 30px';
+                indicator.textContent = '−';
+                element.parentElement.style.borderColor = 'var(--primary)';
+            }
+        }
+    </script>
 </body>
 </html>
