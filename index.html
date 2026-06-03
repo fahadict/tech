@@ -52,8 +52,8 @@
             padding: 80px 24px;
             background: radial-gradient(circle at top right, var(--secondary-glow), transparent 40%),
                         radial-gradient(circle at bottom left, var(--primary-glow), transparent 40%),
-                        linear-gradient(rgba(9, 13, 22, 0.8), rgba(9, 13, 22, 0.98)), 
-                        url("banner.jpg") center/cover no-repeat;
+                        linear-gradient(rgba(9, 13, 22, 0.85), rgba(9, 13, 22, 0.98)), 
+                        id("banner-canvas"); /* Dynamically generated fallback */
             position: relative;
             overflow: hidden;
         }
@@ -77,6 +77,7 @@
             border: 4px solid var(--primary);
             box-shadow: 0 20px 40px rgba(0, 180, 216, 0.25);
             transition: var(--transition);
+            background: #1e293b;
         }
 
         .profile-wrapper:hover .profile {
@@ -422,6 +423,7 @@
             height: 240px;
             object-fit: cover;
             border-bottom: 1px solid var(--card-border);
+            background: #111827;
         }
 
         .project-content {
@@ -619,6 +621,11 @@
             letter-spacing: 0.02em;
         }
 
+        /* Hidden helper canvas style */
+        .ghost-canvas {
+            display: none;
+        }
+
         @media (max-width: 992px) {
             .contact-wrapper { grid-template-columns: 1fr; gap: 50px; }
             section { padding: 80px 6%; }
@@ -634,19 +641,19 @@
 <body>
 
     <!-- HERO SECTION -->
-    <header>
+    <header id="hero-header">
         <div class="hero">
             <div class="profile-wrapper">
-                <img src="profile.jpg" alt="Jamal Fahadh Mohamed" class="profile">
+                <img id="img-profile" alt="Jamal Fahadh Mohamed" class="profile">
                 <div class="status-badge">Available in Hargeisa</div>
             </div>
             <h1><span class="hero-title">Jamal Fahadh Mohamed</span></h1>
             <h2>Information & Communication Technology (ICT) Teacher</h2>
             <p>
-                Highly motivated and dedicated ICT Teacher specializing in delivering engaging, student-centered lessons that develop digital literacy and 21st-century technology skills. Expert in Pearson Edexcel IGCSE & A-Level instruction, tech-lab administration, and pioneering school-wide digital transformations.
+                Highly motivated and dedicated ICT Teacher specializing in delivering engaging, student-centered lessons that develop digital literacy and 21st-century technology skills. Expert in Pearson Edexcel IGCSE & A-Level instruction, tech-lab administration, and pioneering school-wide digital transformations[span_0](start_span)[span_0](end_span).
             </p>
             <div class="buttons">
-                <a href="#" class="btn btn-primary">Download Teaching CV</a>
+                <a href="Jamal_Fahad_CV_ICT_Teacher.pdf" download="Jamal_Fahad_CV_ICT_Teacher.pdf" class="btn btn-primary">Download Teaching CV</a>
                 <a href="#portfolio" class="btn btn-outline">Explore Portals & Learning Tools</a>
             </div>
         </div>
@@ -659,15 +666,15 @@
             <div class="card">
                 <h3>Empowering Learners for a Digital World</h3>
                 <p>
-                    Based in Hargeisa, I hold a Bachelor of Business Information Technology (BIT) with Second Class Upper Division Honors from JKUAT. Over a multi-year career, I have specialized in blending robust academic theories with technical laboratory mastery. From teaching basic programming logic, web design, and hardware troubleshooting to implementing sophisticated cloud-managed learning systems, my mission is to drive operational and scholastic excellence.
+                    Based in Hargeisa, I hold a Bachelor of Business Information Technology (BIT) with Second Class Upper Division Honors from JKUAT[span_1](start_span)[span_1](end_span). Over a multi-year career, I have specialized in blending robust academic theories with technical laboratory mastery[span_2](start_span)[span_2](end_span). From teaching basic programming logic, web design, and hardware troubleshooting to implementing sophisticated cloud-managed learning systems, my mission is to drive operational and scholastic excellence[span_3](start_span)[span_3](end_span).
                 </p>
             </div>
             <div class="card">
                 <h3>Contact & Coordinates</h3>
-                <p style="margin-bottom: 16px;"><span class="contact-label">Location:</span> Idacada, Hargeisa, Somaliland</p>
-                <p style="margin-bottom: 16px;"><span class="contact-label">Mobile:</span> +252 63 6710907</p>
-                <p style="margin-bottom: 16px;"><span class="contact-label">Email:</span> teacherfahadh@gmail.com</p>
-                <p><span class="contact-label">Digital Hub:</span> <a href="https://fahadict.github.io/tech" target="_blank">fahadict.github.io/tech</a></p>
+                <p style="margin-bottom: 16px;"><span class="contact-label">Location:</span> Idacada, Hargeisa, Somaliland[span_4](start_span)[span_4](end_span)</p>
+                <p style="margin-bottom: 16px;"><span class="contact-label">Mobile:</span> +252 63 6710907[span_5](start_span)[span_5](end_span)</p>
+                <p style="margin-bottom: 16px;"><span class="contact-label">Email:</span> teacherfahadh@gmail.com[span_6](start_span)[span_6](end_span)</p>
+                <p><span class="contact-label">Digital Hub:</span> <a href="https://fahadict.github.io/tech" target="_blank">fahadict.github.io/tech</a>[span_7](start_span)[span_7](end_span)</p>
             </div>
         </div>
     </section>
@@ -678,15 +685,15 @@
         <div class="grid-3">
             <div class="benefit-card">
                 <h3 style="color: var(--primary);">1. Curricular Excellence</h3>
-                <p>Expertly aligned lesson plans and assessments mapped directly to the rigorous requirements of Pearson Edexcel IGCSE and A-Level computer science pathways.</p>
+                <p>Expertly aligned lesson plans and assessments mapped directly to the rigorous requirements of Pearson Edexcel IGCSE and A-Level computer science pathways[span_8](start_span)[span_8](end_span).</p>
             </div>
             <div class="benefit-card">
                 <h3 style="color: var(--primary);">2. Differentiated Learning</h3>
-                <p>Developing customizable learning structures designed to target, engage, and elevate mixed-ability student bodies within highly technical projects.</p>
+                <p>Developing customizable learning structures designed to target, engage, and elevate mixed-ability student bodies within highly technical projects[span_9](start_span)[span_9](end_span).</p>
             </div>
             <div class="benefit-card">
                 <h3 style="color: var(--primary);">3. Infrastructure & Lab Control</h3>
-                <p>Comprehensive computer lab upkeep, malware remediation, and local network setups ensuring zero downtime during high-stakes practical exams.</p>
+                <p>Comprehensive computer lab upkeep, malware remediation, and local network setups ensuring zero downtime during high-stakes practical exams[span_10](start_span)[span_10](end_span).</p>
             </div>
         </div>
     </section>
@@ -697,15 +704,15 @@
         <div class="grid-3">
             <div class="benefit-card">
                 <h3>Project-Based Tech Instruction</h3>
-                <p>Guiding students to develop practical solutions using spreadsheets, databases, and structural coding to solve real-world problems.</p>
+                <p>Guiding students to develop practical solutions using spreadsheets, databases, and structural coding to solve real-world problems[span_11](start_span)[span_11](end_span).</p>
             </div>
             <div class="benefit-card">
                 <h3>Modern EdTech Integration</h3>
-                <p>Configuring and deploying digital learning spaces, cloud ecosystems, and learning management systems to boost remote engagement.</p>
+                <p>Configuring and deploying digital learning spaces, cloud ecosystems, and learning management systems to boost remote engagement[span_12](start_span)[span_12](end_span).</p>
             </div>
             <div class="benefit-card">
                 <h3>Clubs & Tech Advocacy</h3>
-                <p>Fostering an innovative school environment through co-curricular initiatives, including student coding clubs and internal technical workshops.</p>
+                <p>Fostering an innovative school environment through co-curricular initiatives, including student coding clubs and internal technical workshops[span_13](start_span)[span_13](end_span).</p>
             </div>
         </div>
     </section>
@@ -740,30 +747,30 @@
             <div class="timeline-item">
                 <h3>Information and Communication Technology (ICT) Teacher</h3>
                 <div class="company">Elm High School | Hargeisa, Somaliland</div>
-                <div class="date">September 2018 - June 2025</div>
+                <div class="date">September 2018 - June 2025[span_14](start_span)[span_14](end_span)</div>
                 <ul>
-                    <li>Delivered high-quality instruction for the Pearson Edexcel IGCSE and A-Level ICT/IT syllabus, significantly driving up national exam metrics.</li>
-                    <li>Designed core technical schemes of work, comprehensive lesson architectures, and customized code blocks for practical testing.</li>
-                    <li>Maintained and administered the school computer laboratory system, protecting standard configurations against malware threats.</li>
-                    <li>Pioneered institutional digital modernization strategies, driving cloud workflows and mentoring teaching peers in modern EdTech setups.</li>
+                    <li>Delivered high-quality instruction for the Pearson Edexcel IGCSE and A-Level ICT/IT syllabus, significantly driving up national exam metrics[span_15](start_span)[span_15](end_span).</li>
+                    <li>Designed core technical schemes of work, comprehensive lesson architectures, and customized code blocks for practical testing[span_16](start_span)[span_16](end_span).</li>
+                    <li>Maintained and administered the school computer laboratory system, protecting standard configurations against malware threats[span_17](start_span)[span_17](end_span).</li>
+                    <li>Pioneered institutional digital modernization strategies, driving cloud workflows and mentoring teaching peers in modern EdTech setups[span_18](start_span)[span_18](end_span).</li>
                 </ul>
             </div>
             <div class="timeline-item">
                 <h3>Library & Learning Resource Supporter</h3>
                 <div class="company">Elm High School | Hargeisa, Somaliland</div>
-                <div class="date">September 2021 - January 2023</div>
+                <div class="date">September 2021 - January 2023[span_19](start_span)[span_19](end_span)</div>
                 <ul>
-                    <li>Spearheaded the technical integration and deployment of a modern automated Library Management System, hitting an 89% implementation milestone.</li>
-                    <li>Assisted student researchers and local educators with indexing physical books and navigating online digital archives.</li>
+                    <li>Spearheaded the technical integration and deployment of a modern automated Library Management System, hitting an 89% implementation milestone[span_20](start_span)[span_20](end_span).</li>
+                    <li>Assisted student researchers and local educators with indexing physical books and navigating online digital archives[span_21](start_span)[span_21](end_span).</li>
                 </ul>
             </div>
             <div class="timeline-item">
                 <h3>Computer Studies Teacher</h3>
                 <div class="company">Turkana School of Technology | Kenya</div>
-                <div class="date">September 2017 - December 2017</div>
+                <div class="date">September 2017 - December 2017[span_22](start_span)[span_22](end_span)</div>
                 <ul>
-                    <li>Constructed, launched, and managed the institution's official public portal and data website framework.</li>
-                    <li>Organized dynamic interactive multimedia lectures and structured individual lab configurations using Google Classroom channels.</li>
+                    <li>Constructed, launched, and managed the institution's official public portal and data website framework[span_23](start_span)[span_23](end_span).</li>
+                    <li>Organized dynamic interactive multimedia lectures and structured individual lab configurations using Google Classroom channels[span_24](start_span)[span_24](end_span).</li>
                 </ul>
             </div>
         </div>
@@ -775,13 +782,13 @@
         <div class="grid-2">
             <div class="card" style="border-right: 4px solid var(--primary);">
                 <h3>Bachelor of Business Information Technology (BIT)</h3>
-                <p>Jomo Kenyatta University of Agriculture and Technology (JKUAT)</p>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Attained: Second Class Honors (Upper Division). Core fields in systems design, database networks, and enterprise structures.</p>
+                <p>Jomo Kenyatta University of Agriculture and Technology (JKUAT)[span_25](start_span)[span_25](end_span)</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Attained: Second Class Honors (Upper Division). Core fields in systems design, database networks, and enterprise structures[span_26](start_span)[span_26](end_span).</p>
             </div>
             <div class="card" style="border-right: 4px solid var(--primary);">
                 <h3>Certificate in E-Commerce & Web Design</h3>
-                <p>East Africa Solution</p>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Graduated with Distinction. Focused on front-end structures, responsive UI design, and entrepreneurship ecosystems.</p>
+                <p>East Africa Solution[span_27](start_span)[span_27](end_span)</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Graduated with Distinction. Focused on front-end structures, responsive UI design, and entrepreneurship ecosystems[span_28](start_span)[span_28](end_span).</p>
             </div>
         </div>
     </section>
@@ -798,26 +805,26 @@
 
         <div class="portfolio-grid">
             <div class="project" data-category="web">
-                <img src="portal-project.jpg" alt="School Portals">
+                <img id="img-portal" alt="School Portals">
                 <div class="project-content">
                     <h3>School Portals & Web Hubs</h3>
-                    <p>Responsive, lightning-fast educational websites built with secure front-end architectures allowing students to easily access grades and reference texts.</p>
+                    <p>Responsive, lightning-fast educational websites built with secure front-end architectures allowing students to easily access grades and reference texts[span_29](start_span)[span_29](end_span).</p>
                     <div class="tag">System Infrastructure</div>
                 </div>
             </div>
             <div class="project" data-category="web">
-                <img src="lms-project.jpg" alt="LMS Architecture">
+                <img id="img-lms" alt="LMS Architecture">
                 <div class="project-content">
                     <h3>Library Management Systems</h3>
-                    <p>Database-driven automated inventory systems engineered to track physical books and securely log user data.</p>
+                    <p>Database-driven automated inventory systems engineered to track physical books and securely log user data[span_30](start_span)[span_30](end_span).</p>
                     <div class="tag">Database Design</div>
                 </div>
             </div>
             <div class="project" data-category="materials">
-                <img src="sheets-project.jpg" alt="Interactive Revision Assets">
+                <img id="img-sheets" alt="Interactive Revision Assets">
                 <div class="project-content">
                     <h3>IGCSE & A-Level Resource Packages</h3>
-                    <p>Step-by-step practical guides, advanced spreadsheet mock exams, and code banks optimized for Pearson Edexcel preparations.</p>
+                    <p>Step-by-step practical guides, advanced spreadsheet mock exams, and code banks optimized for Pearson Edexcel preparations[span_31](start_span)[span_31](end_span).</p>
                     <div class="tag">Curriculum Material</div>
                 </div>
             </div>
@@ -834,7 +841,7 @@
                     <div class="faq-indicator">+</div>
                 </div>
                 <div class="faq-answer">
-                    I rely heavily on past-paper data, custom mock tracking tables, and hands-on lab training. Breaking down technical marking guides for spreadsheets, databases, and programming helps students clearly understand exactly what examiners look for.
+                    I rely heavily on past-paper data, custom mock tracking tables, and hands-on lab training[span_32](start_span)[span_32](end_span). Breaking down technical marking guides for spreadsheets, databases, and programming helps students clearly understand exactly what examiners look for[span_33](start_span)[span_33](end_span).
                 </div>
             </div>
             <div class="faq-item">
@@ -843,7 +850,7 @@
                     <div class="faq-indicator">+</div>
                 </div>
                 <div class="faq-answer">
-                    I implement differentiated learning paths. While less experienced students work through fundamental building blocks with tailored debugging guides, advanced programmers tackle complex projects or run mock tech systems to keep everyone growing.
+                    I implement differentiated learning paths[span_34](start_span)[span_34](end_span). While less experienced students work through fundamental building blocks with tailored debugging guides, advanced programmers tackle complex projects or run mock tech systems to keep everyone growing[span_35](start_span)[span_35](end_span).
                 </div>
             </div>
         </div>
@@ -855,13 +862,13 @@
         <div class="grid-2" style="max-width: 800px; margin: 0 auto;">
             <div class="ref-card">
                 <h4>Mr. Yusuf Lutta</h4>
-                <p>Principal, Elm High School</p>
-                <p style="color: var(--primary); font-size: 0.85rem; margin-top: 5px;">+252 63 323426 | lutta72osinga@gmail.com</p>
+                <p>Principal, Elm High School[span_36](start_span)[span_36](end_span)</p>
+                <p style="color: var(--primary); font-size: 0.85rem; margin-top: 5px;">+252 63 323426 | lutta72osinga@gmail.com[span_37](start_span)[span_37](end_span)</p>
             </div>
             <div class="ref-card">
                 <h4>Mr. Awale Adam</h4>
-                <p>Administrator, Elm High School</p>
-                <p style="color: var(--primary); font-size: 0.85rem; margin-top: 5px;">+252 63 4763674 | adan76ers@yahoo.com</p>
+                <p>Administrator, Elm High School[span_38](start_span)[span_38](end_span)</p>
+                <p style="color: var(--primary); font-size: 0.85rem; margin-top: 5px;">+252 63 4763674 | adan76ers@yahoo.com[span_39](start_span)[span_39](end_span)</p>
             </div>
         </div>
     </section>
@@ -890,12 +897,12 @@
             </div>
 
             <div class="contact-details-side" style="padding-top: 15px;">
-                <p><span class="contact-label">Hotline:</span> +252 63 6710907</p>
-                <p><span class="contact-label">Direct Mail:</span> teacherfahadh@gmail.com</p>
-                <p><span class="contact-label">Base:</span> Hargeisa, Somaliland</p>
+                <p><span class="contact-label">Hotline:</span> +252 63 6710907[span_40](start_span)[span_40](end_span)</p>
+                <p><span class="contact-label">Direct Mail:</span> teacherfahadh@gmail.com[span_41](start_span)[span_41](end_span)</p>
+                <p><span class="contact-label">Base:</span> Hargeisa, Somaliland[span_42](start_span)[span_42](end_span)</p>
                 <br>
                 <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
-                    Ready to bring academic structure, solid computer science knowledge, and lab administration expertise to your school campus. Let's build the next generation of tech leaders together.
+                    Ready to bring academic structure, solid computer science knowledge, and lab administration expertise to your school campus[span_43](start_span)[span_43](end_span). Let's build the next generation of tech leaders together.
                 </p>
                 <a href="mailto:teacherfahadh@gmail.com" class="btn btn-outline" style="margin-left: 0; margin-top: 15px;">
                     Direct Academic Engagement
@@ -909,8 +916,153 @@
         &copy; 2026 Jamal Fahadh Mohamed. Developed for Scholastic Impact and Technical Innovation.
     </footer>
 
-    <!-- INTERACTIVE GALLERY & ACCORDION SCRIPTS -->
+    <!-- GENERATIVE GRAPHICS SYSTEM ENGINE SCRIPT -->
     <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Helper function to create an on-the-fly canvas element
+            function makeGraphic(w, h, renderCallback) {
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d');
+                renderCallback(ctx, w, h);
+                return canvas.toDataURL('image/jpeg', 0.85);
+            }
+
+            // 1. Generate Avatar / Profile image Placeholder
+            const profileDataUrl = makeGraphic(300, 300, (ctx, w, h) => {
+                ctx.fillStyle = '#131c2e';
+                ctx.fillRect(0, 0, w, h);
+                // Grid matrix lines accent background
+                ctx.strokeStyle = 'rgba(0, 180, 216, 0.15)';
+                ctx.lineWidth = 1;
+                for(let i=0; i<w; i+=20) {
+                    ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, h); ctx.stroke();
+                    ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(w, i); ctx.stroke();
+                }
+                // Draw Icon Silhouette representing user/educator
+                ctx.fillStyle = '#00B4D8';
+                ctx.beginPath();
+                ctx.arc(w/2, h/2 - 20, 45, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(w/2, h/2 + 85, 75, Math.PI, 0);
+                ctx.fill();
+                // Label text
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 16px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText("JAMAL F.M.", w/2, h - 30);
+            });
+            document.getElementById('img-profile').src = profileDataUrl;
+
+            // 2. Generate Hero Banner dynamic abstraction background
+            const bannerDataUrl = makeGraphic(1920, 1080, (ctx, w, h) => {
+                let grad = ctx.createLinearGradient(0, 0, w, h);
+                grad.addColorStop(0, '#04060b');
+                grad.addColorStop(0.5, '#090d16');
+                grad.addColorStop(1, '#020306');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, w, h);
+                
+                // Add abstract binary matrix rain effect
+                ctx.fillStyle = 'rgba(6, 214, 160, 0.04)';
+                ctx.font = '14px monospace';
+                for (let x = 0; x < w; x += 40) {
+                    for(let y = 0; y < h; y += 40) {
+                        if(Math.random() > 0.4) {
+                            ctx.fillText(Math.floor(Math.random()*2).toString(), x, y);
+                        }
+                    }
+                }
+            });
+            document.getElementById('hero-header').style.backgroundImage = `radial-gradient(circle at top right, var(--secondary-glow), transparent 40%), radial-gradient(circle at bottom left, var(--primary-glow), transparent 40%), linear-gradient(rgba(9, 13, 22, 0.85), rgba(9, 13, 22, 0.98)), url(${bannerDataUrl})`;
+
+            // 3. Generate Portfolio Layout 1: Web Portals Mock
+            const portalDataUrl = makeGraphic(800, 600, (ctx, w, h) => {
+                ctx.fillStyle = '#0f172a';
+                ctx.fillRect(0, 0, w, h);
+                // Top bar of browser mockup
+                ctx.fillStyle = '#1e293b';
+                ctx.fillRect(0, 0, w, 45);
+                ctx.fillStyle = '#ef4444'; ctx.beginPath(); ctx.arc(25, 22, 6, 0, Math.PI*2); ctx.fill();
+                ctx.fillStyle = '#eab308'; ctx.beginPath(); ctx.arc(45, 22, 6, 0, Math.PI*2); ctx.fill();
+                ctx.fillStyle = '#22c55e'; ctx.beginPath(); ctx.arc(65, 22, 6, 0, Math.PI*2); ctx.fill();
+                // Content Layout abstraction
+                ctx.fillStyle = 'rgba(0, 180, 216, 0.1)';
+                ctx.fillRect(40, 80, w - 80, 140); // Banner
+                ctx.fillStyle = '#00B4D8';
+                ctx.font = 'bold 24px Helvetica';
+                ctx.fillText("ELM HIGH SCHOOL PORTAL V4.0", 70, 160);
+                // Grid blocks block out
+                ctx.fillStyle = '#1e293b';
+                ctx.fillRect(40, 260, 220, 280);
+                ctx.fillRect(290, 260, 470, 280);
+                ctx.fillStyle = 'rgba(255,255,255,0.4)';
+                ctx.font = '14px sans-serif';
+                ctx.fillText("[Student Grades Database Matrix]", 320, 310);
+            });
+            document.getElementById('img-portal').src = portalDataUrl;
+
+            // 4. Generate Portfolio Layout 2: LMS System Database Mock
+            const lmsDataUrl = makeGraphic(800, 600, (ctx, w, h) => {
+                ctx.fillStyle = '#0b0f19';
+                ctx.fillRect(0, 0, w, h);
+                // Draw graph visualizer mockup
+                ctx.strokeStyle = '#06D6A0';
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(50, 450);
+                ctx.lineTo(200, 320);
+                ctx.lineTo(400, 380);
+                ctx.lineTo(600, 180);
+                ctx.lineTo(750, 120);
+                ctx.stroke();
+                // Grid indicators
+                ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+                ctx.lineWidth = 1;
+                for(let y=100; y<500; y+=80) {
+                    ctx.beginPath(); ctx.moveTo(50, y); ctx.lineTo(750, y); ctx.stroke();
+                }
+                // System analytics tracking badges
+                ctx.fillStyle = '#131c2e';
+                ctx.fillRect(50, 40, 320, 100);
+                ctx.fillStyle = '#06D6A0';
+                ctx.font = 'bold 36px Helvetica';
+                ctx.fillText("89% IMPLEMENTED", 70, 100);
+            });
+            document.getElementById('img-lms').src = lmsDataUrl;
+
+            // 5. Generate Portfolio Layout 3: Spreadsheet/Curriculum Package Mock
+            const sheetsDataUrl = makeGraphic(800, 600, (ctx, w, h) => {
+                ctx.fillStyle = '#111827';
+                ctx.fillRect(0, 0, w, h);
+                // Create a spreadsheet mock matrix layout
+                ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+                ctx.lineWidth = 1;
+                ctx.fillStyle = '#1f2937';
+                ctx.fillRect(50, 80, 700, 40); // Excel columns layout header
+                
+                for(let x=50; x<=750; x+=140) {
+                    ctx.beginPath(); ctx.moveTo(x, 80); ctx.lineTo(x, 500); ctx.stroke();
+                }
+                for(let y=80; y<=500; y+=40) {
+                    ctx.beginPath(); ctx.moveTo(50, y); ctx.lineTo(750, y); ctx.stroke();
+                }
+                ctx.fillStyle = '#00B4D8';
+                ctx.font = 'bold 13px sans-serif';
+                ctx.fillText("PEARSON EDEXCEL ASSET REVISION MOCK INDEX", 70, 50);
+                
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '12px monospace';
+                ctx.fillText("=SUM(B2:B20)", 75, 145);
+                ctx.fillText("VLOOKUP(A1...)", 215, 185);
+                ctx.fillText("INDEX/MATCH", 355, 225);
+            });
+            document.getElementById('img-sheets').src = sheetsDataUrl;
+        });
+
+        // Portfolio Sorting Module
         function filterGallery(e, category) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
@@ -926,6 +1078,7 @@
             });
         }
 
+        // Accordion Component Module
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
             const indicator = element.querySelector('.faq-indicator');
