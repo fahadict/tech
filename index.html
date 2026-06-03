@@ -10,10 +10,10 @@
 <meta name="keywords" content="ICT Teacher Somaliland, Pearson Edexcel ICT, Digital Skills Trainer, Web Design Trainer, Hargeisa Teacher, ICT Education">
 
 <meta property="og:title" content="Jamal Fahad - ICT Teacher Portfolio">
-<meta property="og:image" content="profile.jpg">
+<meta property="og:image" content="10401.jpg">
 <meta property="og:description" content="ICT Teacher and Digital Skills Trainer specializing in Pearson Edexcel ICT, web design, and digital literacy.">
 
-<link href="https://fonts.googleapis.com/css2=family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -430,3 +430,375 @@ footer{
     --card:#1e293b;
     --text:#f1f5f9;
     --muted:#94a3b8;
+    --border:#334155;
+}
+
+.dark header {
+    background: #0b1120;
+}
+
+/* RESPONSIVE DESIGN BREAKPOINTS */
+@media (max-width: 968px) {
+    .hero, .two-col, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .hero {
+        text-align: center;
+        padding: 40px 20px;
+    }
+    img.profile-avatar {
+        max-width: 260px;
+        height: 260px;
+    }
+    .metrics-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    section {
+        padding: 50px 20px;
+    }
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div><b>Jamal Fahad</b></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#portfolio">Syllabus & Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="toggle" onclick="toggleDark()">
+        <i class="fas fa-moon" id="toggleIcon"></i>
+    </button>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <span class="profile-headline">ICT Teacher | Pearson Edexcel Specialist | Digital Skills Trainer</span>
+        <h1>Academic Achievement & <span>Digital Transformation</span></h1>
+
+        <p>
+            Jamal Fahad is a professional ICT educator and Digital Skills Trainer based in Hargeisa, Somaliland. He specializes in Pearson Edexcel ICT curricula, web authoring layout architecture, vector graphic configurations, advanced database tracking models, and systematic hardware laboratory execution.
+        </p>
+
+        <a class="btn btn-primary" href="cv.pdf" download><i class="fas fa-download"></i> Download CV</a>
+        <a class="btn btn-secondary" href="#contact"><i class="fas fa-paper-plane"></i> Book Interview</a>
+    </div>
+
+    <div class="img-container">
+        <img src="10401.jpg" class="profile-avatar" onerror="this.onerror=function(){this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600'};this.src='1780442590761.jpeg';" alt="Jamal Fahad Profile Headshot" />
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Profile</h2>
+    
+    <div class="two-col">
+        <div class="card">
+            <h3>Instructional Framework</h3>
+            <p>With an established track record as an ICT Teacher and Digital Skills Trainer, my classroom execution focuses on delivering practical, job-ready capabilities. I prepare secondary students and professionals to navigate complex computational challenges while confidently meeting international testing metrics.</p>
+            <p>My methodology emphasizes active computing loops—enabling students to build web infrastructure, parse complex datasets, design graphic branding arrays, and troubleshoot hardware networks natively rather than memorizing static theory maps.</p>
+        </div>
+
+        <div>
+            <div class="card" style="height: 100%; box-sizing: border-box;">
+                <h3>Specialized Training Vectors</h3>
+                <div class="skills-container">
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-meta"><span>Pearson Edexcel ICT Curriculum</span><span>100%</span></div>
+                        <div class="skill-track"><div class="skill-fill" style="width: 100%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-meta"><span>Web Design & Graphic Layouts</span><span>95%</span></div>
+                        <div class="skill-track"><div class="skill-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-meta"><span>Microsoft Office & Google Workspace</span><span>95%</span></div>
+                        <div class="skill-track"><div class="skill-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-meta"><span>Digital Literacy & Tech Integration</span><span>90%</span></div>
+                        <div class="skill-track"><div class="skill-fill" style="width: 90%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2>Experience Ledger</h2>
+
+    <div class="metrics-row">
+        <div class="metric-card"><h3>7+ Yrs</h3><p>Teaching Pipeline</p></div>
+        <div class="metric-card"><h3>A*–B</h3><p>Edexcel Target Band</p></div>
+        <div class="metric-card"><h3>100%</h3><p>Lab Management</p></div>
+        <div class="metric-card"><h3>Upper</h3><p>Honors Degree</p></div>
+    </div>
+
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline;">
+            <h3>ICT Teaching & Training Specialist</h3>
+            <span style="font-weight: 700; color: var(--accent); font-size: 0.9rem;">7+ YEARS ACTIVE TRACK</span>
+        </div>
+        <p style="margin: 0 0 15px 0; font-weight: 600; color: var(--muted);">Elm High School & Training Centers — Hargeisa</p>
+        <p style="font-size: 0.92rem; color: var(--accent); font-weight: 600; margin-bottom: 10px;">Target Student Base: Secondary Learners (Ages 13-18) & Professional Adults</p>
+        
+        <ul style="margin: 0; padding-left: 20px; color: var(--text);">
+            <li style="margin-bottom: 8px;">Deliver structured Pearson Edexcel IGCSE and International A-Level ICT tracks, maximizing cross-cohort performance outcomes.</li>
+            <li style="margin-bottom: 8px;">Direct technical development bootcamps covering HTML/CSS web authoring, vector graphic systems, and advanced spreadsheet modeling.</li>
+            <li style="margin-bottom: 8px;">Lead institutional digital literacy initiatives, configuring hardware diagnostics and managing structural computer laboratory up-time.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Syllabus & Portfolio Systems</h2>
+    
+    <div class="card" style="margin-bottom: 40px;">
+        <h3>Academic Records</h3>
+        <p style="margin-bottom: 5px;"><b>Bachelor of Business Information Technology (BBIT)</b> — JJKUAT</p>
+        <p style="color: var(--muted); margin: 0 0 15px 0;">Graduated with Second Class Honors (Upper Division).</p>
+        <p style="margin-bottom: 5px;"><b>Certificate in E-commerce, Web Design & Entrepreneurship</b></p>
+        <p style="color: var(--muted); margin: 0;">Verified specialized professional application matrix.</p>
+    </div>
+
+    <div class="filter-bar">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="syllabusSearch" placeholder="Search chapters, unit titles, keywords..." oninput="evaluateCatalog()">
+        </div>
+        <div class="tab-cluster">
+            <button class="tab-btn active" onclick="filterCategory('all', this)">All Specs</button>
+            <button class="tab-btn" onclick="filterCategory('theory', this)">Theory Blocks</button>
+            <button class="tab-btn" onclick="filterCategory('practical', this)">Practical Studios</button>
+        </div>
+    </div>
+
+    <div class="grid" id="catalogGrid">
+        <div class="card catalog-card" data-cat="theory" data-tags="digital devices hardware computer software storage memory system architecture peripherals chapter 1 2 3">
+            <div>
+                <div class="catalog-banner" style="background: #ef4444;">Specification Unit 1</div>
+                <h3>Digital Devices Framework</h3>
+                <p style="color: var(--muted); font-size: 0.92rem;">Core operational layout covering computer architectures, memory storage profiles, operating system structures, and peripheral categories.</p>
+                <div class="chip-cloud">
+                    <span class="chip">Ch 1: Hardware</span><span class="chip">Ch 2: Software</span><span class="chip">Ch 3: Memory</span>
+                </div>
+            </div>
+            <button class="btn btn-secondary" style="margin-top:20px; width:100%; justify-content:center;" onclick="deployModal('unit1')"><i class="fas fa-folder-tree"></i> Load Operational Map</button>
+        </div>
+
+        <div class="card catalog-card" data-cat="theory" data-tags="connectivity networks data transmission packets protocols network topologies communication chapter 4 5">
+            <div>
+                <div class="catalog-banner" style="background: #f59e0b;">Specification Unit 2</div>
+                <h3>Connectivity & Topologies</h3>
+                <p style="color: var(--muted); font-size: 0.92rem;">Analysis of network setup path systems, packet routing parameters, structural data transfer protocols, and encryption maps.</p>
+                <div class="chip-cloud">
+                    <span class="chip">Ch 4: Comms</span><span class="chip">Ch 5: Network Loops</span>
+                </div>
+            </div>
+            <button class="btn btn-secondary" style="margin-top:20px; width:100%; justify-content:center;" onclick="deployModal('unit2')"><i class="fas fa-folder-tree"></i> Load Operational Map</button>
+        </div>
+
+        <div class="card catalog-card" data-cat="practical" data-tags="web authoring html css website layout styling student project graphics chapter 18 16">
+            <div>
+                <div class="catalog-banner" style="background: #a855f7;">Specification Unit 6 (Web)</div>
+                <h3>Web Authoring & Student Work</h3>
+                <p style="color: var(--muted); font-size: 0.92rem;">Applied programming studio showcasing HTML5 semantic tag layouts, CSS style trees, and projects built under my training guidelines.</p>
+                <div class="chip-cloud">
+                    <span class="chip">Ch 18: Web Architecture</span><span class="chip">Ch 16: Graphics</span>
+                </div>
+            </div>
+            <button class="btn btn-secondary" style="margin-top:20px; width:100%; justify-content:center;" onclick="deployModal('web')"><i class="fas fa-folder-tree"></i> Load Operational Map</button>
+        </div>
+
+        <div class="card catalog-card" data-cat="practical" data-tags="spreadsheets formulas functions data modeling vlookup analysis excel training sheet chapter 14">
+            <div>
+                <div class="catalog-banner" style="background: #10b981;">Specification Unit 6 (Data)</div>
+                <h3>Spreadsheet Logic Systems</h3>
+                <p style="color: var(--muted); font-size: 0.92rem;">Advanced automation tracking covering cascading nested formulas, absolute cell coordinate coordinates, and custom database processing sheets.</p>
+                <div class="chip-cloud">
+                    <span class="chip">Ch 14: Data Models</span>
+                </div>
+            </div>
+            <button class="btn btn-secondary" style="margin-top:20px; width:100%; justify-content:center;" onclick="deployModal('spreadsheets')"><i class="fas fa-folder-tree"></i> Load Operational Map</button>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Secure Connection Gate</h2>
+    
+    <div class="contact-grid">
+        <div>
+            <div class="contact-link-card">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4 style="margin:0;">Email Channel</h4>
+                    <a href="mailto:teacherfahadh@gmail.com" style="color:var(--text); text-decoration:none; font-size:0.95rem;">teacherfahadh@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-link-card">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h4 style="margin:0;">Mobile Direct</h4>
+                    <a href="tel:+252636710907" style="color:var(--text); text-decoration:none; font-size:0.95rem;">+252 636 710 907</a>
+                </div>
+            </div>
+            <div class="contact-link-card">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <h4 style="margin:0;">WhatsApp Routing</h4>
+                    <a href="https://wa.me/252636710907" target="_blank" style="color:var(--text); text-decoration:none; font-size:0.95rem;">Launch Live Chat Engine</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="card" style="background: var(--primary); color: white; border: none;">
+                <h3 style="color: #38bdf8; margin-top: 0;">Institutional Endorsements</h3>
+                
+                <div class="reference-node">
+                    <h4>Yusuf Lutta</h4>
+                    <div class="title-stamp">School Principal Reference</div>
+                    <p>"Jamal maintains an exceptional balance of structured technical systems control and rigorous curriculum delivery standards."</p>
+                </div>
+                
+                <div class="reference-node" style="margin-bottom:0;">
+                    <h4>Awale Adam</h4>
+                    <div class="title-stamp">Administrator | Elm High School</div>
+                    <p>"His targeted pedagogy directly translated into measurable classroom development metrics across our computing classes."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Jamal Fahad | Advanced ICT Instructional Portfolio Engine
+</footer>
+
+<div class="modal-overlay" id="systemModal" onclick="closeModalOutside(event)">
+    <div class="modal-content">
+        <i class="fas fa-circle-xmark close-modal" onclick="hideModal()"></i>
+        <div id="modalTarget"></div>
+    </div>
+</div>
+
+<script>
+// Dark Mode Toggle
+function toggleDark(){
+    document.body.classList.toggle("dark");
+    const icon = document.getElementById("toggleIcon");
+    if(document.body.classList.contains("dark")) {
+        icon.className = "fas fa-sun";
+    } else {
+        icon.className = "fas fa-moon";
+    }
+}
+
+// Global Filter Variables
+let activeCategory = 'all';
+
+function filterCategory(cat, btn) {
+    const btns = document.querySelectorAll('.tab-btn');
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCategory = cat;
+    evaluateCatalog();
+}
+
+function evaluateCatalog() {
+    const query = document.getElementById('syllabusSearch').value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.catalog-card');
+
+    cards.forEach(card => {
+        const catAttr = card.getAttribute('data-cat');
+        const tagAttr = card.getAttribute('data-tags');
+        
+        const matchesCategory = (activeCategory === 'all' || catAttr === activeCategory);
+        const matchesSearch = tagAttr.includes(query);
+
+        if(matchesCategory && matchesSearch) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Metric Spec Framework Data Vault
+const dataVault = {
+    unit1: {
+        title: "Unit 1: Digital Devices Framework",
+        objectives: "Deconstruct system architectures, map cache performance levels, evaluate alternative computing storage formats, and differentiate operating system execution loops.",
+        activities: "Executing laboratory stress diagnostics, configuring system BIOS registers, managing input-output device parameters, and verifying memory allocations.",
+        assessment: "Edexcel examination standard routing loops inspecting capacity calculation metrics and structural logic gate arrays."
+    },
+    unit2: {
+        title: "Unit 2: Connectivity & Networks",
+        objectives: "Verify digital package routing headers, evaluate network protocol matrices, analyze wide area topologies, and verify endpoint firewall encryption paths.",
+        activities: "Simulating star/mesh topologies via trace nodes, monitoring baseline ping delays, and setting up network routing paths.",
+        assessment: "Timed structural diagnostic sheets checking layout configuration options and packet breakdown evaluations."
+    },
+    web: {
+        title: "Unit 6: Web Authoring Deployment Matrix",
+        objectives: "Author standard-compliant HTML5 semantic wrappers and structure external responsive CSS style inheritance sheets from scratch.",
+        activities: "Building structural data layouts, optimizing resolution weights for cross-platform devices, and verifying navigation asset link hooks.",
+        assessment: "Studio production speed test evaluating external style sheet structures and element position coordinate settings."
+    },
+    spreadsheets: {
+        title: "Unit 6: Spreadsheet Logic Systems",
+        objectives: "Assemble dynamic data sheets using deep logic algorithms, relative row offsets, and coordinate array lookups.",
+        activities: "Writing advanced automated syntax chains (=VLOOKUP, =IF, =COUNTIF) and compiling contextual tracking analytics dashboards.",
+        assessment: "Timed data optimization lab test tracking structural data lookup chains and functional conditional validation errors."
+    }
+};
+
+// Modal Controls
+function deployModal(key) {
+    const record = dataVault[key];
+    if(!record) return;
+
+    const html = `
+        <h3 style="margin-top:0; font-size:1.6rem; color:var(--text); border-bottom:2px solid var(--border); padding-bottom:10px;">${record.title}</h3>
+        <div class="modal-section">
+            <h4><i class="fas fa-crosshairs"></i> Target Parameters</h4>
+            <p style="margin:5px 0 0 0; font-size:0.95rem; color:var(--muted);">${record.objectives}</p>
+        </div>
+        <div class="modal-section">
+            <h4><i class="fas fa-laptop-code"></i> Laboratory Activities</h4>
+            <p style="margin:5px 0 0 0; font-size:0.95rem; color:var(--muted);">${record.activities}</p>
+        </div>
+        <div class="modal-section">
+            <h4><i class="fas fa-clipboard-check"></i> Standard Assessment</h4>
+            <p style="margin:5px 0 0 0; font-size:0.95rem; color:var(--muted);">${record.assessment}</p>
+        </div>
+    `;
+    
+    document.getElementById('modalTarget').innerHTML = html;
+    document.getElementById('systemModal').style.display = 'flex';
+}
+
+function hideModal() {
+    document.getElementById('systemModal').style.display = 'none';
+}
+
+function closeModalOutside(e) {
+    if(e.target === document.getElementById('systemModal')) hideModal();
+}
+</script>
+
+</body>
+</html>
