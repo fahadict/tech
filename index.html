@@ -1,1078 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jamal Fahadh Mohamed | Senior ICT Educator Portfolio System</title>
-    <!-- Premium Architectural Typography & Graphic Systems -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #0f172a;       /* Deep Slate Blue */
-            --secondary: #0284c7;     /* Tech Horizon Blue */
-            --accent: #38bdf8;        /* Electric Cyber Blue */
-            --success: #10b981;       /* Operational Green */
-            --bg-base: #f8fafc;       /* Clean Light Background */
-            --bg-card: #ffffff;
-            --text-main: #1e293b;     /* High Contrast Text */
-            --text-muted: #64748b;    /* Secondary Structural Text */
-            --border-color: #e2e8f0;  /* Hard Partition Lines */
-            --radius-lg: 14px;
-            --radius-md: 8px;
-            --shadow-sm: 0 1px 3px rgba(15,23,42,0.05);
-            --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
-            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-base);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, .brand-logo {
-            font-family: 'Lexend', sans-serif;
-            letter-spacing: -0.02em;
-        }
-
-        /* --- GLOBAL HEADER & CONTACT BANNER --- */
-        .global-contact-strip {
-            background: #0b1120;
-            color: #94a3b8;
-            font-size: 0.8rem;
-            padding: 0.5rem 2rem;
-            display: flex;
-            justify-content: border-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1001;
-        }
-        
-        .strip-inner {
-            max-width: 1300px;
-            margin: 0 auto;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .strip-cluster {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .strip-cluster a {
-            color: #cbd5e1;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            transition: var(--transition);
-        }
-
-        .strip-cluster a:hover {
-            color: var(--accent);
-        }
-
-        header {
-            background-color: rgba(15, 23, 42, 0.96);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            position: fixed;
-            width: 100%;
-            top: 34px;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .nav-wrapper {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 2rem;
-        }
-
-        .brand-logo {
-            color: #ffffff;
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .brand-logo span {
-            color: var(--accent);
-        }
-
-        .nav-links-cluster {
-            display: flex;
-            gap: 1rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-action-link {
-            color: #94a3b8;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            cursor: pointer;
-            padding: 0.6rem 1rem;
-            border-radius: var(--radius-md);
-        }
-
-        .nav-action-link:hover, .nav-action-link.active-view {
-            color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-drawer-trigger {
-            display: none;
-            color: #ffffff;
-            font-size: 1.4rem;
-            cursor: pointer;
-        }
-
-        /* --- APP VIEWPORTS --- */
-        .app-view-container {
-            display: none;
-            padding: 10rem 2rem 5rem 2rem;
-            max-width: 1300px;
-            margin: 0 auto;
-            animation: viewTransition 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .app-view-container.active-view {
-            display: block;
-        }
-
-        @keyframes viewTransition {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .view-header-block {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .view-header-block h2 {
-            font-size: 2.6rem;
-            color: var(--primary);
-            font-weight: 800;
-            margin-bottom: 0.8rem;
-        }
-
-        .view-header-block p {
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        /* --- HERO COMPONENT --- */
-        .hero-layout-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-            min-height: 55vh;
-        }
-
-        .hero-headline-profile {
-            font-size: 1.1rem;
-            color: var(--secondary);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-        }
-
-        .hero-main-title {
-            font-size: 3rem;
-            color: var(--primary);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-        }
-
-        .hero-main-title span {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-sub-text {
-            font-size: 1.1rem;
-            color: var(--text-main);
-            margin-bottom: 2.5rem;
-            max-width: 680px;
-        }
-
-        .interactive-action-cluster {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* --- SYSTEM BUTTONS --- */
-        .system-btn {
-            padding: 0.9rem 1.8rem;
-            border-radius: var(--radius-md);
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            cursor: pointer;
-            border: none;
-        }
-
-        .system-btn-primary { background-color: var(--secondary); color: #ffffff; }
-        .system-btn-primary:hover {
-            background-color: #0369a1;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
-        }
-
-        .system-btn-secondary { background-color: #ffffff; color: var(--primary); border: 1px solid #cbd5e1; box-shadow: var(--shadow-sm); }
-        .system-btn-secondary:hover { background-color: #f1f5f9; border-color: #94a3b8; transform: translateY(-2px); }
-
-        .system-btn-success { background-color: var(--success); color: #ffffff; }
-        .system-btn-success:hover {
-            background-color: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
-        }
-
-        /* --- PREMIUM AVATAR DOCK --- */
-        .avatar-frame-box {
-            position: relative;
-            width: 100%;
-            max-width: 360px;
-            margin: 0 auto;
-        }
-
-        .avatar-element {
-            width: 100%;
-            height: 360px;
-            border-radius: 50%;
-            box-shadow: var(--shadow-lg);
-            border: 6px solid #ffffff;
-            display: block;
-            object-fit: cover;
-        }
-
-        /* --- METRICS DASHBOARD --- */
-        .grid-dashboard-metrics {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 5rem;
-        }
-
-        .metric-dashboard-node {
-            background: var(--bg-card);
-            padding: 2.2rem 1.5rem;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .metric-dashboard-node h3 {
-            font-size: 2.6rem;
-            color: var(--secondary);
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-dashboard-node p {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* --- STRUCTURAL LAYOUT SYSTEMS --- */
-        .matrix-split-layout {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
-        }
-
-        .narrative-card-engine {
-            background: var(--bg-card);
-            padding: 3rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-        }
-
-        .narrative-card-engine h3, .competency-wrapper h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .narrative-card-engine p {
-            color: var(--text-main);
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .blockquote-system {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: var(--bg-base);
-            border-left: 5px solid var(--secondary);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-        }
-
-        .blockquote-system p { font-style: italic; color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; }
-        .blockquote-system span { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
-
-        /* --- GAUGES & CHIPS --- */
-        .gauge-metric-row { margin-bottom: 1.6rem; }
-        .gauge-label-group { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; }
-        .gauge-track-bg { background: #e2e8f0; height: 10px; border-radius: 5px; overflow: hidden; }
-        .gauge-fill-bar { background: linear-gradient(90deg, var(--secondary), var(--accent)); height: 100%; border-radius: 5px; }
-
-        .tech-chips-assembly { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 1.2rem; }
-        .tech-node-chip {
-            background: var(--bg-card); padding: 1rem; border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 600;
-            border: 1px solid var(--border-color); display: flex; align-items: center; gap: 0.8rem; box-shadow: var(--shadow-sm); transition: var(--transition);
-        }
-        .tech-node-chip:hover { border-color: var(--secondary); background: #fafafa; }
-        .tech-node-chip i { color: var(--secondary); font-size: 1.1rem; }
-
-        .ops-badge-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-top: 1.5rem; }
-        .ops-standalone-badge { background: #f1f5f9; color: #334155; font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.2rem; border-radius: 6px; border: 1px solid #e2e8f0; }
-
-        /* --- STUDENT PROJECTS SECTION --- */
-        .showcase-grid-system {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .showcase-node-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-
-        .showcase-visual-container {
-            background: #e2e8f0;
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            position: relative;
-        }
-
-        .showcase-visual-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .showcase-meta-body {
-            padding: 1.5rem;
-        }
-
-        .showcase-meta-body h4 {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .showcase-meta-body p {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-        }
-
-        /* --- TIMELINE TRACK --- */
-        .spotlight-dashboard-card {
-            background: linear-gradient(135deg, #0f172a, #1e293b); color: #ffffff; padding: 3rem; border-radius: var(--radius-lg);
-            margin-bottom: 4rem; box-shadow: var(--shadow-lg); display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 3rem; align-items: center; position: relative; overflow: hidden;
-        }
-        .spotlight-content h3 { color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem; }
-        .spotlight-content p { color: #94a3b8; font-size: 1.05rem; }
-        .spotlight-stat-box { display: flex; gap: 1.5rem; z-index: 2; }
-        .spotlight-stat-node { background: rgba(255, 255, 255, 0.04); padding: 1.5rem 1rem; border-radius: var(--radius-md); border: 1px solid rgba(255, 255, 255, 0.08); text-align: center; flex: 1; }
-        .spotlight-stat-node h4 { color: var(--accent); font-size: 1.8rem; font-weight: 800; }
-        .spotlight-stat-node p { font-size: 0.8rem; color: #cbd5e1; text-transform: uppercase; margin-top: 0.2rem; }
-
-        .timeline-track { position: relative; max-width: 1000px; margin: 0 auto; }
-        .timeline-track::after { content: ''; position: absolute; width: 2px; background: #cbd5e1; top: 0; bottom: 0; left: 50%; margin-left: -1px; }
-        .timeline-node-item { padding: 1rem 40px; position: relative; width: 50%; }
-        .timeline-node-item::after { content: ''; position: absolute; width: 18px; height: 18px; right: -9px; background-color: #ffffff; border: 4px solid var(--secondary); top: 30px; border-radius: 50%; z-index: 5; }
-        .node-left { left: 0; }
-        .node-right { left: 50%; }
-        .node-right::after { left: -9px; }
-
-        .timeline-block-frame { background: var(--bg-card); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color); }
-        .node-time-stamp { background: var(--primary); color: #ffffff; padding: 0.4rem 1rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700; display: inline-block; margin-bottom: 1rem; }
-        .timeline-block-frame h3 { font-size: 1.4rem; color: var(--primary); margin-bottom: 0.3rem; }
-        .node-institution { color: var(--secondary); font-weight: 700; font-size: 1rem; margin-bottom: 1.5rem; display: block; }
-        .timeline-block-frame ul { list-style: none; }
-        .timeline-block-frame li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; font-size: 0.98rem; color: var(--text-main); }
-        .timeline-block-frame li::before { content: "→"; position: absolute; left: 0; color: var(--secondary); font-weight: bold; }
-
-        /* --- SYLLABUS FILTERS & PATTERNS --- */
-        .credentials-matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 5rem; }
-        .creds-panel-card { background: var(--bg-card); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color); position: relative; overflow: hidden; }
-        .creds-panel-card::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: var(--secondary); }
-        .creds-panel-card h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.5rem; }
-        .creds-meta-stamp { color: var(--secondary); font-weight: 700; font-size: 0.95rem; margin-bottom: 1.2rem; }
-
-        .search-filter-controls { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; margin-bottom: 3rem; background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
-        .search-input-wrapper { position: relative; flex-grow: 1; max-width: 450px; }
-        .search-input-wrapper i { position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
-        .search-input-field { width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; border-radius: var(--radius-md); border: 1px solid #cbd5e1; font-size: 0.92rem; outline: none; }
-        
-        .tab-btn { padding: 0.6rem 1.2rem; border-radius: var(--radius-md); border: 1px solid #cbd5e1; background: #ffffff; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: var(--transition); }
-        .tab-btn.active-tab { background: var(--secondary); color: #ffffff; border-color: var(--secondary); }
-
-        .syllabus-catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 2rem; }
-        .catalog-deck-card { background: var(--bg-card); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: var(--transition); }
-        .catalog-deck-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-        .deck-card-banner { padding: 2rem; color: #ffffff; position: relative; }
-        .deck-card-banner i { font-size: 2.8rem; opacity: 0.15; position: absolute; right: 1.8rem; bottom: 1.2rem; }
-        .deck-card-banner span { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; font-weight: 700; display: block; margin-bottom: 0.3rem; }
-        .deck-card-body { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .deck-card-body h3 { margin-bottom: 0.8rem; color: var(--primary); font-size: 1.35rem; }
-        .deck-card-body p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
-        
-        .chapter-badge-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
-        .chapter-badge { background: #f1f5f9; color: #475569; font-size: 0.78rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 4px; border: 1px solid #e2e8f0; }
-
-        /* --- MODAL DIALOG --- */
-        .modal-overlay { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; padding: 1.5rem; }
-        .modal-body-container { background: var(--bg-card); padding: 3rem; border-radius: var(--radius-lg); max-width: 700px; width: 100%; position: relative; box-shadow: var(--shadow-lg); max-height: 85vh; overflow-y: auto; }
-        .close-modal-trigger { position: absolute; top: 1.5rem; right: 1.8rem; font-size: 1.6rem; cursor: pointer; color: var(--text-muted); }
-        .blueprint-modal-header { border-bottom: 2px solid #f1f5f9; padding-bottom: 1.2rem; margin-bottom: 1.8rem; }
-        .blueprint-modal-header h3 { font-size: 1.8rem; color: var(--primary); }
-        .blueprint-modal-header div { color: var(--secondary); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; margin-top: 0.3rem; }
-        .blueprint-node-section { margin-bottom: 1.5rem; }
-        .blueprint-node-section h4 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; }
-        .blueprint-node-section h4 i { color: var(--secondary); }
-        .blueprint-node-section p { font-size: 0.98rem; color: var(--text-main); padding-left: 1.8rem; }
-
-        /* --- SECURE GATEWAY HUB --- */
-        .gateway-split-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; }
-        .gateway-cards-stack { display: flex; flex-direction: column; gap: 1.4rem; }
-        .gateway-comms-card { display: flex; align-items: center; gap: 1.5rem; background: var(--bg-card); padding: 1.6rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-left: 5px solid var(--secondary); border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-        .gateway-comms-card i { font-size: 1.6rem; color: var(--secondary); background: rgba(2, 132, 199, 0.05); padding: 1rem; border-radius: var(--radius-md); }
-        .comms-meta-text h4 { color: var(--primary); font-size: 1.1rem; margin-bottom: 0.2rem; }
-        .comms-meta-text p, .comms-meta-text a { color: var(--text-muted); text-decoration: none; font-size: 0.98rem; }
-        
-        .secure-reference-vault { background: var(--primary); color: #ffffff; padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
-        .secure-reference-vault h3 { color: var(--accent); margin-bottom: 2rem; font-size: 1.6rem; }
-        .vault-reference-node { border-left: 3px solid var(--secondary); padding-left: 1.5rem; margin-bottom: 2.5rem; }
-        .vault-reference-node h4 { font-size: 1.25rem; font-weight: 700; }
-        .vault-reference-node .role-stamp { color: var(--accent); font-size: 0.92rem; font-weight: 600; margin-bottom: 0.6rem; }
-        .vault-reference-node .feedback-text { font-size: 0.95rem; color: #cbd5e1; font-style: italic; }
-
-        footer { background: var(--primary); border-top: 1px solid #1e293b; padding: 4.5rem 2rem; margin-top: 6rem; text-align: center; }
-        .footer-navigation-map { display: flex; justify-content: center; gap: 2.5rem; list-style: none; margin-bottom: 2rem; }
-        .footer-navigation-map a { color: #94a3b8; text-decoration: none; font-weight: 600; font-size: 0.95rem; cursor: pointer; }
-        .footer-navigation-map a:hover { color: var(--accent); }
-        .footer-copyright-notice { color: #64748b; font-size: 0.9rem; }
-
-        /* --- RESPONSIVE MEDIA --- */
-        @media (max-width: 1024px) {
-            .global-contact-strip { display: none; }
-            header { top: 0; }
-            .hero-layout-grid, .matrix-split-layout, .gateway-split-grid, .spotlight-dashboard-card { grid-template-columns: 1fr; gap: 3rem; }
-            .hero-layout-grid { text-align: center; }
-            .hero-main-title { font-size: 2.4rem; }
-            .avatar-frame-box { max-width: 280px; }
-            .avatar-element { height: 280px; }
-            .interactive-action-cluster { justify-content: center; }
-            .grid-dashboard-metrics { grid-template-columns: repeat(2, 1fr); }
-            .timeline-track::after { left: 20px; }
-            .timeline-node-item { width: 100%; padding-left: 50px; padding-right: 10px; }
-            .timeline-node-item::after { left: 11px; right: auto; }
-            .node-left, .node-right { left: 0; }
-            .mobile-drawer-trigger { display: block; }
-            .nav-links-cluster { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #0f172a; padding: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); gap: 1.5rem; }
-            .nav-links-cluster.drawer-open { display: flex; }
-            .search-filter-controls { flex-direction: column; align-items: stretch; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- PERSISTENT TOP CONTACT SYSTEM STRIP -->
-    <div class="global-contact-strip">
-        <div class="strip-inner">
-            <div><i class="fa-solid fa-location-dot"></i> Hargeisa, Somaliland</div>
-            <div class="strip-cluster">
-                <a href="tel:+252636710907"><i class="fa-solid fa-phone"></i> +252 636 710 907</a>
-                <a href="mailto:teacherfahadh@gmail.com"><i class="fa-solid fa-envelope"></i> teacherfahadh@gmail.com</a>
-                <a href="https://wa.me/252636710907" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- SYSTEM LAYER NAVIGATION ARCHITECTURE -->
-    <header>
-        <div class="nav-wrapper">
-            <a class="brand-logo" onclick="routeToView('home')">Jamal <span>Fahad</span></a>
-            <i class="fa-solid fa-bars-staggered mobile-drawer-trigger" id="drawerTrigger"></i>
-            <ul class="nav-links-cluster" id="navCluster">
-                <li><a class="nav-action-link active-view" onclick="routeToView('home')">Home Hub</a></li>
-                <li><a class="nav-action-link" onclick="routeToView('about')">Profile Parameters</a></li>
-                <li><a class="nav-action-link" onclick="routeToView('experience')">Milestone Ledger</a></li>
-                <li><a class="nav-action-link" onclick="routeToView('portfolio')">Syllabus & Credentials</a></li>
-                <li><a class="nav-action-link" onclick="routeToView('contact')">Secure Connection</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <!-- ================= ENGINE 1: HOME HUB ================= -->
-    <main id="home" class="app-view-container active-view">
-        <div class="hero-layout-grid">
-            <div>
-                <span class="hero-headline-profile">ICT Teacher | Pearson Edexcel ICT Specialist | Digital Skills Trainer</span>
-                <h1 class="hero-main-title">Academic Achievement & <span>Digital Transformation</span></h1>
-                <p class="hero-sub-text">Jamal Fahad is an ICT Teacher and Digital Skills Trainer based in Hargeisa, Somaliland. He specializes in Pearson Edexcel ICT, web design, graphic design, digital literacy, Microsoft Office, and technology education. He is passionate about helping students develop practical ICT skills that support academic achievement, career development, and digital transformation.</p>
-                
-                <div class="interactive-action-cluster">
-                    <a href="cv.pdf" class="system-btn system-btn-primary" download><i class="fa-solid fa-arrow-down-to-line"></i> Download CV</a>
-                    <a href="coverletter.pdf" class="system-btn system-btn-secondary" target="_blank"><i class="fa-solid fa-paperclip"></i> View Cover Letter</a>
-                    <button class="system-btn system-btn-success" onclick="routeToView('contact')"><i class="fa-solid fa-calendar-check"></i> Book Interview Opportunity</button>
-                </div>
-            </div>
-            <div>
-                <div class="avatar-frame-box">
-                    <!-- Standardized Profile Headshot Link (Unified Across Platforms) -->
-                    <img src="profile.jpg" alt="Jamal Fahad - Professional Headshot" class="avatar-element" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600';">
-                </div>
-            </div>
-        </div>
-
-        <!-- STRUCTURAL METRICS MATRIX -->
-        <div class="grid-dashboard-metrics">
-            <div class="metric-dashboard-node">
-                <h3>7+ Yrs</h3>
-                <p>Teaching & Training Experience</p>
-            </div>
-            <div class="metric-dashboard-node">
-                <h3>A*–B</h3>
-                <p>Edexcel Core Target Band</p>
-            </div>
-            <div class="metric-dashboard-node">
-                <h3>100%</h3>
-                <p>Classroom Tech Integration</p>
-            </div>
-            <div class="metric-dashboard-node">
-                <h3>Upper</h3>
-                <p>Honors Degree Classification</p>
-            </div>
-        </div>
-    </main>
-
-    <!-- ================= ENGINE 2: PROFILE PARAMETERS ================= -->
-    <section id="about" class="app-view-container">
-        <div class="view-header-block">
-            <h2>Educational Narrative & Target Vectors</h2>
-            <p>Deconstructing professional capacities across international curriculum frameworks and computer training modules.</p>
-        </div>
-
-        <div class="matrix-split-layout">
-            <div class="narrative-card-engine">
-                <h3>Instructional Framework</h3>
-                <p>With an established track record as an ICT Teacher and Digital Skills Trainer, my classroom execution focuses on delivering practical, job-ready capabilities. I prepare secondary students and professionals to navigate complex computational challenges while confidently meeting international test metrics.</p>
-                <p>My methodology emphasizes active systems engineering loops—enabling students to build web infrastructure, parse complex datasets, design graphic branding arrays, and troubleshoot hardware systems natively instead of just memorizing theory.</p>
-                
-                <div class="blockquote-system">
-                    <p>"Teacher Fahadh has repeatedly demonstrated unparalleled dedication to establishing rigorous computing standards across all classroom layers."</p>
-                    <span>— Awale Adam, Elm High School Administrator</span>
-                </div>
-            </div>
-
-            <div>
-                <div class="competency-wrapper">
-                    <h3>Specialized Training Vectors</h3>
-                    <div class="gauge-metric-row">
-                        <div class="gauge-label-group"><span>Pearson Edexcel ICT Curriculum Expertise</span><span>100%</span></div>
-                        <div class="gauge-track-bg"><div class="gauge-fill-bar" style="width: 100%"></div></div>
-                    </div>
-                    <div class="gauge-metric-row">
-                        <div class="gauge-label-group"><span>Web Design & Graphic Design Training</span><span>95%</span></div>
-                        <div class="gauge-track-bg"><div class="gauge-fill-bar" style="width: 95%"></div></div>
-                    </div>
-                    <div class="gauge-metric-row">
-                        <div class="gauge-label-group"><span>Microsoft Office & Google Workspace Training</span><span>95%</span></div>
-                        <div class="gauge-track-bg"><div class="gauge-fill-bar" style="width: 95%"></div></div>
-                    </div>
-                    <div class="gauge-metric-row">
-                        <div class="gauge-label-group"><span>Digital Literacy & Classroom Tech Integration</span><span>90%</span></div>
-                        <div class="gauge-track-bg"><div class="gauge-fill-bar" style="width: 90%"></div></div>
-                    </div>
-                </div>
-
-                <div style="margin-top: 2.5rem;">
-                    <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem;">Infrastructure & Engine Competencies</h3>
-                    <div class="tech-chips-assembly">
-                        <div class="tech-node-chip"><i class="fa-solid fa-graduation-cap"></i> Edexcel IGCSE / IAL</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-code"></i> HTML5 & CSS3 Architecture</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-file-excel"></i> Advanced Spreadsheet Labs</div>
-                        <div class="tech-node-chip"><i class="fa-brands fa-windows"></i> Microsoft 365 Core Suite</div>
-                        <div class="tech-node-chip"><i class="fa-brands fa-google"></i> Google Workspace Tools</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-bezier-curve"></i> Graphic Design Mechanics</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-microchip"></i> Hardware Diagnostics</div>
-                        <div class="tech-node-chip"><i class="fa-solid fa-chalkboard-user"></i> Digital Literacy Pedagogy</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- NEW CORE IMPROVEMENT: ACTIVE VISUAL STUDENT SHOWCASE -->
-        <div style="margin-top: 5rem;">
-            <div class="view-header-block" style="margin-bottom: 2rem;">
-                <h3>Student Project Showcase</h3>
-                <p>Direct evidence of student achievements, including live websites, graphics, and technical work developed under my guidance.</p>
-            </div>
-            
-            <div class="showcase-grid-system">
-                <div class="showcase-node-card">
-                    <div class="showcase-visual-container">
-                        <img src="student-web.jpg" alt="Student Web Project" onerror="this.src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=400';">
-                    </div>
-                    <div class="showcase-meta-body">
-                        <h4>Responsive Landing Matrices</h4>
-                        <p>Semantic HTML5 and CSS structures built completely from scratch by Level 11 IGCSE curriculum blocks during web authoring labs.</p>
-                    </div>
-                </div>
-
-                <div class="showcase-node-card">
-                    <div class="showcase-visual-container">
-                        <img src="student-graphics.jpg" alt="Student Graphic Design Work" onerror="this.src='https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=400';">
-                    </div>
-                    <div class="showcase-meta-body">
-                        <h4>Digital Branding & Print Assets</h4>
-                        <p>Vector layouts, promotional posters, and social media flyers engineered by students using modern vector styling software tools.</p>
-                    </div>
-                </div>
-
-                <div class="showcase-node-card">
-                    <div class="showcase-visual-container">
-                        <img src="student-sheets.jpg" alt="Student Spreadsheet Models" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400';">
-                    </div>
-                    <div class="showcase-meta-body">
-                        <h4>Automated Financial Modeling</h4>
-                        <p>Complex business balance sheets integrating VLOOKUP arrays, nested logic operators, and predictive data tracking lines.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= ENGINE 3: MILESTONE LEDGER ================= -->
-    <section id="experience" class="app-view-container">
-        <div class="view-header-block">
-            <h2>Teaching & Training Experience Ledger</h2>
-            <p>Chronological overview of institutional computing roles, target age groups, and curriculum delivery metrics.</p>
-        </div>
-
-        <!-- TIMELINE FLOW -->
-        <div class="timeline-track">
-            <div class="timeline-node-item node-left">
-                <div class="timeline-block-frame">
-                    <span class="node-time-stamp">7+ Years Active Track</span>
-                    <h3>ICT Teaching & Training Specialist</h3>
-                    <span class="node-institution">@ Elm High School & Training Centers (Hargeisa)</span>
-                    <p style="font-size: 0.9rem; color: var(--secondary); margin-bottom: 1rem; font-weight: 600;">
-                        Target Student Base: Secondary (Age 13-18) & Professional Adult Learners
-                    </p>
-                    <ul>
-                        <li>Deliver specialized Pearson Edexcel IGCSE and International A-Level ICT tracks, consistently maintaining high pass performance trends.</li>
-                        <li>Direct technical bootcamps focusing on Web Authoring design loops, Vector Graphic creation, and Microsoft Office / Google Workspace optimization.</li>
-                        <li>Lead Digital Literacy initiatives across school systems to integrate technology smoothly into all classrooms and empower faculty pipelines.</li>
-                        <li>Formulate actionable performance tracking sheets to monitor student grade development and optimize lesson delivery targets.</li>
-                        <li>Provide hardware diagnostic leadership, maintaining total computer laboratory operational infrastructure integrity.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= ENGINE 4: SYLLABUS & CREDENTIALS ================= -->
-    <section id="portfolio" class="app-view-container">
-        <div class="view-header-block">
-            <h2>Academic Records & Certifications Array</h2>
-            <p>Verified academic milestones and educational IT qualifications targeting international specifications.</p>
-        </div>
-
-        <!-- ACADEMIC CREDENTIALS CARD DECK -->
-        <div class="credentials-matrix-grid">
-            <div class="creds-panel-card">
-                <h3>Bachelor of Business Information Technology (BBIT)</h3>
-                <div class="creds-meta-stamp">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</div>
-                <p>Graduated with **Second Class Honors (Upper Division)**. Intensive studies in enterprise network architectures, relational database management, and structured systems analytics.</p>
-            </div>
-
-            <div class="creds-panel-card">
-                <h3>Certificate in E-commerce, Web Design & Entrepreneurship</h3>
-                <div class="creds-meta-stamp">Professional Development Certification</div>
-                <p>Comprehensive training in semantic styling architectures, user flow layouts, conversion mechanics, and cross-platform responsive development models.</p>
-            </div>
-
-            <div class="creds-panel-card">
-                <h3>Professional Skills & IT Credentials</h3>
-                <div class="creds-meta-stamp">Google, Microsoft, and Digital Competency Blocks</div>
-                <p>Validated training tracks covering advanced cloud operations, automated spreadsheet processing, network path setups, and modern digital teaching methods.</p>
-            </div>
-        </div>
-
-        <div class="view-header-block" style="margin-bottom: 2rem;">
-            <h3>Interactive Specification Blueprints</h3>
-            <p>Search or filter individual technical curriculum modules derived directly from standard Pearson Edexcel documentation parameters.</p>
-        </div>
-
-        <!-- INTERACTIVE FILTERS LINK -->
-        <div class="search-filter-controls">
-            <div class="search-input-wrapper">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" class="search-input-field" id="syllabusSearch" placeholder="Filter by chapter, unit title, keywords...">
-            </div>
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <button class="tab-btn active-tab" onclick="applyGridFilter('all')">Complete Spectrum</button>
-                <button class="tab-btn" onclick="applyGridFilter('theory')">Core Theory</button>
-                <button class="tab-btn" onclick="applyGridFilter('practical')">Applied Practical Labs</button>
-            </div>
-        </div>
-
-        <!-- SYLLABUS GRID SYSTEM -->
-        <div class="syllabus-catalog-grid" id="catalogGrid">
-            <!-- Unit 1 -->
-            <div class="catalog-deck-card" data-cat="theory" data-tags="digital devices hardware computer software storage memory system architecture peripherals chapter 1 2 3">
-                <div class="deck-card-banner" style="background: #ef4444;">
-                    <span>Specification Unit 1</span>
-                    <h3>Digital Devices Framework</h3>
-                    <i class="fa-solid fa-microchip"></i>
-                </div>
-                <div class="deck-card-body">
-                    <p>Core operational layout covering computer form-factors, processor performance speeds, cache boundaries, structural RAM/ROM properties, and system software categories.</p>
-                    <div class="chapter-badge-list">
-                        <span class="chapter-badge">Ch 1: Digital Devices</span>
-                        <span class="chapter-badge">Ch 2: Software Systems</span>
-                        <span class="chapter-badge">Ch 3: Storage & Memory</span>
-                    </div>
-                    <button class="system-btn system-btn-secondary btn-sm" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="deployBlueprintModal('unit1')"><i class="fa-solid fa-folder-tree"></i> Load Operational Map</button>
-                </div>
-            </div>
-
-            <!-- Unit 2 -->
-            <div class="catalog-deck-card" data-cat="theory" data-tags="connectivity networks data transmission packets protocols network topologies communication chapter 4 5">
-                <div class="deck-card-banner" style="background: #f59e0b;">
-                    <span>Specification Unit 2</span>
-                    <h3>Connectivity & Network Topologies</h3>
-                    <i class="fa-solid fa-network-wired"></i>
-                </div>
-                <div class="deck-card-body">
-                    <p>Comprehensive engineering loops analyzing physical connection vectors, wide scale topologies, path routing mechanics, packet structures, and transfer protocols.</p>
-                    <div class="chapter-badge-list">
-                        <span class="chapter-badge">Ch 4: Communications</span>
-                        <span class="chapter-badge">Ch 5: Network Setups</span>
-                    </div>
-                    <button class="system-btn system-btn-secondary btn-sm" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="deployBlueprintModal('unit2')"><i class="fa-solid fa-folder-tree"></i> Load Operational Map</button>
-                </div>
-            </div>
-
-            <!-- Unit 6 Web -->
-            <div class="catalog-deck-card" data-cat="practical" data-tags="web authoring html css website layout styling tag structural responsive design code graphics chapter 18 16">
-                <div class="deck-card-banner" style="background: #a855f7;">
-                    <span>Specification Unit 6</span>
-                    <h3>Web Authoring Deployment Matrix</h3>
-                    <i class="fa-solid fa-code"></i>
-                </div>
-                <div class="deck-card-body">
-                    <p>Applied studio module mapping structural HTML syntax tags, external CSS formatting link hooks, image optimization guidelines, and multi-device viewport design rules.</p>
-                    <div class="chapter-badge-list">
-                        <span class="chapter-badge">Ch 18: Web Creation</span>
-                        <span class="chapter-badge">Ch 16: Graphic Assets</span>
-                    </div>
-                    <button class="system-btn system-btn-secondary btn-sm" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="deployBlueprintModal('web')"><i class="fa-solid fa-folder-tree"></i> Load Operational Map</button>
-                </div>
-            </div>
-
-            <!-- Unit 6 Spreadsheets -->
-            <div class="catalog-deck-card" data-cat="practical" data-tags="spreadsheets formulas functions data modeling vlookup analysis software sorting filtering sheet chapter 14">
-                <div class="deck-card-banner" style="background: #10b981;">
-                    <span>Specification Unit 6 (Data)</span>
-                    <h3>Spreadsheet Logic & Modeling</h3>
-                    <i class="fa-solid fa-table"></i>
-                </div>
-                <div class="deck-card-body">
-                    <p>Advanced practical tracking covering complex dynamic functions, absolute vs relative row locks, data sorting pipelines, conditional filters, and business assessment charts.</p>
-                    <div class="chapter-badge-list">
-                        <span class="chapter-badge">Ch 14: Spreadsheet Modeling</span>
-                    </div>
-                    <button class="system-btn system-btn-secondary btn-sm" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="deployBlueprintModal('spreadsheets')"><i class="fa-solid fa-folder-tree"></i> Load Operational Map</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= ENGINE 5: SECURE CONNECTION ================= -->
-    <section id="contact" class="app-view-container">
-        <div class="view-header-block">
-            <h2>Secure Connection Desk</h2>
-            <p>Immediate communication paths for interview booking, institutional recruitment, and credential vetting.</p>
-        </div>
-
-        <div class="gateway-split-grid">
-            <div class="gateway-cards-stack">
-                <div class="gateway-comms-card">
-                    <i class="fa-solid fa-envelope-shield"></i>
-                    <div class="comms-meta-text">
-                        <h4>Recruiter Email Channel</h4>
-                        <p><a href="mailto:teacherfahadh@gmail.com">teacherfahadh@gmail.com</a></p>
-                    </div>
-                </div>
-                <div class="gateway-comms-card">
-                    <i class="fa-solid fa-square-phone"></i>
-                    <div class="comms-meta-text">
-                        <h4>Mobile Hotlink Connection</h4>
-                        <p><a href="tel:+252636710907">+252 636 710 907</a></p>
-                    </div>
-                </div>
-                <div class="gateway-comms-card">
-                    <i class="fa-solid fa-comments"></i>
-                    <div class="comms-meta-text">
-                        <h4>Instant Chat Gateway</h4>
-                        <p><a href="https://wa.me/252636710907" target="_blank">Launch Live WhatsApp Thread</a></p>
-                    </div>
-                </div>
-                
-                <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
-                    <a href="mailto:teacherfahadh@gmail.com" class="system-btn system-btn-primary" style="flex: 1; justify-content: center;"><i class="fa-solid fa-paper-plane"></i> Direct Email</a>
-                    <a href="https://wa.me/252636710907" class="system-btn" style="flex: 1; justify-content: center; background: #25d366; color: white;" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat WhatsApp</a>
-                </div>
-            </div>
-
-            <!-- STANDARDIZED MANAGEMENT REFERENCES & TESTIMONIALS -->
-            <div class="secure-reference-vault">
-                <h3>Institutional Endorsements & Feedback</h3>
-                
-                <div class="vault-reference-node">
-                    <h4>Yusuf Lutta</h4>
-                    <p class="role-stamp">School Principal Reference</p>
-                    <p class="feedback-text">"Jamal Fahadh maintains a rare balance of robust administrative systems control and highly productive curriculum delivery metrics."</p>
-                </div>
-
-                <div class="vault-reference-node">
-                    <h4>Awale Adam</h4>
-                    <p class="role-stamp">Administrator | Elm High School</p>
-                    <p class="feedback-text">"His pedagogical methodologies directly translated into highly visible student engagement and lab readiness metrics across our computing classes."</p>
-                </div>
-
-                <div class="vault-reference-node" style="margin-bottom: 0;">
-                    <h4>Dr. Jephthah Nyagah</h4>
-                    <p class="role-stamp">Academic Reference Pathway | JKUAT</p>
-                    <p class="feedback-text">"Demonstrated strong systems understanding and an analytical mindset during his academic development cycle."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPOSITE SYSTEM FOOTER MAP -->
-    <footer>
-        <ul class="footer-navigation-map">
-            <li><a onclick="routeToView('home')">Home Hub</a></li>
-            <li><a onclick="routeToView('about')">Profile Parameters</a></li>
-            <li><a onclick="routeToView('experience')">Milestone Ledger</a></li>
-            <li><a onclick="routeToView('portfolio')">Syllabus & Credentials</a></li>
-            <li><a onclick="routeToView('contact')">Secure Connection</a></li>
-        </ul>
-        <div style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-            <span><i class="fa-solid fa-envelope"></i> teacherfahadh@gmail.com</span>
-            <span><i class="fa-solid fa-phone"></i> +252 636 710 907</span>
-            <span><i class="fa-location-dot"></i> Hargeisa, Somaliland</span>
-        </div>
-        <p class="footer-copyright-notice">&copy; 2026 Jamal Fahadh Mohamed | Advanced ICT Instructional Portfolio Engine</p>
-    </footer>
-
-    <!-- INTERACTIVE CONTEXT MODAL ENGINE -->
-    <div class="modal-overlay" id="appModalOverlay">
-        <div class="modal-body-container">
-            <i class="fa-solid fa-circle-xmark close-modal-trigger" onclick="demobilizeModal()"></i>
-            <div id="modalInjectionPoint"></div>
-        </div>
-    </div>
-
-    <!-- MAIN SYSTEM CONTROLLER SCRIPTS -->
-    <script>
-        // Tabbed Client Router Engine
-        function routeToView(viewTargetId) {
-            const architecturalViews = document.querySelectorAll('.app-view-container');
-            architecturalViews.forEach(viewNode => viewNode.classList.remove('active-view'));
-            
-            const selectedViewElement = document.getElementById(viewTargetId);
-            if (selectedViewElement) selectedViewElement.classList.add('active-view');
-
-            const tabActionLinks = document.querySelectorAll('.nav-action-link');
-            tabActionLinks.forEach(linkNode => linkNode.classList.remove('active-view'));
-            
-            tabActionLinks.forEach(linkNode => {
-                if(linkNode.getAttribute('onclick').includes(viewTargetId)) linkNode.classList.add('active-view');
-            });
-
-            document.getElementById('navCluster').classList.remove('drawer-open');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Drawer Navigation Linkage
-        document.getElementById('drawerTrigger').addEventListener('click', () => {
-            document.getElementById('navCluster').classList.toggle('drawer-open');
-        });
-
-        // Category Filter Link Hook
-        function applyGridFilter(filterCategoryKey) {
-            const navigationButtons = document.querySelectorAll('.tab-btn');
-            navigationButtons.forEach(btnNode => btnNode.classList.remove('active-tab'));
-            if(window.event) window.event.target.classList.add('active-tab');
-
-            evaluateActiveSyllabusFilters();
-        }
-
-        // Live Search Parser Field Evaluator Loop
-        document.getElementById('syllabusSearch').addEventListener('input', () => {
-            evaluateActiveSyllabusFilters();
-        });
-
-        function evaluateActiveSyllabusFilters() {
-            const currentSearchQuery = document.getElementById('syllabusSearch').value.toLowerCase().trim();
-            const activeCategoryTab = document.querySelector('.tab-btn.active-tab').innerText.toLowerCase();
-            const allDeckCards = document.querySelectorAll('.catalog-deck-card');
-
-            allDeckCards.forEach(cardNode => {
-                const cardCategoryAttr = cardNode.getAttribute('data-cat');
-                const searchableTokenTags = cardNode.getAttribute('data-tags');
-                
-                let matchesCategory = false;
-                if (activeCategoryTab.includes('spectrum') || activeCategoryTab.includes('all')) {
-                    matchesCategory = true;
-                } else if (activeCategoryTab.includes('theory') && cardCategoryAttr === 'theory') {
-                    matchesCategory = true;
-                } else if (activeCategoryTab.includes('practical') && cardCategoryAttr === 'practical') {
-                    matchesCategory = true;
-                }
-
-                const matchesSearchToken = searchableTokenTags.includes(currentSearchQuery);
-
-                if (matchesCategory && matchesSearchToken) {
-                    cardNode.style.display = 'flex';
-                } else {
-                    cardNode.style.display = 'none';
-                }
-            });
-        }
-
-        // Comprehensive Structured Lesson Data Model
-        const structuralDataVault = {
-            unit1: {
-                title: "Unit 1: Digital Devices Framework",
-                sub: "Pearson Edexcel 9-1 Specification Unit 1 Core",
-                objectives: "Deconstruct system architectures, analyze cache memory hierarchies, evaluate hardware forms, and contrast operating system execution bounds.",
-                activities: "Executing benchmark system stress tests, managing BIOS parameters, configuring peripheral mapping lines, and evaluating device memory bottlenecks.",
-                assessment: "Edexcel past-paper question routing assessing binary storage capacity formulas, device selection matrix scenarios, and logic gate configurations."
-            },
-            unit2: {
-                title: "Unit 2: Connectivity & Network Topologies",
-                sub: "Pearson Edexcel 9-1 Specification Unit 2 Core",
-                objectives: "Evaluate packet tracking metadata, data transmission protocols, wide area link routing configurations, and layer encryption logic.",
-                activities: "Building complex star and mesh network topologies inside Cisco Packet Tracer environments, analyzing data ping loops, and tracing network delays.",
-                assessment: "Timed evaluation testing diagnostic network blueprints, security protocol selection models, and packet collision troubleshooting metrics."
-            },
-            web: {
-                title: "Unit 6: Web Authoring Deployment Matrix",
-                sub: "Pearson Edexcel 9-1 Practical Component Track",
-                objectives: "Author semantic, standard-compliant HTML5 frameworks and map modular responsive styling structures using clean CSS inheritance rules.",
-                activities: "Writing code layouts for complex tables, embedding hypermedia files, creating navigation links, and adjusting cross-device media breakpoints.",
-                assessment: "Studio production speed test evaluating external stylesheet link hooks, division container layouts, and pixel margin precision metrics."
-            },
-            spreadsheets: {
-                title: "Unit 6: Spreadsheet Logic & Modeling",
-                sub: "Pearson Edexcel 9-1 Practical Component Track",
-                objectives: "Construct robust, dynamic data systems utilizing logical functions, lookup vectors, and absolute coordinate tracking locks.",
-                activities: "Building formulas (=VLOOKUP, =IF, =COUNTIF), setting up cascading logical parameters, validating user inputs, and compiling output charts.",
-                assessment: "Timed data modeling task requiring absolute cell parameters, advanced multi-key filtering, and functional sheet connection strings."
-            }
-        };
-
-        // Modal Command Pipelines
-        function deployBlueprintModal(blueprintDataKey) {
-            const requestedRecord = structuralDataVault[blueprintDataKey];
-            if (!requestedRecord) return;
-
-            const modalHTMLInjection = `
-                <div class="blueprint-modal-header">
-                    <h3>${requestedRecord.title}</h3>
-                    <div>${requestedRecord.sub}</div>
-                </div>
-                <div class="blueprint-node-section">
-                    <h4><i class="fa-solid fa-crosshairs"></i> Target Learning Parameters</h4>
-                    <p>${requestedRecord.objectives}</p>
-                </div>
-                <div class="blueprint-node-section">
-                    <h4><i class="fa-solid fa-laptop-code"></i> Guided Laboratory Activities</h4>
-                    <p>${requestedRecord.activities}</p>
-                </div>
-                <div class="blueprint-node-section">
-                    <h4><i class="fa-solid fa-clipboard-check"></i> Standard Assessment Framework</h4>
-                    <p>${requestedRecord.assessment}</p>
-                </div>
-            `;
-
-            document.getElementById('modalInjectionPoint').innerHTML = modalHTMLInjection;
-            document.getElementById('appModalOverlay').style.display = 'flex';
-        }
-
-        function demobilizeModal() {
-            document.getElementById('appModalOverlay').style.display = 'none';
-        }
-
-        window.onclick = function(eventObject) {
-            const centralOverlay = document.getElementById('appModalOverlay');
-            if (eventObject.target == centralOverlay) demobilizeModal();
-        }
-    </script>
-</body>
-</html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jamal Fahad | ICT Teacher & Digital Skills Trainer</title>
+
+<meta name="description" content="Jamal Fahad - ICT Teacher, Pearson Edexcel ICT Specialist, Digital Skills Trainer, Web & Graphic Design Instructor in Hargeisa, Somaliland.">
+<meta name="keywords" content="ICT Teacher Somaliland, Pearson Edexcel ICT, Digital Skills Trainer, Web Design Trainer, Hargeisa Teacher, ICT Education">
+
+<meta property="og:title" content="Jamal Fahad - ICT Teacher Portfolio">
+<meta property="og:image" content="profile.jpg">
+<meta property="og:description" content="ICT Teacher and Digital Skills Trainer specializing in Pearson Edexcel ICT, web design, and digital literacy.">
+
+<link href="https://fonts.googleapis.com/css2=family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#0f172a;
+    --accent:#0284c7;
+    --accent-hover:#0369a1;
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --text:#1e293b;
+    --muted:#64748b;
+    --border:#e2e8f0;
+    --radius:12px;
+    --shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+/* NAV */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:var(--primary);
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+header a{
+    color:white;
+    margin:0 12px;
+    text-decoration:none;
+    font-weight:600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+header a:hover{color:#38bdf8}
+
+/* HERO */
+.hero{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    padding:80px 60px;
+    gap:50px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:42px;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+.hero span{color:#38bdf8}
+
+.profile-headline {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.btn{
+    display:inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding:12px 22px;
+    margin:10px 10px 0 0;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary{background:var(--accent);color:white;}
+.btn-primary:hover{background:var(--accent-hover); transform: translateY(-1px);}
+.btn-dark{background:rgba(255,255,255,0.1);color:white; border: 1px solid rgba(255,255,255,0.2);}
+.btn-dark:hover{background:rgba(255,255,255,0.2);}
+.btn-secondary{background: #ffffff; color: var(--primary); border: 1px solid var(--border);}
+.btn-secondary:hover{background: #f1f5f9; border-color: #94a3b8;}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+img.profile-avatar {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border: 6px solid var(--card);
+    box-shadow: var(--shadow);
+}
+
+/* SECTIONS & STRUCTURAL GRIDS */
+section{
+    padding:80px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.card{
+    background:var(--card);
+    padding:30px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    margin-bottom:20px;
+    border: 1px solid var(--border);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+}
+
+/* METRICS COMPONENT */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.metric-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+.metric-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* PROGRESS BARS */
+.skills-container {
+    margin-top: 15px;
+}
+
+.skill-bar-wrapper {
+    margin-bottom: 20px;
+}
+
+.skill-meta {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.skill-track {
+    background: var(--border);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    background: linear-gradient(90deg, var(--accent), #38bdf8);
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* CHIPS */
+.chip-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.chip {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* INTERACTIVE SEARCH & CATALOG ARCHITECTURE */
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    background: var(--card);
+    padding: 15px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.search-box {
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.tab-cluster {
+    display: flex;
+    gap: 8px;
+}
+
+.tab-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.catalog-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.catalog-banner {
+    padding: 20px;
+    color: white;
+    border-radius: 8px 8px 0 0;
+    margin: -20px -20px 20px -20px;
+    font-weight: 700;
+}
+
+/* MODAL SYSTEM LAYER */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background: var(--card);
+    padding: 40px;
+    border-radius: var(--radius);
+    max-width: 650px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+    border: 1px solid var(--border);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+.modal-section {
+    margin-top: 20px;
+}
+
+.modal-section h4 {
+    margin: 0 0 5px 0;
+    color: var(--accent);
+}
+
+/* FOOTER & CONNECTIVITY VAULT */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
+}
+
+.contact-link-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.contact-link-card i {
+    font-size: 1.5rem;
+    color: var(--accent);
+    background: var(--bg);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.reference-node {
+    border-left: 3px solid var(--accent);
+    padding-left: 15px;
+    margin-bottom: 25px;
+}
+
+.reference-node h4 { margin: 0; font-size: 1.1rem; }
+.reference-node .title-stamp { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+.reference-node p { margin: 5px 0 0 0; font-style: italic; color: var(--muted); font-size: 0.92rem; }
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:var(--primary);
+    color:white;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* DARK MODE OVERRIDES */
+.dark{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#f1f5f9;
+    --muted:#94a3b8;
