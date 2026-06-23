@@ -15,7 +15,7 @@
 
   <style>
     :root{
-      --header-h: 96px;
+      --header-h: 118px;
       --bg:#f4f7fb;
       --surface:#ffffff;
       --surface-2:#eef4ff;
@@ -92,11 +92,11 @@
       align-items:center;
       justify-content:space-between;
       gap:14px;
-      padding:12px 0;
+      padding:14px 0 10px;
     }
 
     .header-nav-wrap{
-      padding-bottom:12px;
+      padding-bottom:14px;
     }
 
     .logo{
@@ -108,8 +108,8 @@
     }
 
     .logo-img{
-      width:46px;
-      height:46px;
+      width:52px;
+      height:52px;
       border-radius:12px;
       object-fit:cover;
       flex-shrink:0;
@@ -120,7 +120,7 @@
     .logo span{
       font-family:'Sora',sans-serif;
       font-weight:800;
-      font-size:1.05rem;
+      font-size:1.08rem;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
@@ -134,7 +134,7 @@
       border:1px solid rgba(255,255,255,.14);
       color:#fff;
       border-radius:14px;
-      padding:10px 14px;
+      padding:11px 15px;
       font-size:1rem;
       cursor:pointer;
     }
@@ -145,8 +145,7 @@
       gap:8px;
       padding-top:8px;
     }
-
-    .menu.show{display:flex;}
+    .menu.show{display:flex}
 
     .menu a{
       display:block;
@@ -159,7 +158,7 @@
     }
 
     .hero{
-      padding:26px 0 14px;
+      padding:16px 0 8px;
     }
 
     .hero-grid{
@@ -180,7 +179,7 @@
       box-shadow:0 18px 45px rgba(15,23,42,.10);
     }
 
-    .hero-copy{padding:26px;}
+    .hero-copy{padding:24px}
 
     .eyebrow{
       display:inline-flex;
@@ -196,7 +195,7 @@
       overflow-wrap:anywhere;
     }
 
-    h1,h2,h3,h4{font-family:'Sora',sans-serif;}
+    h1,h2,h3,h4{font-family:'Sora',sans-serif}
 
     .hero h1{
       margin:14px 0 10px;
@@ -266,7 +265,7 @@
       font-weight:600;
     }
 
-    .hero-side{padding:18px;}
+    .hero-side{padding:18px}
 
     .profile-wrap{
       width:min(390px,100%);
@@ -290,12 +289,12 @@
     .mini-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:10px;
-      margin-top:14px;
+      gap:8px;
+      margin-top:10px;
     }
 
     .mini{
-      padding:14px;
+      padding:12px;
       border-radius:16px;
       background:#fff;
       border:1px solid var(--line);
@@ -305,7 +304,7 @@
 
     .mini strong{
       display:block;
-      font-size:1.1rem;
+      font-size:1.05rem;
       color:var(--brand);
       line-height:1.2;
     }
@@ -314,21 +313,21 @@
       display:block;
       margin-top:4px;
       color:var(--muted);
-      font-size:.9rem;
+      font-size:.88rem;
     }
 
     .section{
-      padding:24px 0;
-      scroll-margin-top: calc(var(--header-h) + 18px);
+      padding:16px 0;
+      scroll-margin-top: calc(var(--header-h) + 12px);
     }
 
     .section-title{
       text-align:center;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
 
     .section-title h2{
-      margin:0 0 7px;
+      margin:0 0 6px;
       font-size:clamp(1.45rem,2.6vw,2.1rem);
       letter-spacing:-.03em;
     }
@@ -336,23 +335,23 @@
     .section-title p{
       margin:0;
       color:var(--muted);
-      font-size:0.98rem;
+      font-size:.98rem;
     }
 
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:14px;
+      gap:10px;
     }
 
     .grid-2{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:14px;
+      gap:10px;
     }
 
     .card{
-      padding:18px;
+      padding:14px;
       transition:transform .25s ease;
     }
 
@@ -383,18 +382,18 @@
     .stats{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-      gap:12px;
+      gap:10px;
     }
 
     .stat{
-      padding:18px;
+      padding:14px;
       text-align:center;
       transition:transform .25s ease;
     }
 
     .stat strong{
       display:block;
-      font-size:1.8rem;
+      font-size:1.75rem;
       color:var(--brand);
       line-height:1;
     }
@@ -451,10 +450,10 @@
 
     .project-img{
       width:100%;
-      height:210px;
+      height:190px;
       object-fit:cover;
       border-radius:16px;
-      margin-bottom:12px;
+      margin-bottom:10px;
       border:1px solid var(--line);
       background:#fff;
     }
@@ -462,13 +461,13 @@
     .doc-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:14px;
+      gap:10px;
     }
 
     .doc-card{
       display:block;
       text-align:center;
-      padding:18px;
+      padding:14px;
       border-radius:18px;
       background:#fff;
       transition:.25s;
@@ -480,7 +479,7 @@
     .contact-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:14px;
+      gap:10px;
     }
 
     .contact-link{
@@ -497,7 +496,7 @@
 
     footer{
       background:linear-gradient(135deg,var(--dark),var(--dark-2));
-      padding:34px 0 24px;
+      padding:30px 0 20px;
       color:#cbd5e1;
       margin-top:8px;
     }
@@ -505,7 +504,7 @@
     .footer-grid{
       display:grid;
       grid-template-columns:1.1fr .9fr;
-      gap:20px;
+      gap:14px;
       align-items:start;
     }
 
@@ -545,8 +544,8 @@
 
     .footer-note{
       text-align:center;
-      margin-top:20px;
-      padding-top:14px;
+      margin-top:18px;
+      padding-top:12px;
       border-top:1px solid rgba(255,255,255,.08);
       font-size:.93rem;
     }
@@ -625,7 +624,7 @@
     }
 
     @media(max-width:640px){
-      :root{--header-h:108px}
+      :root{--header-h:120px}
       .hero-copy,.hero-side{padding:16px}
       .mini-grid{grid-template-columns:1fr}
       .btn{width:100%}
@@ -651,7 +650,6 @@
       </a>
       <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" onclick="toggleMenu()">Menu</button>
     </div>
-
     <div class="container header-nav-wrap">
       <nav aria-label="Primary navigation">
         <ul class="menu" id="menu">
@@ -727,10 +725,7 @@
 
     <section class="section" id="achievements">
       <div class="container">
-        <div class="section-title">
-          <h2>Key Achievements</h2>
-          <p>Professional impact and accomplishments.</p>
-        </div>
+        <div class="section-title"><h2>Key Achievements</h2><p>Professional impact and accomplishments.</p></div>
         <div class="stats">
           <div class="stat"><strong>2000+</strong><span>Learners Supported</span></div>
           <div class="stat"><strong>7+</strong><span>Years in ICT Education</span></div>
@@ -742,30 +737,20 @@
 
     <section class="section" id="skills">
       <div class="container">
-        <div class="section-title">
-          <h2>Technical Skills</h2>
-          <p>Core competencies and areas of expertise.</p>
-        </div>
+        <div class="section-title"><h2>Technical Skills</h2><p>Core competencies and areas of expertise.</p></div>
         <div class="grid">
-          <div class="card"><h3>Web Development</h3><p>HTML, CSS, Responsive Design</p></div>
-          <div class="card"><h3>Microsoft Office</h3><p>Word, Excel, PowerPoint, Access</p></div>
-          <div class="card"><h3>Computer Lab Management</h3><p>Maintenance, Networking, Troubleshooting</p></div>
-          <div class="card"><h3>Graphic Design</h3><p>Digital Content and Creative Design</p></div>
-          <div class="card"><h3>Digital Skills Training</h3><p>Beginner to Advanced Level Training</p></div>
-          <div class="card"><h3>Educational Technology</h3><p>Learning Platforms and ICT Integration</p></div>
-          <div class="card"><h3>ICT Support</h3><p>Technical Support, Troubleshooting, User Assistance</p></div>
-          <div class="card"><h3>Networking</h3><p>LAN, Routers, Switches, Connectivity</p></div>
-          <div class="card"><h3>Pearson Edexcel ICT</h3><p>Curriculum Delivery and Assessment</p></div>
+          <div class="card"><h3>ICT Teaching</h3><p>Pearson Edexcel ICT, curriculum delivery, learner assessment, classroom support.</p></div>
+          <div class="card"><h3>Digital Skills</h3><p>Microsoft Office, educational technology, digital training, and practical computer use.</p></div>
+          <div class="card"><h3>ICT Support</h3><p>Computer lab management, troubleshooting, networking, and technical assistance.</p></div>
+          <div class="card"><h3>Administration</h3><p>Documentation, reporting, records management, coordination, and communication.</p></div>
+          <div class="card"><h3>Creative & Web</h3><p>Web development, graphic design, and digital content development.</p></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="program-support">
       <div class="container">
-        <div class="section-title">
-          <h2>Program Support Skills</h2>
-          <p>Skills that strengthen operations, coordination, and documentation.</p>
-        </div>
+        <div class="section-title"><h2>Program Support Skills</h2><p>Skills that strengthen operations, coordination, and documentation.</p></div>
         <div class="card">
           <ul class="list">
             <li>Office administration and document handling.</li>
@@ -785,10 +770,7 @@
 
     <section class="section" id="competencies">
       <div class="container">
-        <div class="section-title">
-          <h2>Teaching Competencies</h2>
-          <p>Practical classroom and learner support strengths.</p>
-        </div>
+        <div class="section-title"><h2>Teaching Competencies</h2><p>Practical classroom and learner support strengths.</p></div>
         <div class="card">
           <ul class="list">
             <li>Lesson Planning.</li>
@@ -807,10 +789,7 @@
 
     <section class="section" id="experience">
       <div class="container">
-        <div class="section-title">
-          <h2>Professional Experience</h2>
-          <p>Teaching, ICT support and educational technology experience.</p>
-        </div>
+        <div class="section-title"><h2>Professional Experience</h2><p>Teaching, ICT support and educational technology experience.</p></div>
         <div class="grid">
           <div class="card experience-item">
             <div class="experience-top">
@@ -866,10 +845,7 @@
 
     <section class="section" id="contributions">
       <div class="container">
-        <div class="section-title">
-          <h2>School Contributions</h2>
-          <p>Additional responsibilities and support areas.</p>
-        </div>
+        <div class="section-title"><h2>School Contributions</h2><p>Additional responsibilities and support areas.</p></div>
         <div class="card">
           <ul class="list">
             <li>ICT Laboratory Management.</li>
@@ -885,10 +861,7 @@
 
     <section class="section" id="portfolio">
       <div class="container">
-        <div class="section-title">
-          <h2>Featured Projects</h2>
-          <p>Selected educational and technology projects.</p>
-        </div>
+        <div class="section-title"><h2>Featured Projects</h2><p>Selected educational and technology projects.</p></div>
         <div class="grid">
           <div class="card">
             <img src="assets/images/school-portal.jpg" alt="School portal project preview" class="project-img">
@@ -911,10 +884,7 @@
 
     <section class="section" id="certifications">
       <div class="container">
-        <div class="section-title">
-          <h2>Certifications & Qualifications</h2>
-          <p>Academic achievements and professional competencies.</p>
-        </div>
+        <div class="section-title"><h2>Certifications & Qualifications</h2><p>Academic achievements and professional competencies.</p></div>
         <div class="grid">
           <div class="card">
             <img src="assets/images/degree.jpg" alt="BBIT degree certificate" class="project-img">
@@ -932,26 +902,12 @@
             <p>Kenya Certificate of Secondary Education.</p>
           </div>
         </div>
-
-        <br /><br />
-
-        <div class="grid">
-          <div class="card"><h3>Pearson Edexcel ICT</h3><p>ICT curriculum specialist.</p></div>
-          <div class="card"><h3>Microsoft Office</h3><p>Advanced office productivity skills.</p></div>
-          <div class="card"><h3>Graphic Design</h3><p>Creative digital content production.</p></div>
-          <div class="card"><h3>Digital Skills Training</h3><p>Technology skills development.</p></div>
-          <div class="card"><h3>Educational Technology</h3><p>Technology integration in education.</p></div>
-          <div class="card"><h3>Computer Lab Management</h3><p>ICT laboratory administration and support.</p></div>
-        </div>
       </div>
     </section>
 
     <section class="section" id="safeguarding">
       <div class="container">
-        <div class="section-title">
-          <h2>Safeguarding Commitment</h2>
-          <p>Student wellbeing and responsible technology use.</p>
-        </div>
+        <div class="section-title"><h2>Safeguarding Commitment</h2><p>Student wellbeing and responsible technology use.</p></div>
         <div class="card">
           <p>Committed to maintaining a safe, inclusive and supportive learning environment that promotes student wellbeing, digital citizenship, child protection awareness and responsible technology use.</p>
         </div>
@@ -960,10 +916,7 @@
 
     <section class="section" id="testimonials">
       <div class="container">
-        <div class="section-title">
-          <h2>Testimonials</h2>
-          <p>Feedback from former colleagues and supervisors.</p>
-        </div>
+        <div class="section-title"><h2>Testimonials</h2><p>Feedback from former colleagues and supervisors.</p></div>
         <div class="grid-2">
           <div class="card">
             <h3>Former Colleague</h3>
@@ -979,10 +932,7 @@
 
     <section class="section" id="references">
       <div class="container">
-        <div class="section-title">
-          <h2>Professional Documents</h2>
-          <p>Reference letters available upon request, and I can facilitate contact with my referees if needed.</p>
-        </div>
+        <div class="section-title"><h2>Professional Documents</h2><p>Reference letters available upon request, and I can facilitate contact with my referees if needed.</p></div>
         <div class="doc-grid">
           <a href="assets/documents/Jamal_Fahadh_CV.pdf" target="_blank" rel="noopener" class="doc-card">
             <div style="font-size:2rem;">📄</div>
@@ -1014,10 +964,7 @@
 
     <section class="section" id="why-me">
       <div class="container">
-        <div class="section-title">
-          <h2>Why Hire Me?</h2>
-          <p>Reasons I can add value to your school or organization.</p>
-        </div>
+        <div class="section-title"><h2>Why Hire Me?</h2><p>Reasons I can add value to your school or organization.</p></div>
         <div class="card">
           <ul class="list">
             <li>7+ years ICT teaching experience.</li>
@@ -1035,10 +982,7 @@
 
     <section class="section" id="contact">
       <div class="container">
-        <div class="section-title">
-          <h2>Contact Me</h2>
-          <p>Available for ICT Teaching, Digital Skills Training, Educational Technology Projects and Consulting.</p>
-        </div>
+        <div class="section-title"><h2>Contact Me</h2><p>Available for ICT Teaching, Digital Skills Training, Educational Technology Projects and Consulting.</p></div>
         <div class="contact-grid">
           <div class="card">
             <h3>Get In Touch</h3>
