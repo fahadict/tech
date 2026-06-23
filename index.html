@@ -564,6 +564,50 @@
       box-shadow:0 16px 35px rgba(0,0,0,.16);
     }
 
+    .modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,.78);
+      z-index:10000;
+      padding:20px;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .modal.show{display:flex}
+
+    .modal-content{
+      width:min(900px,100%);
+      background:#fff;
+      border-radius:22px;
+      padding:16px;
+      position:relative;
+      box-shadow:0 30px 80px rgba(0,0,0,.35);
+    }
+
+    .modal-close{
+      position:absolute;
+      top:10px;
+      right:12px;
+      width:40px;
+      height:40px;
+      border:none;
+      border-radius:999px;
+      background:#0f172a;
+      color:#fff;
+      font-size:1.2rem;
+      cursor:pointer;
+    }
+
+    .modal-img{
+      width:100%;
+      max-height:80vh;
+      object-fit:contain;
+      border-radius:14px;
+      background:#f8fbff;
+    }
+
     @media(min-width:981px){
       .menu{
         display:flex;
@@ -629,7 +673,7 @@
           <div class="eyebrow">✔ ICT professional based in Hargeisa, Somaliland, available for immediate employment.</div>
           <h1>Jamal Fahadh Mohamed</h1>
           <h2>Pearson Edexcel ICT Teacher | Digital Skills Trainer | Program Support | Software Skills Instructor</h2>
-          <p>I help schools and organizations stay organized, efficient, and digitally strong through ICT teaching, program support, document management, reporting, and practical technology skills.</p>
+          <p>Experienced ICT professional with over seven years of service in education, digital skills training, educational technology, ICT support, program coordination, documentation, and administrative operations. I have strong experience in Pearson Edexcel ICT curriculum delivery, learner assessment, computer laboratory management, digital transformation initiatives, stakeholder communication, reporting, and operational support. My work is defined by a practical technical foundation, strong organizational ability, and a consistent focus on improving learning outcomes and operational efficiency.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Contact Me</a>
             <a class="btn btn-secondary" href="assets/documents/Jamal_Fahadh_CV.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -658,12 +702,15 @@
 
     <section class="section" id="about">
       <div class="container">
-        <div class="section-title"><h2>Professional Profile</h2><p>Empowering learners and supporting organizational efficiency.</p></div>
+        <div class="section-title">
+          <h2>Professional Profile</h2>
+          <p>Empowering learners and supporting organizational efficiency.</p>
+        </div>
         <div class="grid-2">
           <div class="card">
             <h3>ICT Educator & Program Support Professional</h3>
-            <p>I am an ICT educator, digital skills trainer, and program support professional with experience in teaching, documentation, administration, and technology-based operations.</p>
-            <p>My strength is combining technical knowledge with practical organization skills to help teams work more effectively while supporting learners and workplace operations.</p>
+            <p>Experienced ICT professional with over seven years of service in education, digital skills training, educational technology, ICT support, program coordination, documentation, and administrative operations.</p>
+            <p>I have strong experience in Pearson Edexcel ICT curriculum delivery, learner assessment, computer laboratory management, digital transformation initiatives, stakeholder communication, reporting, and operational support.</p>
           </div>
           <div class="card">
             <h3>Teaching Philosophy</h3>
@@ -680,7 +727,10 @@
 
     <section class="section" id="achievements">
       <div class="container">
-        <div class="section-title"><h2>Key Achievements</h2><p>Professional impact and accomplishments.</p></div>
+        <div class="section-title">
+          <h2>Key Achievements</h2>
+          <p>Professional impact and accomplishments.</p>
+        </div>
         <div class="stats">
           <div class="stat"><strong>2000+</strong><span>Learners Supported</span></div>
           <div class="stat"><strong>7+</strong><span>Years in ICT Education</span></div>
@@ -692,7 +742,10 @@
 
     <section class="section" id="skills">
       <div class="container">
-        <div class="section-title"><h2>Technical Skills</h2><p>Core competencies and areas of expertise.</p></div>
+        <div class="section-title">
+          <h2>Technical Skills</h2>
+          <p>Core competencies and areas of expertise.</p>
+        </div>
         <div class="grid">
           <div class="card"><h3>Web Development</h3><p>HTML, CSS, Responsive Design</p></div>
           <div class="card"><h3>Microsoft Office</h3><p>Word, Excel, PowerPoint, Access</p></div>
@@ -709,7 +762,10 @@
 
     <section class="section" id="program-support">
       <div class="container">
-        <div class="section-title"><h2>Program Support Skills</h2><p>Skills that strengthen operations, coordination, and documentation.</p></div>
+        <div class="section-title">
+          <h2>Program Support Skills</h2>
+          <p>Skills that strengthen operations, coordination, and documentation.</p>
+        </div>
         <div class="card">
           <ul class="list">
             <li>Office administration and document handling.</li>
@@ -729,7 +785,10 @@
 
     <section class="section" id="competencies">
       <div class="container">
-        <div class="section-title"><h2>Teaching Competencies</h2><p>Practical classroom and learner support strengths.</p></div>
+        <div class="section-title">
+          <h2>Teaching Competencies</h2>
+          <p>Practical classroom and learner support strengths.</p>
+        </div>
         <div class="card">
           <ul class="list">
             <li>Lesson Planning.</li>
@@ -748,7 +807,10 @@
 
     <section class="section" id="experience">
       <div class="container">
-        <div class="section-title"><h2>Professional Experience</h2><p>Teaching, ICT support and educational technology experience.</p></div>
+        <div class="section-title">
+          <h2>Professional Experience</h2>
+          <p>Teaching, ICT support and educational technology experience.</p>
+        </div>
         <div class="grid">
           <div class="card experience-item">
             <div class="experience-top">
@@ -758,12 +820,12 @@
               </div>
             </div>
             <ul class="experience-bullets">
-              <li>Delivered ICT lessons and supported digital learning activities.</li>
-              <li>Managed computer laboratory resources and technology equipment.</li>
-              <li>Prepared lesson materials, student records, and academic reports.</li>
-              <li>Assisted with school ICT operations and technical support.</li>
-              <li>Communicated with staff and students to ensure smooth learning delivery.</li>
-              <li>Supported organization of digital resources and classroom materials.</li>
+              <li>Delivered Pearson Edexcel ICT lessons to hundreds of learners.</li>
+              <li>Supported over 2,000 students in developing practical digital skills.</li>
+              <li>Managed ICT laboratory resources and ensured operational readiness.</li>
+              <li>Prepared academic records, reports, and digital learning materials.</li>
+              <li>Assisted staff and students with ICT troubleshooting and technology integration.</li>
+              <li>Contributed to digital resource development and school technology initiatives.</li>
             </ul>
           </div>
 
@@ -804,7 +866,10 @@
 
     <section class="section" id="contributions">
       <div class="container">
-        <div class="section-title"><h2>School Contributions</h2><p>Additional responsibilities and support areas.</p></div>
+        <div class="section-title">
+          <h2>School Contributions</h2>
+          <p>Additional responsibilities and support areas.</p>
+        </div>
         <div class="card">
           <ul class="list">
             <li>ICT Laboratory Management.</li>
@@ -820,7 +885,10 @@
 
     <section class="section" id="portfolio">
       <div class="container">
-        <div class="section-title"><h2>Featured Projects</h2><p>Selected educational and technology projects.</p></div>
+        <div class="section-title">
+          <h2>Featured Projects</h2>
+          <p>Selected educational and technology projects.</p>
+        </div>
         <div class="grid">
           <div class="card">
             <img src="assets/images/school-portal.jpg" alt="School portal project preview" class="project-img">
@@ -843,7 +911,10 @@
 
     <section class="section" id="certifications">
       <div class="container">
-        <div class="section-title"><h2>Certifications & Qualifications</h2><p>Academic achievements and professional competencies.</p></div>
+        <div class="section-title">
+          <h2>Certifications & Qualifications</h2>
+          <p>Academic achievements and professional competencies.</p>
+        </div>
         <div class="grid">
           <div class="card">
             <img src="assets/images/degree.jpg" alt="BBIT degree certificate" class="project-img">
@@ -877,7 +948,10 @@
 
     <section class="section" id="safeguarding">
       <div class="container">
-        <div class="section-title"><h2>Safeguarding Commitment</h2><p>Student wellbeing and responsible technology use.</p></div>
+        <div class="section-title">
+          <h2>Safeguarding Commitment</h2>
+          <p>Student wellbeing and responsible technology use.</p>
+        </div>
         <div class="card">
           <p>Committed to maintaining a safe, inclusive and supportive learning environment that promotes student wellbeing, digital citizenship, child protection awareness and responsible technology use.</p>
         </div>
@@ -886,7 +960,10 @@
 
     <section class="section" id="testimonials">
       <div class="container">
-        <div class="section-title"><h2>Testimonials</h2><p>Feedback from former colleagues and supervisors.</p></div>
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>Feedback from former colleagues and supervisors.</p>
+        </div>
         <div class="grid-2">
           <div class="card">
             <h3>Former Colleague</h3>
@@ -902,7 +979,10 @@
 
     <section class="section" id="references">
       <div class="container">
-        <div class="section-title"><h2>Professional Documents</h2><p>Reference letters available upon request, and I can facilitate contact with my referees if needed.</p></div>
+        <div class="section-title">
+          <h2>Professional Documents</h2>
+          <p>Reference letters available upon request, and I can facilitate contact with my referees if needed.</p>
+        </div>
         <div class="doc-grid">
           <a href="assets/documents/Jamal_Fahadh_CV.pdf" target="_blank" rel="noopener" class="doc-card">
             <div style="font-size:2rem;">📄</div>
@@ -922,11 +1002,11 @@
             <p>Sample teaching methodology</p>
             <span style="color:#2563eb;font-weight:700;">View Document →</span>
           </a>
-          <a href="assets/documents/citizenship-certificate.pdf" target="_blank" rel="noopener" class="doc-card">
+          <a href="#passport-modal" class="doc-card" id="citizenship-trigger">
             <div style="font-size:2rem;">🪪</div>
             <h4>Citizenship Document</h4>
-            <p>Proof of identity and citizenship</p>
-            <span style="color:#0ea5e9;font-weight:700;">View Document →</span>
+            <p>Click to view passport bio page</p>
+            <span style="color:#0ea5e9;font-weight:700;">View Image →</span>
           </a>
         </div>
       </div>
@@ -934,7 +1014,10 @@
 
     <section class="section" id="why-me">
       <div class="container">
-        <div class="section-title"><h2>Why Hire Me?</h2><p>Reasons I can add value to your school or organization.</p></div>
+        <div class="section-title">
+          <h2>Why Hire Me?</h2>
+          <p>Reasons I can add value to your school or organization.</p>
+        </div>
         <div class="card">
           <ul class="list">
             <li>7+ years ICT teaching experience.</li>
@@ -952,7 +1035,10 @@
 
     <section class="section" id="contact">
       <div class="container">
-        <div class="section-title"><h2>Contact Me</h2><p>Available for ICT Teaching, Digital Skills Training, Educational Technology Projects and Consulting.</p></div>
+        <div class="section-title">
+          <h2>Contact Me</h2>
+          <p>Available for ICT Teaching, Digital Skills Training, Educational Technology Projects and Consulting.</p>
+        </div>
         <div class="contact-grid">
           <div class="card">
             <h3>Get In Touch</h3>
@@ -1016,6 +1102,13 @@
 
   <a href="https://wa.me/252636710907" target="_blank" rel="noopener" class="floating-wa">WhatsApp</a>
 
+  <div class="modal" id="passport-modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" type="button" aria-label="Close modal" onclick="closeModal()">×</button>
+      <img src="assets/images/passport-bio-page.jpg" alt="Passport bio page" class="modal-img">
+    </div>
+  </div>
+
   <script>
     function toggleMenu(){
       const menu = document.getElementById('menu');
@@ -1023,6 +1116,28 @@
       menu.classList.toggle('show');
       btn.setAttribute('aria-expanded', menu.classList.contains('show'));
     }
+
+    const trigger = document.getElementById('citizenship-trigger');
+    const modal = document.getElementById('passport-modal');
+
+    trigger.addEventListener('click', function(e){
+      e.preventDefault();
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+
+    function closeModal(){
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeModal();
+    });
   </script>
 </body>
 </html>
