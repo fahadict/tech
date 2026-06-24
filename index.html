@@ -93,12 +93,21 @@
     .hero{
       padding:54px 0 72px;
       background:
-        radial-gradient(circle at top right, rgba(250,204,21,.13) 0%, transparent 28%),
-        radial-gradient(circle at bottom left, rgba(59,130,246,.18) 0%, transparent 30%),
+        radial-gradient(circle at top right, rgba(250,204,21,.12) 0%, transparent 26%),
+        radial-gradient(circle at left center, rgba(59,130,246,.16) 0%, transparent 22%),
+        radial-gradient(circle at bottom right, rgba(14,165,233,.10) 0%, transparent 20%),
         linear-gradient(180deg,#0b1120 0%, #111827 100%);
       position:relative;overflow:hidden
     }
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(11,17,32,.20) 0%, rgba(11,17,32,.32) 100%);
+      pointer-events:none;
+    }
     .hero-grid{
+      position:relative;
+      z-index:1;
       display:grid;grid-template-columns:1.25fr .95fr;gap:34px;align-items:center
     }
     .availability{
@@ -138,12 +147,12 @@
     .btn:hover,.btn:focus-visible{transform:translateY(-2px);outline:none}
     .profile-wrapper{display:flex;justify-content:center;align-items:center}
     .profile-frame{
-      width:min(440px,100%);aspect-ratio:1/1;padding:12px;border-radius:30px;
-      background:linear-gradient(135deg,rgba(250,204,21,.95),rgba(255,255,255,.26));
+      width:min(500px,100%);aspect-ratio:1/1;padding:14px;border-radius:28px;
+      background:linear-gradient(135deg, rgba(250,204,21,.95), rgba(59,130,246,.18));
       box-shadow:var(--shadow)
     }
     .profile-img{
-      width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:22px;
+      width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:20px;
       border:6px solid rgba(11,17,32,.9);background:#0f172a
     }
 
@@ -358,11 +367,12 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <a href="#documents" class="cv-btn">Documents</a>
+      <a href="#documents" class="cv-btn">View Docs</a>
     </div>
   </header>
 
   <section class="hero" id="home">
+    <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-grid">
         <div>
@@ -392,13 +402,13 @@
 
           <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary"><i class="fas fa-phone"></i>Contact Me</a>
-            <a href="#about" class="btn btn-secondary"><i class="fas fa-arrow-down"></i>Explore Profile</a>
+            <a href="#documents" class="btn btn-secondary"><i class="fas fa-folder-open"></i>View Docs</a>
           </div>
         </div>
 
         <div class="profile-wrapper">
           <div class="profile-frame">
-            <img src="jamal-profile.jpg" alt="Portrait of Jamal Fahadh Mohamed" class="profile-img" />
+            <img src="assets/images/jamal-profile.jpg" alt="Portrait of Jamal Fahadh Mohamed" class="profile-img" />
           </div>
         </div>
       </div>
@@ -422,15 +432,10 @@
         <h2>Executive Profile</h2>
         <p>Dedicated to learner success, digital growth, and efficient operations.</p>
       </div>
-
       <div class="light-card profile-card">
         <h3>Professional Overview</h3>
-        <p>
-          Dedicated ICT educator and program support professional with strong experience in teaching Pearson Edexcel ICT, supporting digital learning environments, managing computer labs, and assisting with office and administrative operations.
-        </p>
-        <p>
-          Skilled in learner assessment, lesson delivery, educational technology, Microsoft Office, communication, documentation, record management, and coordination of academic and technical activities.
-        </p>
+        <p>Dedicated ICT educator and program support professional with strong experience in teaching Pearson Edexcel ICT, supporting digital learning environments, managing computer labs, and assisting with office and administrative operations.</p>
+        <p>Skilled in learner assessment, lesson delivery, educational technology, Microsoft Office, communication, documentation, record management, and coordination of academic and technical activities.</p>
       </div>
     </div>
   </section>
@@ -441,11 +446,8 @@
         <h2>Teaching Philosophy</h2>
         <p>Practical, student-centered, and focused on confidence building.</p>
       </div>
-
       <div class="light-card profile-card">
-        <p>
-          I believe technology education should be practical, engaging, and relevant to real-world applications. My goal is to help learners become confident, creative, and digitally responsible through hands-on practice and clear guidance.
-        </p>
+        <p>I believe technology education should be practical, engaging, and relevant to real-world applications. My goal is to help learners become confident, creative, and digitally responsible through hands-on practice and clear guidance.</p>
         <div class="chips">
           <span class="chip">Practical Learning</span>
           <span class="chip">Student-Centered Delivery</span>
@@ -462,7 +464,6 @@
         <h2>Career Highlights</h2>
         <p>Key accomplishments and contributions across teaching and support roles.</p>
       </div>
-
       <div class="grid-auto">
         <div class="light-card card"><h3>Classroom Delivery</h3><p>Delivered Pearson Edexcel ICT lessons and guided learners through practical tasks.</p></div>
         <div class="light-card card"><h3>Digital Support</h3><p>Supported ICT lab activities, troubleshooting, and educational technology use.</p></div>
@@ -597,7 +598,6 @@
         <h2>Why Hire Me?</h2>
         <p>Reasons I can add value to a school or organization.</p>
       </div>
-
       <div class="light-card card">
         <ul class="why-list">
           <li>7+ years of ICT teaching experience.</li>
@@ -618,11 +618,8 @@
         <h2>Safeguarding Commitment</h2>
         <p>Supporting safe, inclusive, and responsible learning environments.</p>
       </div>
-
       <div class="light-card card">
-        <p>
-          Committed to maintaining a safe, respectful, and supportive environment for all learners. I promote responsible technology use, digital citizenship, child protection awareness, and inclusive classroom practice.
-        </p>
+        <p>Committed to maintaining a safe, respectful, and supportive environment for all learners. I promote responsible technology use, digital citizenship, child protection awareness, and inclusive classroom practice.</p>
       </div>
     </div>
   </section>
@@ -633,24 +630,21 @@
         <h2>Projects & Contributions</h2>
         <p>Selected educational and digital initiatives.</p>
       </div>
-
       <div class="grid-3">
         <div class="project-card">
-          <img src="school-portal.jpg" alt="School portal project preview" class="project-img" />
+          <img src="assets/images/school-portal.jpg" alt="School portal project preview" class="project-img" />
           <span class="project-tag">Web Systems</span>
           <h3>School Portal</h3>
           <p>Supported content structure and user access flow for learning and communication.</p>
         </div>
-
         <div class="project-card">
-          <img src="library-system.jpg" alt="Library management system project preview" class="project-img" />
+          <img src="assets/images/library-system.jpg" alt="Library management system project preview" class="project-img" />
           <span class="project-tag">Information Management</span>
           <h3>Library Management System</h3>
           <p>Helped organize records and workflow for better resource management.</p>
         </div>
-
         <div class="project-card">
-          <img src="student-database.jpg" alt="Student database project preview" class="project-img" />
+          <img src="assets/images/student-database.jpg" alt="Student database project preview" class="project-img" />
           <span class="project-tag">Database</span>
           <h3>Student Database</h3>
           <p>Contributed to a structured student record system using Microsoft Access.</p>
@@ -665,22 +659,19 @@
         <h2>Certificates & Qualifications</h2>
         <p>Academic and professional credentials.</p>
       </div>
-
       <div class="grid-3">
         <div class="certificate-card">
-          <img src="degree.jpg" alt="Bachelor degree certificate" class="certificate-img" />
+          <img src="assets/images/degree.jpg" alt="Bachelor degree certificate" class="certificate-img" />
           <h3>Bachelor of Business Information Technology</h3>
           <p>University degree in Business Information Technology.</p>
         </div>
-
         <div class="certificate-card">
-          <img src="web_cert.jpg" alt="Web development certificate" class="certificate-img" />
+          <img src="assets/images/web_cert.jpg" alt="Web development certificate" class="certificate-img" />
           <h3>Web Design & Development</h3>
           <p>Responsive website design and development skills.</p>
         </div>
-
         <div class="certificate-card">
-          <img src="kcse.jpg" alt="KCSE certificate" class="certificate-img" />
+          <img src="assets/images/kcse.jpg" alt="KCSE certificate" class="certificate-img" />
           <h3>KCSE Certificate</h3>
           <p>Kenya Certificate of Secondary Education.</p>
         </div>
@@ -694,7 +685,6 @@
         <h2>Testimonials</h2>
         <p>Feedback from colleagues and supervisors.</p>
       </div>
-
       <div class="grid-2">
         <div class="testimonial">
           <p>“Jamal is organized, dependable, and highly supportive. He brings practical value to both teaching and school operations.”</p>
@@ -714,7 +704,6 @@
         <h2>Languages</h2>
         <p>Communication across learning and professional environments.</p>
       </div>
-
       <div class="grid-3">
         <div class="light-card card"><h3>English</h3><p>Bilingual / Native</p></div>
         <div class="light-card card"><h3>Somali</h3><p>Professional Working Proficiency</p></div>
@@ -729,27 +718,23 @@
         <h2>Professional Documents</h2>
         <p>Quick access to supporting documents and teaching materials.</p>
       </div>
-
       <div class="doc-grid">
-        <a href="Jamal_Fahadh_CV.pdf" class="doc-card">
+        <a href="assets/documents/Jamal_Fahadh_CV.pdf" class="doc-card">
           <i class="fas fa-file-pdf"></i>
           <h4>Curriculum Vitae</h4>
           <p>Download and review my latest CV.</p>
         </a>
-
-        <a href="Cover_Letter.pdf" class="doc-card">
+        <a href="assets/documents/Cover_Letter.pdf" class="doc-card">
           <i class="fas fa-file-lines"></i>
           <h4>Cover Letter</h4>
           <p>Professional introduction for applications.</p>
         </a>
-
-        <a href="sample-lesson-plan.pdf" class="doc-card">
+        <a href="assets/documents/sample-lesson-plan.pdf" class="doc-card">
           <i class="fas fa-chalkboard-user"></i>
           <h4>Lesson Plan Sample</h4>
           <p>Example of my teaching preparation and methodology.</p>
         </a>
-
-        <a href="citizenship-document.jpg" class="doc-card">
+        <a href="assets/documents/citizenship-document.jpg" class="doc-card">
           <i class="fas fa-id-card"></i>
           <h4>Citizenship Document</h4>
           <p>Passport bio page / citizenship document image.</p>
@@ -762,9 +747,7 @@
     <div class="container">
       <div class="availability-box">
         <h2>Available Immediately</h2>
-        <p>
-          Open to ICT Teaching, Digital Skills Training, Program Support, Educational Technology, Computer Lab Management, Administrative Support, and School Coordination opportunities.
-        </p>
+        <p>Open to ICT Teaching, Digital Skills Training, Program Support, Educational Technology, Computer Lab Management, Administrative Support, and School Coordination opportunities.</p>
         <div class="availability-items">
           <div><i class="fas fa-location-dot"></i>Hargeisa, Somaliland</div>
           <div><i class="fas fa-briefcase"></i>Full-Time Opportunities</div>
@@ -781,7 +764,6 @@
         <h2>Contact Me</h2>
         <p>Let's discuss ICT teaching, digital training, and program support opportunities.</p>
       </div>
-
       <div class="contact-grid">
         <div class="contact-card">
           <h3>Contact Information</h3>
